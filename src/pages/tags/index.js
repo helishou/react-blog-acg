@@ -20,7 +20,7 @@ const TagsList = (props) => {
                 {list.length > 0 ?list.map((item, index) => {
                     return (
                         <Tag color={color[getrand(0, color.length - 1)]} key={index}>
-                            <Link to={'/tags/' + item.id}>{item.name}({item.postsTotal||999})</Link>
+                            <Link to={'/tags/' + item._id}>{item.name}{item.postsTotal?'('+item.postsTotal+')':''}</Link>
                         </Tag>
                     )
                 }):<p>你暂时还未添加标签...</p>}
