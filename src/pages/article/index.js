@@ -10,7 +10,8 @@ import Tocify from "./tocify";
 import Comments from "./components/Comments";
 import axios from "axios";
 import Carousel, { Modal, ModalGateway } from "react-images";
-
+import WechatReward from "../../statics/images/WechatReward.jpg";
+import AlipayReward from "../../statics/images/AlipayReward.jpg";
 class Article extends PureComponent {
   tocify = new Tocify();
 
@@ -20,7 +21,16 @@ class Article extends PureComponent {
       content: "",
       timg: "",
       id: props.match.params.id,
-      socialsList: [],
+      socialsList: [
+        {
+          content: WechatReward,
+          remark: "微信",
+        },
+        {
+          content: AlipayReward,
+          remark: "支付宝",
+        },
+      ],
       imgList: [],
       modalIsOpen: false,
       currentImage: 0,
@@ -37,8 +47,9 @@ class Article extends PureComponent {
       modalIsOpen,
       currentImage,
     } = this.state;
-    const { name, avatar } = this.props.userInfo.toJS();
+    // const { name, avatar } = this.props.userInfo.toJS();
     this.tocify && this.tocify.reset();
+
     if (content.title) document.title = content.title;
     const styleInit = {
       header: (base, state) => ({
@@ -68,10 +79,8 @@ class Article extends PureComponent {
             <h1 className="entry-title">{content.title}</h1>
             {content && (
               <p className="entry-census">
-                <span>
-                  <img src={avatar} alt="" />
-                </span>
-                <span>{name}</span>
+                <span>{/* <img src={avatar} alt="" /> */}</span>
+                <span>{content.author}</span>
                 <span className="bull">·</span>
                 <span>{getTime(content.createTime)}</span>
                 <span className="bull">·</span>
@@ -126,7 +135,6 @@ class Article extends PureComponent {
     });
     this.getDetail(this.props.match.params.id);
     this.getTimg();
-    this.getSocials();
   }
 
   toggleModal = () => {
@@ -156,7 +164,6 @@ class Article extends PureComponent {
     axios
       .post("/getArticleDetail", { id: id, type: 1, filter: 2 })
       .then((res) => {
-        console.log("getDetail", res);
         let { data } = res;
         let model = {
           id: data._id,
@@ -171,6 +178,7 @@ class Article extends PureComponent {
           tagsList: data.category,
           categoryId: data.category[0],
           categoryName: data.category[0],
+          author: data.author,
         };
         if (res.code === 0) {
           this.setState(
@@ -199,26 +207,6 @@ class Article extends PureComponent {
           this.props.history.push("/404");
         }
       });
-  }
-
-  getSocials() {
-    // axios.get("/auth/social/v1/socials?code=reward").then((res) => {
-    //   if (res.success === 1) {
-    this.setState({
-      socialsList: {
-        id: 4,
-        code: "reward",
-        content: "https://img-blog.csdn.net/20180626214506161?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3EzNDM1MDk3NDA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70",
-        showType: 1,
-        remark: "微信",
-        isEnabled: 1,
-        isHome: 0,
-        createTime: 1619056144000,
-        updateTime: 1619056144000,
-      },
-    });
-    //   }
-    // });
   }
 
   setSocials(socialsList) {
@@ -263,7 +251,7 @@ class Article extends PureComponent {
 const mapState = (state) => {
   return {
     topImg: state.getIn(["image", "bannerList"]),
-    userInfo: state.getIn(["header", "userInfo"]),
+    // userInfo: state.getIn(["header", "userInfo"]),
   };
 };
 

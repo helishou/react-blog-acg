@@ -51,7 +51,7 @@ class TagList extends PureComponent {
 
     getList(page, id, override) {
         this.setState({loading: true});
-        axios.get('/getArticleList', {
+        axios.get('/getArticleList?state=1', {
             params: {
                 pageNum: page,
                 pageSize: 10,

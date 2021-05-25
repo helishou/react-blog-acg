@@ -118,7 +118,7 @@ class Archives extends PureComponent {
 
   getArchives() {
     this.setState({ loading: true });
-    axios.get("/getArticleList").then((res) => {
+    axios.get("/getArticleList?state=1").then((res) => {
       let { data } = res;
       let models = [];
       let archivePosts = [];

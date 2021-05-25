@@ -145,7 +145,7 @@ const mapDispatch = (dispatch) => {
     getBlogList(page, override) {
       dispatch({ type: constants.LOADING_TRUE });
       axios
-        .get("/getArticleList", {
+        .get("/getArticleList?state=1", {
           params: {
             pageNum: page,
             pageSize: 10,

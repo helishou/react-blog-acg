@@ -10,7 +10,6 @@ const changeCategory = (data) => ({
 export const getCategory = () => {
   return (dispatch) => {
     axios.get("/getCategoryList").then((res) => {
-      //   console.log("getCategory", res.data.list);
       let list = res.data.list;
       list.map((item, index) => {
         item.id = item._id;

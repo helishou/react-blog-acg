@@ -134,48 +134,48 @@ class Comments extends PureComponent {
                 data["content"] = content;
             }
         }
-        axios({
-            method: 'post',
-            url: '/comments/comments/v1/add',
-            data: data
-        }).then((res) => {
-            if (res.success === 1) {
-                message.success('评论成功');
-                this.setState({
-                    value: '',
-                    parentId: ''
-                });
-                this.getComments(id, 1);
-            } else {
-                this.login();
-            }
-        });
+        // axios({
+        //     method: 'post',
+        //     url: '',
+        //     data: data
+        // }).then((res) => {
+        //     if (res.success === 1) {
+        //         message.success('评论成功');
+        //         this.setState({
+        //             value: '',
+        //             parentId: ''
+        //         });
+        //         this.getComments(id, 1);
+        //     } else {
+        //         this.login();
+        //     }
+        // });
     }
 
     login() {
-        axios.get('/auth/github/v1/get').then((res) => {
-            if (res.success === 1) {
-                openWindow(res.model.authorizeUrl, "绑定GitHub", 540, 540);
-                window.addEventListener("message", loginGithubHandel, false);
-            }
-        });
+        // axios.get('').then((res) => {
+        //     if (res.success === 1) {
+        //         openWindow(res.model.authorizeUrl, "绑定GitHub", 540, 540);
+        //         window.addEventListener("message", loginGithubHandel, false);
+        //     }
+        // });
     }
 
     getComments(id, page) {
-        axios.get('/comments/comments-posts/v1/list', {
-            params: {
-                page: page,
-                size: 5,
-                postsId: id
-            }
-        }).then((res) => {
-            if (res.success === 1) {
-                this.setState({
-                    commentsList: res.models,
-                    pageInfo: res.pageInfo
-                })
-            }
-        });
+        // axios.get('', {
+        //     params: {
+        //         page: page,
+        //         size: 5,
+        //         postsId: id
+        //     }
+        // }).then((res) => {
+        //     if (res.success === 1) {
+        //         this.setState({
+        //             commentsList: res.models,
+        //             pageInfo: res.pageInfo
+        //         })
+        //     }
+        // });
     }
 }
 

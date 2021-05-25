@@ -51,11 +51,11 @@ class Header extends PureComponent {
             <NavLeft className="ellipsis">
               <a href={domain} alt="包子铺" id="title">
                 <ruby>
-                  <span class="sakuraso">肉まん</span>
-                  <span class="no">の</span>
-                  <span class="shironeko">店</span>
+                  <span className="sakuraso">肉まん</span>
+                  <span className="no">の</span>
+                  <span className="shironeko">店</span>
                   <rp></rp>
-                  <rt class="chinese-font">{title}</rt>
+                  <rt className="chinese-font">{title}</rt>
                   <rp></rp>
                 </ruby>
               </a>
