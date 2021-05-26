@@ -105,6 +105,12 @@ class Header extends PureComponent {
                         <span>标签墙</span>
                       </Link>
                     </NavItem>
+                    <NavItem>
+                      <Link to={"/tools/genshin"} className="nav-item">
+                        <Icon type="tool" theme="filled" />
+                        <span>工具</span>
+                      </Link>
+                    </NavItem>
                     {menuList.map((item, index) => {
                       if (item.child && item.child.length > 0) {
                         return (

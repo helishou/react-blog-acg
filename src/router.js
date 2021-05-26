@@ -12,6 +12,7 @@ const Tags = loadable(() => import("./pages/tags"));
 const TagList = loadable(() => import("./pages/tags/list"));
 const Search = loadable(() => import("./pages/search"));
 const Error = loadable(() => import("./pages/error"));
+const Tools = loadable(() => import("./pages/tools"));
 
 class Router extends PureComponent {
   render() {
@@ -25,6 +26,7 @@ class Router extends PureComponent {
         <Route path="/tags" exact component={Tags} />
         <Route path="/tags/:id" exact component={TagList} />
         <Route path="/search/:key" exact component={Search} />
+        <Route path="/tools/genshin"  component={Tools} />
         <Route component={Error} />
       </Switch>
     );

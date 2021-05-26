@@ -8,11 +8,11 @@ const Name = 'Name'
 export const config = {
   oauth_uri: "https://github.com/login/oauth/authorize",
   redirect_uri: "http://wangxinyang.xyz/login",
-  client_id: "****",
-  client_secret: "****",
+  client_id: "eeb6852852645a7bc976",
+  client_secret: "22e834508732cf7720884db5cd939e1f33a3f4e9",
 };
 
-// 本地开发环境下 （参数可以直接用）
+// 本地开发环境下 
 if (process.env.NODE_ENV === "development") {
   config.redirect_uri = "http://localhost:3000/login";
   config.client_id = "502176cec65773057a9e";
