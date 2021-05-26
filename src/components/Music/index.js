@@ -15,51 +15,19 @@ export default function Music() {
       lrcType: 3,
       audio: [
         {
-          name: "星辰大海",
-          url: "http://music.163.com/song/media/outer/url?id=562598065.mp3",
-          artist: "黄霄雲",
+          name: "永不失联的爱",
+          url: "http://music.163.com/song?id=523250334&userid=277106354",
+          artist: "周兴哲",
           cover:
-            "https://p3.music.126.net/eRSdB2vIoBHJV7-0Ga3i6g==/109951165641911293.jpg",
+            "https://p1.music.126.net/ACPwGpJZxmGKnM3rWilemA==/109951163083048605.jpg",
           lrc: "",
         },
         {
-          name: "乌兰巴托的夜 (Live)",
-          url: "http://music.163.com/song/media/outer/url?id=562598065.mp3",
-          artist: "谭维维",
+          name: "悬溺",
+          url: "http://music.163.com/song?id=1407112865&userid=277106354",
+          artist: "封茗囧菌",
           cover:
-            "https://p4.music.126.net/DprdNIWpRWYZJak4Q-cS-Q==/2891715582273535.jpg",
-          lrc: "",
-        },
-        {
-          name: "错位时空",
-          url: "http://music.163.com/song/media/outer/url?id=562598065.mp3",
-          artist: "艾辰",
-          cover:
-            "https://p3.music.126.net/8C0lwLE88j9ZwLyPQ9a4FA==/109951165595770076.jpg",
-          lrc: "",
-        },
-        {
-          name: "10 Hz Alpha Thunderstorm (Extended Version)",
-          url: "http://music.163.com/song/media/outer/url?id=562598065.mp3",
-          artist: "White Noise Meditation",
-          cover:
-            "https://p3.music.126.net/qubVOdYo2xfJJzNhSjwDLg==/7943971512042563.jpg",
-          lrc: "",
-        },
-        {
-          name: "句号",
-          url: "http://music.163.com/song/media/outer/url?id=562598065.mp3",
-          artist: "G.E.M.邓紫棋",
-          cover:
-            "https://p4.music.126.net/KTo5oSxH3CPA5PBTeFKDyA==/109951164581432409.jpg",
-          lrc: "",
-        },
-        {
-          name: "Señorita",
-          url: "http://music.163.com/song/media/outer/url?id=562598065.mp3",
-          artist: "MADILYN",
-          cover:
-            "https://p3.music.126.net/sIP-VbnVw2JpxajGZvoTkw==/109951164233533476.jpg",
+            "https://p2.music.126.net/7giu5YmWVADmmLMJKka_6g==/109951164523346209.jpg",
           lrc: "",
         },
       ],

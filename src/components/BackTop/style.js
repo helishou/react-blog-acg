@@ -40,7 +40,7 @@ export const Top = styled.div`
     
     .toTop img, .toTophui img {
         width: 100%;
-        height: 80%;
+        height:96%;
     }
     
     @-webkit-keyframes float {

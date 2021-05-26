@@ -122,16 +122,16 @@ class Banner extends PureComponent {
         isHome: 1,
         updateTime: 1621847573185,
       },
-    //   {
-    //     code: "WeChat",
-    //     content: "479525390",
-    //     showType: 2,
-    //     remark: "111",
-    //     icon: "https://cos.nosum.cn/sakura/qq_icon.png",
-    //     isEnabled: 1,
-    //     isHome: 1,
-    //     updateTime: 1621847573185,
-    //   },
+      // {
+      //   code: "WeChat",
+      //   content: "479525390",
+      //   showType: 2,
+      //   remark: "111",
+      //   icon: "https://cos.nosum.cn/sakura/qq_icon.png",
+      //   isEnabled: 1,
+      //   isHome: 1,
+      //   updateTime: 1621847573185,
+      // },
     ];
     let array = [];
     for (let i = 0; i < models.length; i++) {

@@ -100,7 +100,7 @@ class Article extends PureComponent {
                 />
                 {this.setSocials(socialsList)}
                 {/* 暂不开放评论 */}
-                <Comments id={id} isComment={content.isComment} />
+                <Comments id={id} isComment={content.isComment} commentsList={content.commentsList}/>
               </div>
               {this.tocify && this.tocify.render()}
             </div>
@@ -179,6 +179,7 @@ class Article extends PureComponent {
           categoryId: data.category[0],
           categoryName: data.category[0],
           author: data.author,
+          commentsList:data.comments,
         };
         if (res.code === 0) {
           this.setState(

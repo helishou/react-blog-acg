@@ -39,4 +39,5 @@ export default function openWindow(url, title, w, h) {
     if (window.focus) {
         newWindow.focus();
     }
+    return newWindow
 }

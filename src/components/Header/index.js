@@ -14,10 +14,10 @@ import {
 } from "./style";
 import { actionCreators } from "./store";
 import { Icon, Menu, Dropdown, Affix, message } from "antd";
-import { getAvatar, setAvatar, setToken } from "../../lib/auth";
+import { getAvatar, setAvatar, setToken, setName } from "../../lib/auth";
+import { config } from "../../lib/auth";
 import axios from "axios";
 import openWindow from "../../lib/openWindow";
-
 class Header extends PureComponent {
   constructor(props) {
     super(props);
@@ -334,6 +334,49 @@ class Header extends PureComponent {
     // });
   }
 
+  login() {
+    let popWin = openWindow(
+      `${config.oauth_uri}?client_id=${config.client_id}&redirect_uri=${config.redirect_uri}`,
+      "绑定GitHub",
+      540,
+      540
+    );
+    let checkCode = () => {
+      try {
+        let query = popWin.location.search.substring(1);
+        console.log(query);
+        var querystring = require("querystring");
+        let code = querystring.parse(query).code;
+        // console.log(code);
+        if (typeof code !== "undefined") {
+          clearInterval(intervalId);
+          popWin.close();
+          // console.log("code", code);
+          this.loginGithubHandel(code);
+          // eventEmitter.emit("code", code);
+        }
+      } catch (err) {}
+    };
+    let intervalId = setInterval(checkCode, 1000);
+  }
+  loginGithubHandel(code) {
+    axios
+      .post("/getUser", {
+        code,
+      })
+      .then((res) => {
+        if (res.code === 0) {
+          // console.log("登陆成功");
+          setToken(res.data._id);
+          setAvatar(res.data.avatar);
+          setName(res.data.name);
+          // this.setState({ isUser: true });
+          message.success("登录成功");
+        } else {
+          message.error(res.message, 1);
+        }
+      });
+  }
   keypress(e) {
     if (e.which === 13) {
       const { value } = this.state;
@@ -343,43 +386,6 @@ class Header extends PureComponent {
         this.props.history.push("/search/" + value);
         this.handleClick();
       }
-    }
-  }
-
-  login() {
-    // console.log("暂不开放");
-
-    openWindow(
-      "https://github.com/login/oauth/authorize?state=c2NvcGU9aGVsbG9ibG9n&client_id=f4c8307b3cf060136820",
-      "绑定GitHub",
-      540,
-      540
-    );
-    window.addEventListener("message", this.loginGithubHandel, false);
-  }
-
-  loginGithubHandel(e) {
-    console.log("loginGithubHandel", e);
-    const { socialId, avatar, name, htmlUrl } = e.data;
-    if (socialId) {
-      axios({
-        method: "post",
-        url: "getUser",
-        data: {
-          code: socialId,
-          avatar: avatar,
-          name: name,
-          htmlUrl: htmlUrl,
-        },
-      }).then((res) => {
-        if (res.code === 0) {
-          setToken(res.data.github_id);
-          setAvatar(res.data.avatar);
-          this.setState({ isUser: true });
-          message.success("登录成功");
-        }
-      });
-      window.removeEventListener("message", this.loginGithubHandel, false);
     }
   }
 

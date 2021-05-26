@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import loadable from "./utils/loadable";
 // const Home = loadable(() => import("./pages/home"));
-import Home from "./pages/home"
+const Home = loadable(() => import("./pages/home"));
 const Article = loadable(() => import("./pages/article"));
 const Category = loadable(() => import("./pages/category"));
 const Archives = loadable(() => import("./pages/archives"));
