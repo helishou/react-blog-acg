@@ -71,11 +71,11 @@ export const getConfing = () => {
       },
       {
         configKey: "copyright",
-        configValue: "Copyright @ bygit",
+        configValue: "Copyright @ helishou",
       },
       {
         configKey: "icp",
-        configValue: "豫ICP备18036324号",
+        configValue: "浙ICP备2021016797号",
       },
     ];
     let data = {};
