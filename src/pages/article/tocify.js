@@ -1,3 +1,12 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-24 09:00:06
+ * @LastEditTime : 2021-06-03 20:57:45
+ * @LastEditors  : helishou
+ * @Description  : 文章目录
+ * @FilePath     : d:\desk\sakura\react-blog-acg\src\pages\article\tocify.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import React from 'react';
 import {Anchor} from 'antd';
 import {last} from 'lodash';
@@ -57,8 +66,12 @@ export default class Tocify {
     };
 
     renderToc(items) { // 递归 render
+        console.log(items)
         return items.map(item => (
-            <Link key={item.anchor} href={`#${item.anchor}`} title={item.text}>
+            
+            <Link key={item.anchor} href={`#${item.anchor}`}
+            //正则匹配,去掉标签名
+             title={item.text.replace(/(.*?)g>/,'').replace(/<\/(.*)/,'')}>
                 {item.children && this.renderToc(item.children)}
             </Link>
         ));

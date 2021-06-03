@@ -1,3 +1,12 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-24 09:00:06
+ * @LastEditTime : 2021-06-03 11:18:16
+ * @LastEditors  : helishou
+ * @Description  : 主入口
+ * @FilePath     : d:\desk\sakura\react-blog-acg\src\App.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import React, { PureComponent } from "react";
 import { BrowserRouter } from "react-router-dom";
 import "antd/dist/antd.css";
@@ -9,23 +18,34 @@ import Header from "./components/Header";
 import ToTop from "./components/BackTop";
 import Router from "./router";
 import loadable from "./utils/loadable";
+import { Redirect, Route, Switch } from "react-router-dom";
 const Footer = loadable(() => import("./components/Footer"));
 const Music = loadable(() => import("./components/Music"));
 // import axios from "axios";
+const Login = loadable(() => import("./pages/login"));
+
+function mainComponent() {
+  return (
+    <ScrollToTop>
+      <Music />
+      <ToTop />
+      <GlobalStyle />
+      <Header />
+      <Router />
+      <Footer />
+    </ScrollToTop>
+  );
+}
 
 class App extends PureComponent {
   render() {
     return (
       <Provider store={store}>
         <BrowserRouter>
-          <ScrollToTop>
-            <Music />
-            <ToTop />
-            <GlobalStyle />
-            <Header />
-            <Router />
-            <Footer />
-          </ScrollToTop>
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/" component={mainComponent} />
+          </Switch>
         </BrowserRouter>
       </Provider>
     );

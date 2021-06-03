@@ -1,5 +1,14 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-24 09:00:06
+ * @LastEditTime : 2021-06-02 10:02:33
+ * @LastEditors  : helishou
+ * @Description  :
+ * @FilePath     : d:\desk\sakura\react-blog-acg\src\router.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import React, { PureComponent } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import loadable from "./utils/loadable";
 // const Home = loadable(() => import("./pages/home"));
@@ -13,6 +22,7 @@ const TagList = loadable(() => import("./pages/tags/list"));
 const Search = loadable(() => import("./pages/search"));
 const Error = loadable(() => import("./pages/error"));
 const Tools = loadable(() => import("./pages/tools"));
+const Login = loadable(() => import("./pages/login"));
 
 class Router extends PureComponent {
   render() {
@@ -26,7 +36,7 @@ class Router extends PureComponent {
         <Route path="/tags" exact component={Tags} />
         <Route path="/tags/:id" exact component={TagList} />
         <Route path="/search/:key" exact component={Search} />
-        <Route path="/tools/genshin"  component={Tools} />
+        <Route path="/tools/genshin" component={Tools} />
         <Route component={Error} />
       </Switch>
     );

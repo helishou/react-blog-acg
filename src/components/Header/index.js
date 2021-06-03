@@ -14,7 +14,13 @@ import {
 } from "./style";
 import { actionCreators } from "./store";
 import { Icon, Menu, Dropdown, Affix, message } from "antd";
-import { getAvatar, setAvatar, setToken, setName } from "../../lib/auth";
+import {
+  getAvatar,
+  getToken,
+  setAvatar,
+  setToken,
+  setName,
+} from "../../lib/auth";
 import { config } from "../../lib/auth";
 import axios from "axios";
 import openWindow from "../../lib/openWindow";
@@ -34,7 +40,7 @@ class Header extends PureComponent {
     this.setValue = this.setValue.bind(this);
     this.openMonav = this.openMonav.bind(this);
     this.login = this.login.bind(this);
-    this.loginGithubHandel = this.loginGithubHandel.bind(this);
+    // this.loginGithubHandel = this.loginGithubHandel.bind(this);
   }
 
   render() {
@@ -257,6 +263,16 @@ class Header extends PureComponent {
                 <span>标签墙</span>
               </Link>
             </li>
+            <li>
+              <Link
+                to={"/tools/genshin"}
+                className="item flex-items"
+                onClick={this.openMonav}
+              >
+                <Icon type="tool" theme="filled" />
+                <span>工具</span>
+              </Link>
+            </li>
             {menuList.map((item, index) => {
               if (item.child && item.child.length > 0) {
                 return (
@@ -341,48 +357,71 @@ class Header extends PureComponent {
   }
 
   login() {
-    let popWin = openWindow(
+    // let preventHistory = {
+    //   pathname: window.location.pathname,
+    //   search: window.location.search,
+    // };
+    // window.sessionStorage.preventHistory = JSON.stringify(preventHistory);
+    // // window.location.href = 'https://github.com/login/oauth/authorize?client_id=6de90ab270aea2bdb01c&redirect_uri=http://biaochenxuying.cn/login'
+    // window.location.href = `${config.oauth_uri}?client_id=${
+    //   config.client_id
+    // }&redirect_uri=${config.redirect_uri}`;
+    // console.log(`${config.oauth_uri}?client_id=${config.client_id}&redirect_uri=${config.redirect_uri}`)
+    openWindow(//打开新窗口登陆github
       `${config.oauth_uri}?client_id=${config.client_id}&redirect_uri=${config.redirect_uri}`,
       "绑定GitHub",
       540,
       540
     );
-    let checkCode = () => {
+    let checkToken = () => {
       try {
-        let query = popWin.location.search.substring(1);
-        console.log(query);
-        var querystring = require("querystring");
-        let code = querystring.parse(query).code;
         // console.log(code);
-        if (typeof code !== "undefined") {
-          clearInterval(intervalId);
-          popWin.close();
-          // console.log("code", code);
-          this.loginGithubHandel(code);
-          // eventEmitter.emit("code", code);
-        }
-      } catch (err) {}
-    };
-    let intervalId = setInterval(checkCode, 1000);
-  }
-  loginGithubHandel(code) {
-    axios
-      .post("/getUser", {
-        code,
-      })
-      .then((res) => {
-        if (res.code === 0) {
-          // console.log("登陆成功");
-          setToken(res.data._id);
-          setAvatar(res.data.avatar);
-          setName(res.data.name);
-          // this.setState({ isUser: true });
+        if (typeof getToken() !== "undefined") {
+          clearInterval(iv);
           message.success("登录成功");
-        } else {
-          message.error(res.message, 1);
+          this.setState({ isUser: true });
         }
-      });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    let iv = setInterval(checkToken, 1000);
+    // let checkCode = () => {
+    //   try {
+    //     let query = popWin.location.search.substring(1);
+    //     console.log(query);
+    //     var querystring = require("querystring");
+    //     let code = querystring.parse(query).code;
+    //     // console.log(code);
+    //     if (typeof code !== "undefined") {
+    //       clearInterval(intervalId);
+    //       popWin.close();
+    //       // console.log("code", code);
+    //       this.loginGithubHandel(code);
+    //       // eventEmitter.emit("code", code);
+    //     }
+    //   } catch (err) {}
+    // };
+    // let intervalId = setInterval(checkCode, 1000);
   }
+  // loginGithubHandel(code) {
+  //   axios
+  //     .post("/getUser", {
+  //       code,
+  //     })
+  //     .then((res) => {
+  //       if (res.code === 0) {
+  //         // console.log("登陆成功");
+  //         setToken(res.data._id);
+  //         setAvatar(res.data.avatar);
+  //         setName(res.data.name);
+  //         // this.setState({ isUser: true });
+  //         message.success("登录成功");
+  //       } else {
+  //         message.error(res.message, 1);
+  //       }
+  //     });
+  // }
   keypress(e) {
     if (e.which === 13) {
       const { value } = this.state;

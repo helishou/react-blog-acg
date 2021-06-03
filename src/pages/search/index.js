@@ -43,7 +43,7 @@ class Search extends PureComponent {
         axios.get('/getArticleList?state=1', {
             params: {
                 pageNum: page,
-                pageSize: 10,
+                pageSize: 500,
                 keyword: key
             }
         }).then((res) => {

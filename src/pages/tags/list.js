@@ -54,7 +54,7 @@ class TagList extends PureComponent {
         axios.get('/getArticleList?state=1', {
             params: {
                 pageNum: page,
-                pageSize: 10,
+                pageSize: 500,
                 tag_id: id
             }
         }).then((res) => {

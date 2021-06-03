@@ -1,3 +1,12 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-31 09:30:07
+ * @LastEditTime : 2021-06-02 23:29:38
+ * @LastEditors  : helishou
+ * @Description  : 
+ * @FilePath     : d:\desk\sakura\react-blog-acg\src\lib\auth.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import Cookies from "js-cookie";
 import axios from "axios";
 import { message } from "antd";
@@ -8,44 +17,37 @@ const Name = 'Name'
 export const config = {
   oauth_uri: "https://github.com/login/oauth/authorize",
   redirect_uri: "http://wangxinyang.xyz/login",
-  client_id: "eeb6852852645a7bc976",
-  client_secret: "22e834508732cf7720884db5cd939e1f33a3f4e9",
+  client_id: "51854bed29b55e611d18",
+  client_secret: "fab69f559b39a49929102ad67acf0f89d1c6720c",
 };
 
 // 本地开发环境下 
-if (process.env.NODE_ENV === "development") {
-  config.redirect_uri = "http://localhost:3000/login";
-  config.client_id = "502176cec65773057a9e";
-  config.client_secret = "65d444de381a026301a2c7cffb6952b9a86ac235";
-}
+// if (process.env.NODE_ENV === "development") {
+//   config.redirect_uri = "http://localhost:3001/login";
+//   config.client_id = "502176cec65773057a9e";
+//   config.client_secret = "65d444de381a026301a2c7cffb6952b9a86ac235";
+// }
 export function getAvatar() {
   return Cookies.get(Avatar);
 }
 
 export function setAvatar(url) {
-  return Cookies.set(Avatar, url);
+  return Cookies.set(Avatar, url,{domain:'.wangxinyang.xyz'});
 }
 export function getName() {
   return Cookies.get(Name);
 }
 
 export function setName(name) {
-  return Cookies.set(Name, name);
+  return Cookies.set(Name, name,{domain:'.wangxinyang.xyz'});
 }
-// export function getId() {
-//   return Cookies.get(Github_id);
-// }
-
-// export function setId(id) {
-//   return Cookies.set(Github_id, id);
-// }
 
 export function getToken() {
   return Cookies.get(TokenKey);
 }
 
 export function setToken(token) {
-  return Cookies.set(TokenKey, token);
+  return Cookies.set(TokenKey, token,{domain:'.wangxinyang.xyz'});
 }
 
 export function removeToken() {

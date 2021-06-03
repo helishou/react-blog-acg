@@ -1,3 +1,12 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-31 09:30:07
+ * @LastEditTime : 2021-06-03 19:03:02
+ * @LastEditors  : helishou
+ * @Description  : 
+ * @FilePath     : d:\desk\sakura\react-blog-acg\src\pages\home\store\actionCreators.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import axios from "axios";
 import * as constants from "./constants";
 import { fromJS } from "immutable";
@@ -14,13 +23,13 @@ export const getFeature = () => {
       .get("getArticleList?", {
         params: {
           pageNum: 1,
-          pageSize: 3,
+          pageSize: 500,
           origin: 1,
           state: 1,
         },
       })
       .then(function (res) {
-        let datas = res.data.list;
+        let datas = res.data.list.slice(0,3);
         let models = [];
         datas.map((data, index) => {
           let model = {

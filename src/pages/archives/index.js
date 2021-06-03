@@ -42,12 +42,14 @@ const ArchivesList = (props) => {
       <div className="wrapper-md">
         <ul className="timeline">
           {list.map((item, index) => {
+            // console.log("item", item);
             return (
               <div className={Class[index % Class.length]} key={index}>
                 <li className="tl-header">
-                  <h2 className="title">{setYears(item.archiveDate)}</h2>
+                  <h2 className="title">{item.archiveYear + "年"+item.archiveMonth+'月'}</h2>
                 </li>
                 {item.archivePosts.map((item2, index2) => {
+                  // console.log("archivePosts", item2);
                   return (
                     <div className="tl-body" key={index2}>
                       <li className="tl-item">
@@ -118,31 +120,28 @@ class Archives extends PureComponent {
 
   getArchives() {
     this.setState({ loading: true });
-    axios.get("/getArticleList?state=1").then((res) => {
+    axios.get("/getArticleList?state=1&article=1").then((res) => {
       let { data } = res;
       let models = [];
-      let archivePosts = [];
       data.list.map((item, index) => {
-        archivePosts.push({
-          id: item._id,
-          title: item.title,
-          comments: item.meta.comments,
-          status: 2,
-          summary: item.desc,
-          views: item.meta.views,
-          weight: 1,
-          createTime: item.create_time,
-          updateTime: item.create_time,
-          isComment: 1,
-          syncStatus: 1,
-          categoryId: item.category[0],
+        let archivePosts = [];
+        console.log(item);
+        item.list.map((item, index) => {
+          archivePosts.push({
+            id: item._id,
+            title: item.title,
+            createTime: item.create_time,
+            updateTime: item.create_time,
+          });
+        });
+        models.push({
+          articleTotal: data.count,
+          archiveYear: item.yearMonth.slice(0,4),
+          archiveMonth: item.yearMonth.slice(4),
+          archivePosts: archivePosts,
         });
       });
-      models.push({
-        articleTotal: data.count,
-        archiveDate: 1617206400000,
-        archivePosts: archivePosts,
-      });
+      console.log('models',models)
       if (res.code === 0) {
         this.setState({
           list: models,
