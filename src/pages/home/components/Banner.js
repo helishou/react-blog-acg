@@ -120,30 +120,21 @@ class Banner extends PureComponent {
         code: "QQ",
         content: "479525390",
         showType: 2,
-        remark: "111",
         icon: "https://cos.nosum.cn/sakura/qq_icon.png",
-        isEnabled: 1,
-        isHome: 1,
         updateTime: 1621847573185,
       },
       {
         code: "WeChar",
         content: "WXY025025025",
         showType: 2,
-        remark: "111",
         icon: wechat,
-        isEnabled: 1,
-        isHome: 1,
         updateTime: 1621847573185,
       },
       {
         code: "Email",
         content: "Wang86699596@gmail.com",
         showType: 2,
-        remark: "111",
         icon: "https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/sns/email.svg",
-        isEnabled: 1,
-        isHome: 1,
         updateTime: 1621847573185,
       },
       {
@@ -151,10 +142,7 @@ class Banner extends PureComponent {
         content: "leetcode",
         link: "https://leetcode-cn.com/u/he-li-shou/",
         showType: 3,
-        remark: "111",
         icon: leetcode,
-        isEnabled: 1,
-        isHome: 1,
         updateTime: 1621847573185,
       },
     ];
@@ -165,6 +153,7 @@ class Banner extends PureComponent {
         icon: models[i].icon,
         content: models[i].content,
         showType: models[i].showType,
+        link:models[i].link||'',
       });
     }
     this.setState({
