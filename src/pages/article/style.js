@@ -271,14 +271,14 @@ export const MainWrapper = styled.div`
     }
     
     .entry-content h4:after {
-        content: "â–Œ";
+        content: "▌";
         left: 0;
         position: absolute;
         color: #ff6d6d;
     }
     
     .entry-content h5:after {
-        content: "â™¯";
+        content: "♯";
         left: 0;
         position: absolute;
         color: #ff6d6d;

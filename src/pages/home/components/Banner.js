@@ -2,7 +2,8 @@ import React, { PureComponent } from "react";
 import { BannerWrapper, Center, Focusinfo } from "../style";
 import { scrollAnimation } from "../../../lib/auth";
 import axios from "axios";
-
+import leetcode from "../../../statics/images/leetcode.svg";
+import wechat from "../../../statics/images/wechat.svg";
 class Banner extends PureComponent {
   constructor(props) {
     super(props);
@@ -81,12 +82,15 @@ class Banner extends PureComponent {
                     return (
                       <li className="link" key={index}>
                         <a
-                          href={item.content}
+                          href={item.link}
                           target={"_blank"}
                           rel="noopener noreferrer"
                         >
                           <img src={item.icon} alt="" />
                         </a>
+                        <div className="text-box">
+                          <p>{item.content}</p>
+                        </div>
                       </li>
                     );
                   } else {
@@ -122,16 +126,37 @@ class Banner extends PureComponent {
         isHome: 1,
         updateTime: 1621847573185,
       },
-      // {
-      //   code: "WeChat",
-      //   content: "479525390",
-      //   showType: 2,
-      //   remark: "111",
-      //   icon: "https://cos.nosum.cn/sakura/qq_icon.png",
-      //   isEnabled: 1,
-      //   isHome: 1,
-      //   updateTime: 1621847573185,
-      // },
+      {
+        code: "WeChar",
+        content: "WXY025025025",
+        showType: 2,
+        remark: "111",
+        icon: wechat,
+        isEnabled: 1,
+        isHome: 1,
+        updateTime: 1621847573185,
+      },
+      {
+        code: "Email",
+        content: "Wang86699596@gmail.com",
+        showType: 2,
+        remark: "111",
+        icon: "https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/sns/email.svg",
+        isEnabled: 1,
+        isHome: 1,
+        updateTime: 1621847573185,
+      },
+      {
+        code: "leetcode",
+        content: "leetcode",
+        link: "https://leetcode-cn.com/u/he-li-shou/",
+        showType: 3,
+        remark: "111",
+        icon: leetcode,
+        isEnabled: 1,
+        isHome: 1,
+        updateTime: 1621847573185,
+      },
     ];
     let array = [];
     for (let i = 0; i < models.length; i++) {

@@ -12,6 +12,7 @@ import axios from "axios";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import WechatReward from "../../statics/images/WechatReward.jpg";
 import AlipayReward from "../../statics/images/AlipayReward.jpg";
+import ColumnGroup from "antd/lib/table/ColumnGroup";
 class Article extends PureComponent {
   tocify = new Tocify();
 
@@ -131,6 +132,14 @@ class Article extends PureComponent {
     };
     marked.setOptions({
       renderer: renderer,
+      headerIds: false,
+      gfm: true,
+      tables: true,
+      breaks: false,
+      pedantic: false,
+      sanitize: false,
+      smartLists: true,
+      smartypants: false,
       highlight: (code) => hljs.highlightAuto(code).value,
     });
     this.getDetail(this.props.match.params.id);
@@ -180,6 +189,7 @@ class Article extends PureComponent {
           categoryName: data.category[0],
           author: data.author,
           commentsList:data.comments,
+          thumbnail:data.img_url,
         };
         if (res.code === 0) {
           this.setState(

@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-06-03 20:57:45
+ * @LastEditTime : 2021-06-04 16:26:19
  * @LastEditors  : helishou
  * @Description  : 文章目录
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\pages\article\tocify.js
@@ -28,7 +28,9 @@ export default class Tocify {
     add(text, level) {
         const anchor = `toc${level}${++this.index}`;
         this.anchors.push(anchor);
-        const item = {anchor, level, text};
+        //正则匹配,去掉标签名
+        const newText= text.replace(/(.*?)>/,'').replace(/<\/(.*)/,'')
+        const item = {anchor, level, text:newText};
         const items = this.tocItems;
 
         if (items.length === 0) { // 第一个 item 直接 push
@@ -68,10 +70,8 @@ export default class Tocify {
     renderToc(items) { // 递归 render
         console.log(items)
         return items.map(item => (
-            
             <Link key={item.anchor} href={`#${item.anchor}`}
-            //正则匹配,去掉标签名
-             title={item.text.replace(/(.*?)g>/,'').replace(/<\/(.*)/,'')}>
+             title={item.text}>
                 {item.children && this.renderToc(item.children)}
             </Link>
         ));
@@ -80,6 +80,7 @@ export default class Tocify {
     render() {
         if (this.tocItems.length > 0) {
             return (
+                //使用antd 的anchor实现
                 <Anchor className='toc' affix showInkInFixed onClick={handleClick} offsetTop={100}>
                     <h3>文章目录</h3>
                     {this.renderToc(this.tocItems)}

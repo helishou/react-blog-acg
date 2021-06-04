@@ -134,7 +134,7 @@ const list = (thumbList, data) => {
       createTime: data[i].create_time,
       syncStatus: data[i].syncStatus || 1,
       author: data[i].author || "helishou",
-      categoryName: data[i].category[0],
+      categoryName: data[i].category[0]?data[i].category[0].name:'',
     });
   }
   return arr;
