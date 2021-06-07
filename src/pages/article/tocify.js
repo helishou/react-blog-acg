@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-06-04 16:26:19
+ * @LastEditTime : 2021-06-07 09:03:44
  * @LastEditors  : helishou
  * @Description  : 文章目录
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\pages\article\tocify.js
@@ -29,6 +29,7 @@ export default class Tocify {
         const anchor = `toc${level}${++this.index}`;
         this.anchors.push(anchor);
         //正则匹配,去掉标签名
+        // console.log(text)
         const newText= text.replace(/(.*?)>/,'').replace(/<\/(.*)/,'')
         const item = {anchor, level, text:newText};
         const items = this.tocItems;

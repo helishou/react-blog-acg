@@ -1,3 +1,12 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-24 09:00:06
+ * @LastEditTime : 2021-06-07 15:29:01
+ * @LastEditors  : helishou
+ * @Description  : 页脚
+ * @FilePath     : d:\desk\sakura\react-blog-acg\src\components\Footer\index.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import React, {PureComponent} from 'react';
 import {Footers} from './style';
 import {connect} from "react-redux";
@@ -16,7 +25,7 @@ class Footer extends PureComponent {
                                 <a href={domain} rel="noopener noreferrer" target={'_blank'}>{copyright}</a>
                             </span>
                         </p>
-                        <p>© 2020 {title} <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">{icp}</a></p>
+                        <p>© 2021 {title} <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">{icp}</a></p>
                     </div>
                 </div>
             </Footers>
