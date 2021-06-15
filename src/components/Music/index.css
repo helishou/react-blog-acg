@@ -1,0 +1,8 @@
+.aplayer-narrow {
+    transform: translate(-66px, 0px);
+    transition: 0.5s;
+}
+.aplayer-narrow:hover{
+    transform: translate(0px, 0px);
+    transition: 0.5s;
+}

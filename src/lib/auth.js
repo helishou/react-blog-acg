@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-31 09:30:07
- * @LastEditTime : 2021-06-02 23:29:38
+ * @LastEditTime : 2021-06-15 19:12:40
  * @LastEditors  : helishou
  * @Description  : 
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\lib\auth.js
@@ -19,14 +19,21 @@ export const config = {
   redirect_uri: "http://wangxinyang.xyz/login",
   client_id: "51854bed29b55e611d18",
   client_secret: "fab69f559b39a49929102ad67acf0f89d1c6720c",
+  username: 'helishou',
+	access_token_url: 'https://github.com/login/oauth/access_token',
+	// 获取 github 用户信息 url // eg: https://api.github.com/user?access_token=****&scope=&token_type=bearer
+	user_url: 'https://api.github.com/user',
+
+	// 请把生产环境的 redirect_url，client_id 和 client_secret 中的 "****", 换成自己创建的 OAuth App 的具体参数即可。
+	// // 生产环境
 };
 
 // 本地开发环境下 
-// if (process.env.NODE_ENV === "development") {
-//   config.redirect_uri = "http://localhost:3001/login";
-//   config.client_id = "502176cec65773057a9e";
-//   config.client_secret = "65d444de381a026301a2c7cffb6952b9a86ac235";
-// }
+if (process.env.NODE_ENV === "development") {
+  config.redirect_uri = "http://localhost:3000/login";
+  config.client_id = "502176cec65773057a9e";
+  config.client_secret = "65d444de381a026301a2c7cffb6952b9a86ac235";
+}
 export function getAvatar() {
   return Cookies.get(Avatar);
 }

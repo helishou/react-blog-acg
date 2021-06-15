@@ -75,7 +75,7 @@ const ArchivesList = (props) => {
             );
           })}
           <div className="tl-header">
-            <div className="start">开始</div>
+            <div className="start">博客用React重构</div>
           </div>
         </ul>
       </div>
@@ -137,7 +137,7 @@ class Archives extends PureComponent {
         models.push({
           articleTotal: data.count,
           archiveYear: item.yearMonth.slice(0,4),
-          archiveMonth: item.yearMonth.slice(4),
+          archiveMonth: parseInt(item.yearMonth.slice(4))+1,
           archivePosts: archivePosts,
         });
       });

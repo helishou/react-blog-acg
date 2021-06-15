@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-25 16:44:36
- * @LastEditTime : 2021-06-07 09:02:40
+ * @LastEditTime : 2021-06-15 15:49:07
  * @LastEditors  : helishou
  * @Description  : 音乐播放器
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\components\Music\index.js
@@ -10,8 +10,9 @@
 import React, { useEffect } from "react";
 import APlayer from "aplayer";
 import "aplayer/dist/APlayer.min.css";
-import axios from "axios";
-import music1 from  '../../statics/music/song1.mp3'
+// import axios from "axios";
+import "./index.css";
+import music1 from "../../statics/music/song1.mp3";
 export default function Music() {
   // const getWYY=()=>{
   //   https://api.imjad.cn/cloudmusic/?id=460839654&type=song
@@ -28,7 +29,8 @@ export default function Music() {
       listMaxHeight: "300px",
       listFolded: false,
       lrcType: 3,
-      preload:'none',
+      preload: "none",
+      // float:true,
       // autoplay: true,
       audio: [
         // {

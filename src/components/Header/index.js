@@ -111,12 +111,12 @@ class Header extends PureComponent {
                         <span>标签墙</span>
                       </Link>
                     </NavItem>
-                    <NavItem>
+                    {/* <NavItem>
                       <Link to={"/tools/genshin"} className="nav-item">
                         <Icon type="tool" theme="filled" />
                         <span>工具</span>
                       </Link>
-                    </NavItem>
+                    </NavItem> */}
                     {menuList.map((item, index) => {
                       if (item.child && item.child.length > 0) {
                         return (
@@ -263,7 +263,7 @@ class Header extends PureComponent {
                 <span>标签墙</span>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to={"/tools/genshin"}
                 className="item flex-items"
@@ -272,7 +272,7 @@ class Header extends PureComponent {
                 <Icon type="tool" theme="filled" />
                 <span>工具</span>
               </Link>
-            </li>
+            </li> */}
             {menuList.map((item, index) => {
               if (item.child && item.child.length > 0) {
                 return (

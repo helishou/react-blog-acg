@@ -73,7 +73,7 @@ class Article extends PureComponent {
             <img
               className="lazyload"
               src={content && (content.thumbnail || timg)}
-              alt=""
+              alt="loading"
             />
           </div>
           <div className="single-header">
@@ -101,7 +101,11 @@ class Article extends PureComponent {
                 />
                 {this.setSocials(socialsList)}
                 {/* 暂不开放评论 */}
-                <Comments id={id} isComment={content.isComment} commentsList={content.commentsList}/>
+                <Comments
+                  id={id}
+                  isComment={content.isComment}
+                  commentsList={content.commentsList}
+                />
               </div>
               {this.tocify && this.tocify.render()}
             </div>
@@ -169,29 +173,36 @@ class Article extends PureComponent {
     });
   }
 
+
   getDetail(id) {
     axios
       .post("/getArticleDetail", { id: id, type: 1, filter: 2 })
       .then((res) => {
-        let { data } = res;
-        let model = {
-          id: data._id,
-          title: data.title,
-          content: data.content,
-          comments: data.meta.comments,
-          summary: data.desc,
-          views: data.meta.views,
-          weight: data.weight || 1,
-          createTime: data.create_time,
-          isComment: data.isComment || 1,
-          tagsList: data.category,
-          categoryId: data.category[0],
-          categoryName: data.category[0],
-          author: data.author,
-          commentsList:data.comments,
-          thumbnail:data.img_url,
-        };
         if (res.code === 0) {
+          let { data } = res;
+          let newImgUrl =null
+          if (data.img_url.indexOf("small") > 0) {
+            newImgUrl = data.img_url.replace("small", "");
+            newImgUrl = newImgUrl.slice(0, newImgUrl.length - 14) + ".jpg";
+          }
+          let model = {
+            id: data._id,
+            title: data.title,
+            content: data.content,
+            comments: data.meta.comments,
+            summary: data.desc,
+            views: data.meta.views,
+            weight: data.weight || 1,
+            createTime: data.create_time,
+            isComment: data.isComment || 1,
+            tagsList: data.category,
+            categoryId: data.category[0],
+            categoryName: data.category[0],
+            author: data.author,
+            commentsList: data.comments,
+            thumbnail: newImgUrl?newImgUrl:data.img_url,
+          };
+          // http://img.netbian.com/file/2020/0407/small7e47965b793534d12b64e4ebdcd33cfa1586267701.jpg
           this.setState(
             {
               content: model,
@@ -214,9 +225,10 @@ class Article extends PureComponent {
               });
             }
           );
-        } else {
-          this.props.history.push("/404");
         }
+      })
+      .catch((err) => {
+        this.props.history.push("/404");
       });
   }
 

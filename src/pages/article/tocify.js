@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-06-07 09:03:44
+ * @LastEditTime : 2021-06-15 16:00:59
  * @LastEditors  : helishou
  * @Description  : 文章目录
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\pages\article\tocify.js
@@ -69,7 +69,7 @@ export default class Tocify {
     };
 
     renderToc(items) { // 递归 render
-        console.log(items)
+        // console.log(items)
         return items.map(item => (
             <Link key={item.anchor} href={`#${item.anchor}`}
              title={item.text}>

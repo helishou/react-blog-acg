@@ -1,3 +1,12 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-24 09:00:06
+ * @LastEditTime : 2021-06-15 15:02:48
+ * @LastEditors  : helishou
+ * @Description  : 项目展示列表
+ * @FilePath     : \src\pages\home\components\Feature.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import React from "react";
 import {Link} from 'react-router-dom';
 import {FeatureWrapper, FeatureTitle} from '../style';
@@ -37,7 +46,7 @@ const Feature =(props)=> {
     return (
         <FeatureWrapper>
             <FeatureTitle>
-                <h1><i className='iconfont icon-anchor'/><span> START:DASH!!</span></h1>
+                <h1><i className='iconfont icon-anchor'/><span> Project!!</span></h1>
             </FeatureTitle>
             {featureList(props)}
         </FeatureWrapper>
