@@ -1,3 +1,12 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-24 09:00:06
+ * @LastEditTime : 2021-06-15 14:01:57
+ * @LastEditors  : helishou
+ * @Description  : 自动异步加载live2d
+ * @FilePath     : \public\assets\autoload.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 try {
     if (!isMobileBrowser()) {
         $("<link>").attr({href: "/assets/waifu.min.css?v=1.4.2", rel: "stylesheet", type: "text/css"}).appendTo('head');
@@ -7,7 +16,7 @@ try {
         /* 可直接修改部分参数 */
         live2d_settings['hitokotoAPI'] = 'hitokoto.cn';  // 一言 API
         live2d_settings['modelId'] = 6;                  // 默认模型 ID
-        live2d_settings['modelTexturesId'] = 18;         // 默认材质 ID
+        live2d_settings['modelTexturesId'] = 10;         // 默认材质 ID
         live2d_settings['modelStorage'] = false;         // 不储存模型 ID
         live2d_settings['waifuEdgeSide'] = 'right:30';
         live2d_settings['homePageUrl'] = '/';

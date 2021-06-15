@@ -47,7 +47,7 @@ class Banner extends PureComponent {
                 <i className="iconfont icon-quote-left" />
                 <span>
                   {introduction ||
-                    "You got to put the past behind you before you can move on."}
+                    "在继续前进之前，您必须将过去抛在脑后。"}
                 </span>
                 <i className="iconfont icon-quoteright" />
               </p>
