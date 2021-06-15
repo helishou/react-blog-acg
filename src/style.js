@@ -68,6 +68,13 @@ export const GlobalStyle = createGlobalStyle`
         filter: blur(0px);
         transition: .3s filter linear,.3s -webkit-filter linear;
     }
+    .loadimg {
+        filter: blur(1px);
+    }
+    .doneimg{
+        filter: blur(0px);
+        transition: .1s filter linear,.1s -webkit-filter linear;
+    }
     p{
         cursor: url(${require('./statics/images/texto.cur')}),auto;
     }

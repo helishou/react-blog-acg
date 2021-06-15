@@ -21,6 +21,8 @@ class Article extends PureComponent {
     this.state = {
       content: "",
       timg: "",
+      thumbnail: "",
+      isloading: true,
       id: props.match.params.id,
       socialsList: [
         {
@@ -47,6 +49,8 @@ class Article extends PureComponent {
       imgList,
       modalIsOpen,
       currentImage,
+      thumbnail,
+      isloading,
     } = this.state;
     // const { name, avatar } = this.props.userInfo.toJS();
     this.tocify && this.tocify.reset();
@@ -71,8 +75,8 @@ class Article extends PureComponent {
         <ArticleTop>
           <div className="pattern-attachment-img">
             <img
-              className="lazyload"
-              src={content && (content.thumbnail || timg)}
+              className={isloading ? "loadimg" : "doneimg"}
+              src={thumbnail && (thumbnail || timg)}
               alt="loading"
             />
           </div>
@@ -173,18 +177,12 @@ class Article extends PureComponent {
     });
   }
 
-
   getDetail(id) {
     axios
       .post("/getArticleDetail", { id: id, type: 1, filter: 2 })
       .then((res) => {
         if (res.code === 0) {
           let { data } = res;
-          let newImgUrl =null
-          if (data.img_url.indexOf("small") > 0) {
-            newImgUrl = data.img_url.replace("small", "");
-            newImgUrl = newImgUrl.slice(0, newImgUrl.length - 14) + ".jpg";
-          }
           let model = {
             id: data._id,
             title: data.title,
@@ -200,14 +198,29 @@ class Article extends PureComponent {
             categoryName: data.category[0],
             author: data.author,
             commentsList: data.comments,
-            thumbnail: newImgUrl?newImgUrl:data.img_url,
           };
           // http://img.netbian.com/file/2020/0407/small7e47965b793534d12b64e4ebdcd33cfa1586267701.jpg
           this.setState(
             {
               content: model,
+              thumbnail: data.img_url,
             },
             () => {
+              let newImgUrl = null;
+              if (data.img_url.indexOf("small") > 0) {
+                newImgUrl = data.img_url.replace("small", "");
+                newImgUrl = newImgUrl.slice(0, newImgUrl.length - 14) + ".jpg";
+                const img = new Image();
+                img.src = newImgUrl;
+                img.onload = () => {
+                  img.onload = null;
+                  // callback(img);
+                  this.setState({
+                    thumbnail: newImgUrl,
+                    isloading: false,
+                  });
+                };
+              }
               const content = document.getElementById("content");
               const img = content.getElementsByTagName("img");
               let arr = [];

@@ -367,22 +367,18 @@ class Header extends PureComponent {
     //   config.client_id
     // }&redirect_uri=${config.redirect_uri}`;
     // console.log(`${config.oauth_uri}?client_id=${config.client_id}&redirect_uri=${config.redirect_uri}`)
-    openWindow(//打开新窗口登陆github
+    openWindow(
+      //打开新窗口登陆github
       `${config.oauth_uri}?client_id=${config.client_id}&redirect_uri=${config.redirect_uri}`,
       "绑定GitHub",
       540,
       540
     );
     let checkToken = () => {
-      try {
-        // console.log(code);
-        if (typeof getToken() !== "undefined") {
-          clearInterval(iv);
-          message.success("登录成功");
-          this.setState({ isUser: true });
-        }
-      } catch (err) {
-        console.log(err);
+      if (typeof getToken() !== "undefined") {
+        clearInterval(iv);
+        message.success("登录成功");
+        this.setState({ isUser: true });
       }
     };
     let iv = setInterval(checkToken, 1000);

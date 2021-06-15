@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import { CommentsWrapper, CommentTextarea } from "../style";
 import { getFormatTime, getTime } from "../../../lib/public";
 import { Pagination, message } from "antd";
@@ -6,7 +6,7 @@ import axios from "axios";
 import { loginGithubHandel, config } from "../../../lib/auth";
 import openWindow from "../../../lib/openWindow";
 import { getToken, getAvatar, getName } from "../../../lib/auth";
-class Comments extends PureComponent {
+class Comments extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,9 +35,9 @@ class Comments extends PureComponent {
         </h3>
         <ul className="commentwrap">
           {commentsList.map((item, index) => {
-            if (item.is_handle !== 2) {
-              return null;
-            }
+            // if (item.is_handle !== 2) {
+            //   return null;
+            // }
             return (
               <li className="comment" key={index}>
                 <div className="commentinfo flex-items">
@@ -111,7 +111,7 @@ class Comments extends PureComponent {
   }
 
   componentDidMount() {
-    this.getComments(this.props.id, 1);
+    // this.getComments(this.props.id, 1);
   }
 
   reply(parentId, authorName, preUserID) {
@@ -155,14 +155,11 @@ class Comments extends PureComponent {
     let checkCode = () => {
       try {
         let query = popWin.location.search.substring(1);
-        console.log(query);
         var querystring = require("querystring");
         let code = querystring.parse(query).code;
-        // console.log(code);
         if (typeof code !== "undefined") {
           clearInterval(intervalId);
           popWin.close();
-          // console.log("code", code);
           loginGithubHandel(code);
           // eventEmitter.emit("code", code);
         }
@@ -192,11 +189,12 @@ class Comments extends PureComponent {
       url: "/addComment",
       data: data,
     }).then((res) => {
-      console.log(res);
+      // console.log(res);
       if (res.code === 0) {
         message.success("评论成功");
         this.getComments(data);
       }
+
       this.setState({
         value: "",
         parentId: "",
@@ -211,7 +209,6 @@ class Comments extends PureComponent {
       content: data.content,
       _id: data.user_id,
     };
-    // console.log("新评论",newComment);
     this.setState({
       commentsList: [...this.state.commentsList, newComment],
       //   pageInfo: res.pageInfo,

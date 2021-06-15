@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-06-02 09:02:40
- * @LastEditTime : 2021-06-15 19:29:34
+ * @LastEditTime : 2021-06-15 20:05:38
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\pages\login\index.js
@@ -36,7 +36,7 @@ function Login(props) {
   };
 
   useEffect(() => {
-    document.title = "使用github第三方登陆";
+    this.title='github第三方登陆偶尔会抽风'
     const checkCode = () => {
       try {
         //从地址获取code
