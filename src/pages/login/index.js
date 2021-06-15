@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-06-02 09:02:40
- * @LastEditTime : 2021-06-15 19:04:22
+ * @LastEditTime : 2021-06-15 19:29:34
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\pages\login\index.js
@@ -9,13 +9,7 @@
  */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {
-  getAvatar,
-  setAvatar,
-  setToken,
-  setName,
-  config,
-} from "../../lib/auth";
+import { getAvatar, setAvatar, setToken, setName } from "../../lib/auth";
 import { Icon, Menu, Dropdown, Affix, message } from "antd";
 import { withRouter } from "react-router";
 import { Wrapper } from "./style";
@@ -23,100 +17,22 @@ function Login(props) {
   //   const [loading, setLoading] = useState(true);
   //设置cookie,注意设置domin,使同域名下都可以访问cookie
   // 后台登陆github
-  // const loginGithubHandel = (code) => {
-  //   axios
-  //     .post("/getUser", {
-  //       code,
-  //     })
-  //     .then((res) => {
-  //       if (res.code === 0) {
-  //         setToken(res.data._id);
-  //         setAvatar(res.data.avatar);
-  //         setName(res.data.name);
-  //         message.success("登录成功");
-  //         window.close();
-  //       } else {
-  //         message.error(res.message, 1);
-  //       }
-  //     });
-  // };
-  // 前台登陆github,因为服务器老是连不上github
-  const loginGithubHandelByFront = (code) => {
-    let path = config.access_token_url;
-    const params = {
-      client_id: config.client_id,
-      client_secret: config.client_secret,
-      code: code,
-    };
-    console.log("params", params);
-    fetch(path, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(params),
-    })
-      .then((res1) => {
-        return res1.text();
+  const loginGithubHandel = (code) => {
+    axios
+      .post("/getUser", {
+        code,
       })
-      .then((body) => {
-        const args = body.split("&");
-        let arg = args[0].split("=");
-        const access_token = arg[1];
-        // console.log("body:",body);
-        console.log("access_token:", access_token);
-        return access_token;
-      })
-      .then(async (token) => {
-        const url = config.user_url;
-        // + "?access_token=" + token
-        console.log("url:", url);
-        await fetch(url, {
-          headers: {
-            Authorization: "token " + token,
-          },
-        })
-          .then((res2) => {
-            console.log("res2 :", res2);
-            return res2.json();
-          })
-          .then((response) => {
-            console.log("response ", response);
-            axios
-              .post("/getUserFront", {
-                response,
-              })
-              .then((res) => {
-                if (res.code === 0) {
-                  setToken(res.data._id);
-                  setAvatar(res.data.avatar);
-                  setName(res.data.name);
-                  message.success("登录成功");
-                  window.close();
-                } else {
-                  message.error(res.message, 1);
-                }
-              });
-          });
-      })
-      .catch((e) => {
-        console.log("e:", e);
+      .then((res) => {
+        if (res.code === 0) {
+          setToken(res.data._id);
+          setAvatar(res.data.avatar);
+          setName(res.data.name);
+          message.success("登录成功");
+          window.close();
+        } else {
+          message.error(res.message, 1);
+        }
       });
-    // axios
-    //   .post("/getUser", {
-    //     code,
-    //   })
-    //   .then((res) => {
-    //     if (res.code === 0) {
-    //       setToken(res.data._id);
-    //       setAvatar(res.data.avatar);
-    //       setName(res.data.name);
-    //       message.success("登录成功");
-    //       window.close();
-    //     } else {
-    //       message.error(res.message, 1);
-    //     }
-    //   });
   };
 
   useEffect(() => {
@@ -129,7 +45,7 @@ function Login(props) {
         let code = querystring.parse(query).code;
         if (typeof code !== "undefined") {
           // loginGithubHandel(code);
-          loginGithubHandelByFront(code);
+          loginGithubHandel(code);
         }
       } catch (err) {
         message.error(err, 1);

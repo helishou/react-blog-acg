@@ -1,9 +1,9 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-31 09:30:07
- * @LastEditTime : 2021-06-15 19:12:40
+ * @LastEditTime : 2021-06-15 19:29:06
  * @LastEditors  : helishou
- * @Description  : 
+ * @Description  :
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\lib\auth.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
@@ -12,41 +12,41 @@ import axios from "axios";
 import { message } from "antd";
 const TokenKey = "helishou-token";
 const Avatar = "Avatar";
-const Name = 'Name'
+const Name = "Name";
 // const Github_id ='1111'
 export const config = {
   oauth_uri: "https://github.com/login/oauth/authorize",
   redirect_uri: "http://wangxinyang.xyz/login",
   client_id: "51854bed29b55e611d18",
   client_secret: "fab69f559b39a49929102ad67acf0f89d1c6720c",
-  username: 'helishou',
-	access_token_url: 'https://github.com/login/oauth/access_token',
-	// 获取 github 用户信息 url // eg: https://api.github.com/user?access_token=****&scope=&token_type=bearer
-	user_url: 'https://api.github.com/user',
+  username: "helishou",
+  access_token_url: "https://github.com/login/oauth/access_token",
+  // 获取 github 用户信息 url // eg: https://api.github.com/user?access_token=****&scope=&token_type=bearer
+  user_url: "https://api.github.com/user",
 
-	// 请把生产环境的 redirect_url，client_id 和 client_secret 中的 "****", 换成自己创建的 OAuth App 的具体参数即可。
-	// // 生产环境
+  // 请把生产环境的 redirect_url，client_id 和 client_secret 中的 "****", 换成自己创建的 OAuth App 的具体参数即可。
+  // // 生产环境
 };
 
-// 本地开发环境下 
-if (process.env.NODE_ENV === "development") {
-  config.redirect_uri = "http://localhost:3000/login";
-  config.client_id = "502176cec65773057a9e";
-  config.client_secret = "65d444de381a026301a2c7cffb6952b9a86ac235";
-}
+// 本地开发环境下
+// if (process.env.NODE_ENV === "development") {
+//   config.redirect_uri = "http://localhost:3000/login";
+//   config.client_id = "502176cec65773057a9e";
+//   config.client_secret = "65d444de381a026301a2c7cffb6952b9a86ac235";
+// }
 export function getAvatar() {
   return Cookies.get(Avatar);
 }
 
 export function setAvatar(url) {
-  return Cookies.set(Avatar, url,{domain:'.wangxinyang.xyz'});
+  return Cookies.set(Avatar, url, { domain: ".wangxinyang.xyz" });
 }
 export function getName() {
   return Cookies.get(Name);
 }
 
 export function setName(name) {
-  return Cookies.set(Name, name,{domain:'.wangxinyang.xyz'});
+  return Cookies.set(Name, name, { domain: ".wangxinyang.xyz" });
 }
 
 export function getToken() {
@@ -54,7 +54,7 @@ export function getToken() {
 }
 
 export function setToken(token) {
-  return Cookies.set(TokenKey, token,{domain:'.wangxinyang.xyz'});
+  return Cookies.set(TokenKey, token, { domain: ".wangxinyang.xyz" });
 }
 
 export function removeToken() {
@@ -70,7 +70,7 @@ export function loginGithubHandel(code) {
         // console.log("登陆成功");
         setToken(res.data._id);
         setAvatar(res.data.avatar);
-        setName(res.data.name)
+        setName(res.data.name);
         // this.setState({ isUser: true });
         message.success("登录成功");
       } else {
