@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-06-02 09:02:40
- * @LastEditTime : 2021-06-15 20:05:38
+ * @LastEditTime : 2021-06-21 16:04:44
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\pages\login\index.js
@@ -36,7 +36,11 @@ function Login(props) {
   };
 
   useEffect(() => {
-    this.title='github第三方登陆偶尔会抽风'
+    try{
+      document.title='github第三方登陆偶尔会抽风'
+    }catch(e){
+      console.log(e)
+    }
     const checkCode = () => {
       try {
         //从地址获取code
