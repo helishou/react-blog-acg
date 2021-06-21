@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-31 09:30:07
- * @LastEditTime : 2021-06-16 17:17:26
+ * @LastEditTime : 2021-06-21 21:06:21
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\pages\home\store\actionCreators.js
@@ -31,7 +31,7 @@ export const getFeature = () => {
         let datas = res.data.list;
         let models = [];
         datas.map((data, index) => {
-          console.log(data)
+          // console.log(data)
           let model = {
             id: data._id,
             title: data.title,

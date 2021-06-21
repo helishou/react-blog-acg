@@ -125,7 +125,7 @@ class Archives extends PureComponent {
       let models = [];
       data.list.map((item, index) => {
         let archivePosts = [];
-        console.log(item);
+        // console.log(item);
         item.list.map((item, index) => {
           archivePosts.push({
             id: item._id,
@@ -141,7 +141,7 @@ class Archives extends PureComponent {
           archivePosts: archivePosts,
         });
       });
-      console.log('models',models)
+      // console.log('models',models)
       if (res.code === 0) {
         this.setState({
           list: models,
