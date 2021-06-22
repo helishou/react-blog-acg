@@ -1,10 +1,10 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-06-02 09:02:40
- * @LastEditTime : 2021-06-21 16:04:44
+ * @LastEditTime : 2021-06-22 15:03:18
  * @LastEditors  : helishou
  * @Description  :
- * @FilePath     : d:\desk\sakura\react-blog-acg\src\pages\login\index.js
+ * @FilePath     : \src\pages\login\index.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import React, { useEffect, useState } from "react";
@@ -36,11 +36,6 @@ function Login(props) {
   };
 
   useEffect(() => {
-    try{
-      document.title='github第三方登陆偶尔会抽风'
-    }catch(e){
-      console.log(e)
-    }
     const checkCode = () => {
       try {
         //从地址获取code
