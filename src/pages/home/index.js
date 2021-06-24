@@ -1,3 +1,12 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-24 09:00:06
+ * @LastEditTime : 2021-06-24 11:08:16
+ * @LastEditors  : helishou
+ * @Description  : home
+ * @FilePath     : \react-blog-acg\src\pages\home\index.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import React, {PureComponent} from 'react';
 import Banner from "./components/Banner";
 import ListWrapper from './components/List';
