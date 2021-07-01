@@ -20,9 +20,19 @@ const List = (props) => {
       {list.map((item, index) => {
         return (
           <div className={Class[index % Class.length]} key={index}>
-              <div className="post-thumb">
-                <Link to={"/article/" + item.id}>
-                  <img src={item.thumbnail} alt="" />
+            <div className="post-thumb">
+              <Link to={"/article/" + item.id}>
+                <img src={item.thumbnail} alt="" />
+              </Link>
+            </div>
+            <div className="post-content-wrap">
+              <div className="post-content">
+                <div className="post-date">
+                  <i className="iconfont icon-time" />
+                  发布于{getTime(item.createTime)}
+                </div>
+                <Link to={"/article/" + item.id} className="post-title">
+                  <h3>{item.title}</h3>
                 </Link>
               </div>
               <div className="post-content-wrap">
@@ -36,8 +46,8 @@ const List = (props) => {
                   </Link>
                   <div className="post-meta">
                     <span>
-                      <i className="iconfont icon-attention" />
-                      {item.views} 热度
+                      <i className="iconfont icon-file" />
+                      {item.categoryName[0]}
                     </span>
                     <span className="comments-number">
                       <i className="iconfont icon-mark" />
