@@ -340,6 +340,7 @@ export const MainWrapper = styled.div`
     }
     
     pre{
+        white-space:pre-wrap;
         position: relative;
         background: #2b3940;
         border-radius: 5px;
@@ -352,17 +353,24 @@ export const MainWrapper = styled.div`
         color: #000;
         padding: 20px;
         box-shadow: 0 10px 30px 0px rgba(0,0,0,.4);
+        code{
+            color: #fff;
+            word-break: break-word;
+            padding: 2px;
+            text-shadow: none;
+            border-radius: 5px 5px 5px 5px;
+            background: #2b3940 ;
+        }
     }
     
     code{
-        color: #fff;
+        color: rgb(254, 150, 0);
         word-break: break-word;
         padding: 2px;
         text-shadow: none;
         border-radius: 5px 5px 5px 5px;
-        background: #2b3940 ;
+        background: #fff5f5 ;
     }
-    
     .example {
         text-align: center;
         border-radius: 4px;

@@ -104,7 +104,6 @@ class Article extends PureComponent {
                   dangerouslySetInnerHTML={{ __html: marked(content.content) }}
                 />
                 {this.setSocials(socialsList)}
-                {/* 暂不开放评论 */}
                 <Comments
                   id={id}
                   isComment={content.isComment}

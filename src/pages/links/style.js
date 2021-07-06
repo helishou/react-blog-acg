@@ -58,6 +58,7 @@ export const LinksTop = styled.div`
         right: 0;
         text-align: center;
         color: #fff;
+        text-shadow: 2px 2px 10px #000;
         z-index: 1;
         h1{
             color: #fff;

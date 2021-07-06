@@ -133,7 +133,7 @@ class Links extends PureComponent {
           },
         ];
         arrar.push({
-          title: i,
+          title: "大佬们",
           list: temp,
         });
       }
@@ -147,9 +147,9 @@ class Links extends PureComponent {
   }
 
   getTimg() {
-    const list = this.props.topImg;
-    const num = this.getrand(0, list.length - 1);
-    this.setState({ timg: list[num].img });
+    // const list = this.props.topImg;
+    // const num = this.getrand(0, list.length - 1);
+    this.setState({ timg: 'https://2heng.xin/wp-content/uploads//2017/11/1-1511301SP0.jpg' });
   }
 
   getrand(m, n) {

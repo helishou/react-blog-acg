@@ -23,10 +23,14 @@ const image = () => {
         ],
         //首页banner图和内页顶部头图
         bannerList: [
-            {img: 'https://image.bygit.cn/banner-1.png'},
-            {img: 'https://image.bygit.cn/banner-2.png'},
+            // {img: 'https://image.bygit.cn/banner-1.png'},
+            // {img: 'https://image.bygit.cn/banner-2.png'},
             {img: 'https://image.bygit.cn/banner-3.png'},
-            {img: 'https://image.bygit.cn/banner-4.png'}
+            {img: 'https://image.bygit.cn/banner-4.png'},
+            {img: 'https://i.postimg.cc/08CXj9N1/362e3fc0bb57fcc0cef6e4d73f0856f1-jpg.webp'},
+            {img: 'https://i.postimg.cc/dQcFFqNP/speed-of-light-COVER-77987370-p1-png.webp'},
+            {img: 'https://i.postimg.cc/59rwyRvV/78b1d42bf01a216ea8cea9569fe68da5-jpg.webp'},
+            // {img: 'https://api.2heng.xin/cover/'}
         ],
     }
 };

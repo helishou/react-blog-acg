@@ -4,16 +4,15 @@ import axios from "axios";
 import { ArchivesWrapper, ArticleTop, MainWrapper } from "./style";
 import { Link } from "react-router-dom";
 import { Spin } from "antd";
-
-const setYears = (time) => {
-  const date = new Date(time);
-  let Y = date.getFullYear() + "年";
-  let M =
-    (date.getMonth() + 1 < 10
-      ? "0" + (date.getMonth() + 1)
-      : date.getMonth() + 1) + "月";
-  return Y + M;
-};
+// const setYears = (time) => {
+//   const date = new Date(time);
+//   let Y = date.getFullYear() + "年";
+//   let M =
+//     (date.getMonth()  < 10
+//       ? "0" + (date.getMonth() )
+//       : date.getMonth() ) + "月";
+//   return Y + M;
+// };
 
 const setDay = (time) => {
   const date = new Date(time);
@@ -152,9 +151,9 @@ class Archives extends PureComponent {
   }
 
   getTimg() {
-    const list = this.props.topImg;
-    const num = this.getrand(0, list.length - 1);
-    this.setState({ timg: list[num].img });
+    // const list = this.props.topImg;
+    // const num = this.getrand(0, list.length - 1);
+    this.setState({ timg: 'https://2heng.xin/wp-content/uploads//2017/08/午後_58898122.jpg' });
   }
 
   getrand(m, n) {

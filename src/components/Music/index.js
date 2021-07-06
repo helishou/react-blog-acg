@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-25 16:44:36
- * @LastEditTime : 2021-06-15 15:49:07
+ * @LastEditTime : 2021-07-05 20:14:26
  * @LastEditors  : helishou
  * @Description  : 音乐播放器
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\components\Music\index.js
@@ -12,7 +12,8 @@ import APlayer from "aplayer";
 import "aplayer/dist/APlayer.min.css";
 // import axios from "axios";
 import "./index.css";
-import music1 from "../../statics/music/song1.mp3";
+// import music1 from "/assets/song1.mp3";
+import cover1 from "../../statics/images/cover.jpg"
 export default function Music() {
   // const getWYY=()=>{
   //   https://api.imjad.cn/cloudmusic/?id=460839654&type=song
@@ -51,10 +52,9 @@ export default function Music() {
         // },
         {
           name: "雪之泪 雨之音",
-          url: music1,
+          url: "/assets/song1.mp3",
           artist: "东京塔子",
-          cover:
-            "https://p2.music.126.net/bLW5Sq4HmQsLDaRrbFD_HA==/109951162862938232.jpg",
+          cover:cover1,
           lrc: ``,
         },
       ],

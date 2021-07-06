@@ -1,3 +1,12 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-31 09:30:07
+ * @LastEditTime : 2021-07-06 10:41:59
+ * @LastEditors  : helishou
+ * @Description  : 
+ * @FilePath     : d:\desk\sakura\react-blog-acg\src\pages\tags\index.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import React, {PureComponent} from "react";
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
@@ -81,9 +90,9 @@ class Tags extends PureComponent {
     }
 
     getTimg() {
-        const list = this.props.topImg;
-        const num = getrand(0, list.length - 1);
-        this.setState({timg: list[num].img});
+        // const list = this.props.topImg;
+        // const num = getrand(0, list.length - 1);
+        this.setState({timg: 'https://2heng.xin/wp-content/uploads//2017/08/pixiv54839592.png'});
     }
 }
 

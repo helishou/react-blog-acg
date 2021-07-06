@@ -13,7 +13,7 @@ class Comments extends Component {
       id: props.id,
       isComment: props.isComment,
       commentsList: props.commentsList,
-      pageInfo: {},
+      // pageInfo: {},
       value: "",
       parentId: "",
       preContent: "",
@@ -27,11 +27,12 @@ class Comments extends Component {
   }
 
   render() {
-    const { pageInfo, id, commentsList, isComment } = this.state;
+    const {  id, commentsList, isComment } = this.state;
+    // console.log(pageInfo)
     return (
       <CommentsWrapper>
         <h3 className="comments-list-title">
-          Comments | <span className="noticom">{pageInfo.total} 条评论 </span>
+          Comments | <span className="noticom">{commentsList.length} 条评论 </span>
         </h3>
         <ul className="commentwrap">
           {commentsList.map((item, index) => {
@@ -76,9 +77,9 @@ class Comments extends Component {
           size="small"
           onChange={(page) => this.getComments(id, page)}
           itemRender={this.itemRender}
-          current={pageInfo.page}
+          // current={pageInfo.page}
           pageSize={5}
-          total={pageInfo.total}
+          // total={pageInfo.total}
         />
         {isComment === 1 ? (
           <CommentTextarea>

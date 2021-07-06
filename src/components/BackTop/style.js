@@ -1,7 +1,17 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-24 09:00:06
+ * @LastEditTime : 2021-07-06 10:52:12
+ * @LastEditors  : helishou
+ * @Description  : 
+ * @FilePath     : d:\desk\sakura\react-blog-acg\src\components\BackTop\style.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import styled from "styled-components";
 
 export const Top = styled.div`
     .toTop {
+        will-change: auto;
         position: fixed;
         right: 40px;
         top: -150px;

@@ -1,9 +1,10 @@
 import React, { PureComponent } from "react";
 import { BannerWrapper, Center, Focusinfo } from "../style";
 import { scrollAnimation } from "../../../lib/auth";
-import axios from "axios";
 import leetcode from "../../../statics/images/leetcode.svg";
-import wechat from "../../../statics/images/wechat.svg";
+import wechat from "../../../statics/images/wechat.png";
+import github from "../../../statics/images/github.png";
+import gitee from "../../../statics/images/gitee.png";
 class Banner extends PureComponent {
   constructor(props) {
     super(props);
@@ -47,7 +48,7 @@ class Banner extends PureComponent {
                 <i className="iconfont icon-quote-left" />
                 <span>
                   {introduction ||
-                    "在继续前进之前，您必须将过去抛在脑后。"}
+                    "这世界上有一种鸟是没有脚的，它只能够一直的飞呀飞呀。"}
                 </span>
                 <i className="iconfont icon-quoteright" />
               </p>
@@ -143,6 +144,22 @@ class Banner extends PureComponent {
         link: "https://leetcode-cn.com/u/he-li-shou/",
         showType: 3,
         icon: leetcode,
+        updateTime: 1621847573185,
+      },
+      {
+        code: "github",
+        content: "github",
+        link: "https://github.com/helishou",
+        showType: 3,
+        icon: github,
+        updateTime: 1621847573185,
+      },
+      {
+        code: "gitee",
+        content: "gitee",
+        link: "https://gitee.com/unclebao",
+        showType: 3,
+        icon: gitee,
         updateTime: 1621847573185,
       },
     ];

@@ -28,6 +28,7 @@ export const BannerWrapper = styled.div`
         } 
     } 
     .waveWrapper {
+        will-change:auto;
         overflow: hidden; 
         position: absolute; 
         left: 0; 
@@ -94,6 +95,7 @@ export const BannerWrapper = styled.div`
         background-image: url('${require('../../statics/images/wave-bot.png')}');
     }
     .headertop-down {
+        will-change:auto;
         position: absolute;
         bottom: 80px;
         left: 50%;
