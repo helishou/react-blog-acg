@@ -1,3 +1,12 @@
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-24 09:00:06
+ * @LastEditTime : 2021-07-07 18:12:09
+ * @LastEditors  : helishou
+ * @Description  : store
+ * @FilePath     : d:\desk\sakura\react-blog-acg\src\store\reducer.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
 import {combineReducers} from 'redux-immutable';
 import {reducer as headerReducer} from "../components/Header/store";
 import {reducer as homeReducer} from '../pages/home/store';
@@ -27,10 +36,11 @@ const image = () => {
             // {img: 'https://image.bygit.cn/banner-2.png'},
             {img: 'https://image.bygit.cn/banner-3.png'},
             {img: 'https://image.bygit.cn/banner-4.png'},
-            {img: 'https://i.postimg.cc/08CXj9N1/362e3fc0bb57fcc0cef6e4d73f0856f1-jpg.webp'},
-            {img: 'https://i.postimg.cc/dQcFFqNP/speed-of-light-COVER-77987370-p1-png.webp'},
-            {img: 'https://i.postimg.cc/59rwyRvV/78b1d42bf01a216ea8cea9569fe68da5-jpg.webp'},
-            // {img: 'https://api.2heng.xin/cover/'}
+            {img: '/assets/362e3fc0bb57fcc0cef6e4d73f0856f1.jpg.webp'},
+            {img: '/assets/d8c29cad010447a75b0eaae4513f3780.jpg.webp'},
+            // {img: '/assets/[speed of light] COVER_77987370_p1.png.webp'},
+            {img: '/assets/78b1d42bf01a216ea8cea9569fe68da5.jpg.webp'},
+            {img: 'https://api.2heng.xin/cover/'}
         ],
     }
 };
