@@ -208,7 +208,8 @@ class Article extends PureComponent {
               let newImgUrl = null;
               if (data.img_url.indexOf("small") > 0) {
                 newImgUrl = data.img_url.replace("small", "");
-                newImgUrl = newImgUrl.slice(0, newImgUrl.length - 14) + ".jpg";
+                newImgUrl = newImgUrl.slice(0, newImgUrl.length - 19) + ".jpg.webp";
+                // console.log(newImgUrl)
                 const img = new Image();
                 img.src = newImgUrl;
                 img.onload = () => {
