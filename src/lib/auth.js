@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-31 09:30:07
- * @LastEditTime : 2021-06-15 19:29:06
+ * @LastEditTime : 2021-07-08 08:50:19
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\lib\auth.js
@@ -23,9 +23,6 @@ export const config = {
   access_token_url: "https://github.com/login/oauth/access_token",
   // 获取 github 用户信息 url // eg: https://api.github.com/user?access_token=****&scope=&token_type=bearer
   user_url: "https://api.github.com/user",
-
-  // 请把生产环境的 redirect_url，client_id 和 client_secret 中的 "****", 换成自己创建的 OAuth App 的具体参数即可。
-  // // 生产环境
 };
 
 // 本地开发环境下
