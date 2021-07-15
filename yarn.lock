@@ -10369,14 +10369,15 @@ react-dev-utils@^10.2.0:
     strip-ansi "6.0.0"
     text-table "0.2.0"
 
-react-dom@^0.0.0-experimental-81346764b-20210714:
-  version "0.0.0-experimental-81346764b-20210714"
-  resolved "https://registry.nlark.com/react-dom/download/react-dom-0.0.0-experimental-81346764b-20210714.tgz#43ee2702a5eef826d10287c771966fcb67d4af2d"
-  integrity sha1-Q+4nAqXu+CbRAofHcZZvy2fUry0=
+react-dom@^16.12.0:
+  version "16.14.0"
+  resolved "https://registry.nlark.com/react-dom/download/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
+  integrity sha1-etg47Cmnd/s8dcOhkPZhz5Kri4k=
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
-    scheduler "0.0.0-experimental-81346764b-20210714"
+    prop-types "^15.6.2"
+    scheduler "^0.19.1"
 
 react-error-overlay@^6.0.6:
   version "6.0.6"
@@ -10638,13 +10639,14 @@ react-view-pager@^0.6.0:
     resize-observer-polyfill "1.5.0"
     tabbable "1.1.2"
 
-react@^0.0.0-experimental-81346764b-20210714:
-  version "0.0.0-experimental-81346764b-20210714"
-  resolved "https://registry.nlark.com/react/download/react-0.0.0-experimental-81346764b-20210714.tgz#574045525c259b29192ba92ae6eea1985329c94e"
-  integrity sha1-V0BFUlwlmykZK6kq5u6hmFMpyU4=
+react@^16.12.0:
+  version "16.14.0"
+  resolved "https://registry.nlark.com/react/download/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
+  integrity sha1-lNd23dCqo32j7aj8W2sYpMmjEU0=
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
+    prop-types "^15.6.2"
 
 read-pkg-up@^2.0.0:
   version "2.0.0"
@@ -11176,10 +11178,10 @@ saxes@^3.1.9:
   dependencies:
     xmlchars "^2.1.1"
 
-scheduler@0.0.0-experimental-81346764b-20210714:
-  version "0.0.0-experimental-81346764b-20210714"
-  resolved "https://registry.nlark.com/scheduler/download/scheduler-0.0.0-experimental-81346764b-20210714.tgz#683f1bb6680d0e317a9dddfe60310c5a73bc443b"
-  integrity sha1-aD8btmgNDjF6nd3+YDEMWnO8RDs=
+scheduler@^0.19.1:
+  version "0.19.1"
+  resolved "https://registry.nlark.com/scheduler/download/scheduler-0.19.1.tgz#4f3e2ed2c1a7d65681f4c854fa8c5a1ccb40f196"
+  integrity sha1-Tz4u0sGn1laB9MhU+oxaHMtA8ZY=
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
