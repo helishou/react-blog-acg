@@ -1,10 +1,10 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-07-15 15:18:12
- * @LastEditTime : 2021-07-15 18:55:03
+ * @LastEditTime : 2021-07-16 00:22:14
  * @LastEditors  : helishou
  * @Description  : 大图预加载
- * @FilePath     : d:\desk\sakura\react-blog-acg\src\utils\preload.ts
+ * @FilePath     : \src\utils\preload.ts
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 /**
@@ -18,6 +18,8 @@ const preload = (function (): any {
   let doing = false //表示任务是否在执行
   let nextImg ='' //表示接下来要预加载的图
   return (url: string, callback?: Function) => {
+    //懒加载文章组件
+    require("../pages/article")
     if (imgArray.has(url)) {
       //console.log('如果该图已加载过，直接返回回调')
       callback && callback(imgArray.get(url));
@@ -26,7 +28,7 @@ const preload = (function (): any {
     //封装一下加载图片函数
     const loadImg=(url:string,callback?:Function)=>{
       let newImgUrl: string = "";
-      if (url.indexOf("small") > 0) {
+      if (url?.indexOf("small") > 0) {
         doing=true
         newImgUrl = url.replace("small", "");
         newImgUrl = newImgUrl.slice(0, newImgUrl.length - 19) + ".jpg.webp";
