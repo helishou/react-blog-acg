@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-07-15 09:44:09
- * @LastEditTime : 2021-07-15 10:54:03
+ * @LastEditTime : 2021-07-15 11:03:24
  * @LastEditors  : helishou
  * @Description  : webpack配置
  * @FilePath     : d:\desk\sakura\react-blog-acg\config-overrides.js
@@ -14,6 +14,7 @@ const path = require('path');
 // customize-cra提供的addWebpackPlugin来添加插件
 const addConfigPlugin = config => {
     // 在这里我们还可以很方便的对config扩展别的配置项
+    /*预渲染选项
     if(process.env.NODE_ENV === 'production') {
         config.plugins = config.plugins.concat([
             new PrerenderSPAPlugin({
@@ -24,7 +25,7 @@ const addConfigPlugin = config => {
                 })
               })
         ]);
-    }
+    }预渲染选项*/
     return config
 }
 // 我的理解override函数的本质还是处理config对象并返回

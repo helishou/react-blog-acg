@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-06-02 10:02:33
+ * @LastEditTime : 2021-07-15 11:06:04
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\router.js
@@ -22,7 +22,6 @@ const TagList = loadable(() => import("./pages/tags/list"));
 const Search = loadable(() => import("./pages/search"));
 const Error = loadable(() => import("./pages/error"));
 const Tools = loadable(() => import("./pages/tools"));
-const Login = loadable(() => import("./pages/login"));
 
 class Router extends PureComponent {
   render() {
