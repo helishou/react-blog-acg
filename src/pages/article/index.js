@@ -13,6 +13,7 @@ import Carousel, { Modal, ModalGateway } from "react-images";
 import WechatReward from "../../statics/images/WechatReward.jpg";
 import AlipayReward from "../../statics/images/AlipayReward.jpg";
 import ColumnGroup from "antd/lib/table/ColumnGroup";
+import preload from '../../utils/preload'
 class Article extends PureComponent {
   tocify = new Tocify();
 
@@ -206,22 +207,10 @@ class Article extends PureComponent {
               thumbnail: data.img_url,
             },
             () => {
-              let newImgUrl = null;
-              if (data.img_url.indexOf("small") > 0) {
-                newImgUrl = data.img_url.replace("small", "");
-                newImgUrl = newImgUrl.slice(0, newImgUrl.length - 19) + ".jpg.webp";
-                // console.log(newImgUrl)
-                const img = new Image();
-                img.src = newImgUrl;
-                img.onload = () => {
-                  img.onload = null;
-                  // callback(img);
-                  this.setState({
-                    thumbnail: newImgUrl,
-                    isloading: false,
-                  });
-                };
-              }
+              preload(data.img_url,(newImgUrl)=>this.setState({
+                thumbnail: newImgUrl,
+                isloading: false,
+              }))
               const content = document.getElementById("content");
               const img = content.getElementsByTagName("img");
               let arr = [];

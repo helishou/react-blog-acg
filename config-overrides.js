@@ -1,10 +1,10 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-07-15 09:44:09
- * @LastEditTime : 2021-07-15 11:03:24
+ * @LastEditTime : 2021-07-15 15:03:42
  * @LastEditors  : helishou
  * @Description  : webpack配置
- * @FilePath     : d:\desk\sakura\react-blog-acg\config-overrides.js
+ * @FilePath     : \config-overrides.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 const { override, fixBabelImports, addLessLoader, addWebpackAlias, addWebpackPlugin } = require('customize-cra');
@@ -32,9 +32,9 @@ const addConfigPlugin = config => {
 module.exports =  override(
     addConfigPlugin,
     // 这里是按需加载antd
-    fixBabelImports('import', {        
-        libraryName: 'antd',        
-        libraryDirectory: 'es',       
-        style: 'css'
-    })
+    // fixBabelImports('import', {        
+    //     libraryName: 'antd',        
+    //     libraryDirectory: 'es',       
+    //     style: 'css'
+    // })
 )

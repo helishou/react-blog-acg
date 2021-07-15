@@ -5,6 +5,7 @@ import leetcode from "../../../statics/images/leetcode.svg";
 import wechat from "../../../statics/images/wechat.png";
 import github from "../../../statics/images/github.png";
 import gitee from "../../../statics/images/gitee.png";
+
 class Banner extends PureComponent {
   constructor(props) {
     super(props);

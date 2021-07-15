@@ -1,10 +1,10 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-07-15 10:21:25
+ * @LastEditTime : 2021-07-15 15:36:21
  * @LastEditors  : helishou
  * @Description  : 项目展示列表
- * @FilePath     : d:\desk\sakura\react-blog-acg\src\pages\home\components\Feature.js
+ * @FilePath     : \src\pages\home\components\Feature.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import React from "react";
@@ -12,7 +12,7 @@ import {Link} from 'react-router-dom';
 import {FeatureWrapper, FeatureTitle} from '../style';
 import {Row, Col} from 'antd';
 import {getrand} from "../../../lib/public";
-
+import preload from "../../../utils/preload";
 const featureList = (props) => {
     const {featureList, ListImg} = props;
     const list = featureList.toJS();
@@ -21,7 +21,7 @@ const featureList = (props) => {
             {
                 list.map((item, index) => {
                     return (
-                        <Col className="top-feature-v2" key={index} xs={24} sm={24} md={8} lg={8} xl={8}>
+                        <Col onMouseEnter={()=>preload(item.thumbnail)} className="top-feature-v2" key={index} xs={24} sm={24} md={8} lg={8} xl={8}>
                             <div className='top-feature-item'>
                                 <Link  to={{pathname:'/article/' + item.id,state:{thumbnail:item.thumbnail}}}>
                                     <div className='img-box'>

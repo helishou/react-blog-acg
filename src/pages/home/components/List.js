@@ -7,7 +7,7 @@ import PagInation from "../../../components/PagInation";
 import * as constants from "../store/constants";
 import axios from "axios";
 import { fromJS } from "immutable";
-
+import preload from "../../../utils/preload";
 const List = (props) => {
   const { blogList } = props;
   const list = blogList.toJS();
@@ -19,7 +19,7 @@ const List = (props) => {
     <BlogList>
       {list.map((item, index) => {
         return (
-          <div className={Class[index % Class.length]} key={index}>
+          <div onMouseEnter={()=>preload(item.thumbnail)} className={Class[index % Class.length]} key={index}>
               <div className="post-thumb">
                 <Link to={{pathname:"/article/" + item.id,state:{thumbnail:item.thumbnail}}}>
                   <img src={item.thumbnail} alt="" />
