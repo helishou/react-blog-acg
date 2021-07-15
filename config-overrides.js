@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-07-15 09:44:09
- * @LastEditTime : 2021-07-15 09:49:44
+ * @LastEditTime : 2021-07-15 10:54:03
  * @LastEditors  : helishou
  * @Description  : webpack配置
  * @FilePath     : d:\desk\sakura\react-blog-acg\config-overrides.js
@@ -17,9 +17,12 @@ const addConfigPlugin = config => {
     if(process.env.NODE_ENV === 'production') {
         config.plugins = config.plugins.concat([
             new PrerenderSPAPlugin({
-                routes: ['/', '/home', 'about'],
-                staticDir: path.join(__dirname, 'build'),
-            })
+                staticDir: path.join(__dirname, '../build'),
+                routes: ['/'],
+                renderer: new PrerenderSPAPlugin.PuppeteerRenderer({//这样写renderAfterTime生效了
+                  renderAfterTime: 5000
+                })
+              })
         ]);
     }
     return config
