@@ -1,10 +1,10 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-07-15 11:06:04
+ * @LastEditTime : 2021-07-15 14:45:18
  * @LastEditors  : helishou
  * @Description  :
- * @FilePath     : d:\desk\sakura\react-blog-acg\src\router.js
+ * @FilePath     : \src\router.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import React, { PureComponent } from "react";
@@ -12,7 +12,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import loadable from "./utils/loadable";
 // const Home = loadable(() => import("./pages/home"));
-const Home = loadable(() => import("./pages/home"));
+import Home from "./pages/home";
 const Article = loadable(() => import("./pages/article"));
 const Category = loadable(() => import("./pages/category"));
 const Archives = loadable(() => import("./pages/archives"));
