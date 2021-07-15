@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-07-07 18:12:09
+ * @LastEditTime : 2021-07-15 12:10:30
  * @LastEditors  : helishou
  * @Description  : store
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\store\reducer.js
@@ -40,7 +40,8 @@ const image = () => {
             {img: '/assets/d8c29cad010447a75b0eaae4513f3780.jpg.webp'},
             // {img: '/assets/[speed of light] COVER_77987370_p1.png.webp'},
             {img: '/assets/78b1d42bf01a216ea8cea9569fe68da5.jpg.webp'},
-            {img: 'https://api.2heng.xin/cover/'}
+            {img: '/assets/AK-01.jpg.webp'},
+            // {img: 'https://api.2heng.xin/cover/'}
         ],
     }
 };
