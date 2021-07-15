@@ -55,7 +55,7 @@ export const getConfing = () => {
       },
       {
         configKey: "domain",
-        configValue: "http://www.wangxinyang.xyz",
+        configValue: "https://www.wangxinyang.xyz",
       },
       {
         configKey: "keywords",
