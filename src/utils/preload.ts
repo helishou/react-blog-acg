@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-07-15 15:18:12
- * @LastEditTime : 2021-07-15 18:13:47
+ * @LastEditTime : 2021-07-15 18:55:03
  * @LastEditors  : helishou
  * @Description  : 大图预加载
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\utils\preload.ts
@@ -9,8 +9,8 @@
  */
 /**
  * @description : 闭包实现预加载图片
- * @param        {string} url
- * @param        {Function} callback
+ * @param        {string} url - 网址
+ * @param        {Function} callback - 回调
  * @return       {*}
  */
 const preload = (function (): any {
@@ -18,19 +18,19 @@ const preload = (function (): any {
   let doing = false //表示任务是否在执行
   let nextImg ='' //表示接下来要预加载的图
   return (url: string, callback?: Function) => {
-    //如果该图已家在过，直接返回回调
     if (imgArray.has(url)) {
-      console.log('如果该图已家在过，直接返回回调')
+      //console.log('如果该图已加载过，直接返回回调')
       callback && callback(imgArray.get(url));
       return;
     }
-    //封装一下加载图片的函数
+    //封装一下加载图片函数
     const loadImg=(url:string,callback?:Function)=>{
       let newImgUrl: string = "";
       if (url.indexOf("small") > 0) {
+        doing=true
         newImgUrl = url.replace("small", "");
         newImgUrl = newImgUrl.slice(0, newImgUrl.length - 19) + ".jpg.webp";
-        // console.log(newImgUrl)
+        // //console.log(newImgUrl)
         const img = new Image();
         img.src = newImgUrl;
         img.onload = () => {
@@ -40,32 +40,28 @@ const preload = (function (): any {
             callback(newImgUrl);
           }else{
             if(nextImg!==''){
-              console.log('加载下一张')
+              //console.log('加载下一张')
               loadImg(nextImg)
               nextImg=''
             }else{
-              console.log('加载完了')
+              //console.log('加载完了')
               doing=false
             }
           }
         };
       }
     }
-    //有callback说明是文章详情页的加载，优先并行处理
     if(callback){
-      console.log('有callback说明是文章详情页的加载，优先并行处理')
+      //console.log('有callback说明是文章详情页的加载，优先并行处理')
       loadImg(url,callback)
       return
     }
-    //如果已经在加载了,就插队
     if(doing){
-      console.log('//如果已经在加载了,就插队')
+      //console.log('//如果已经在加载了,就插队,因为永远是最后的那个最优先')
       nextImg = url
     }else{
-      //没在加载
-      console.log('//没在加载')
+      //console.log('//没在加载')
       loadImg(url,callback)
-      doing=true
     }
   };
 })();
