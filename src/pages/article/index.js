@@ -18,10 +18,11 @@ class Article extends PureComponent {
 
   constructor(props) {
     super(props);
+    // console.log(this.props.history.location.state)
     this.state = {
-      content: "",
+      content: '',
       timg: "",
-      thumbnail: "",
+      thumbnail: props.history.location.state?props.history.location.state.thumbnail:"",
       isloading: true,
       id: props.match.params.id,
       socialsList: [

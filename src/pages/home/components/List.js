@@ -21,7 +21,7 @@ const List = (props) => {
         return (
           <div className={Class[index % Class.length]} key={index}>
               <div className="post-thumb">
-                <Link to={"/article/" + item.id}>
+                <Link to={{pathname:"/article/" + item.id,state:{thumbnail:item.thumbnail}}}>
                   <img src={item.thumbnail} alt="" />
                 </Link>
               </div>
@@ -31,7 +31,7 @@ const List = (props) => {
                     <i className="iconfont icon-time" />
                     发布于 {getTime(item.createTime)}
                   </div>
-                  <Link to={"/article/" + item.id} className="post-title">
+                  <Link to={{pathname:"/article/" + item.id,state:{thumbnail:item.thumbnail}}} className="post-title">
                     <h3>{item.title}</h3>
                   </Link>
                   <div className="post-meta">
@@ -53,7 +53,7 @@ const List = (props) => {
                   <div className="float-content">
                     <p>{item.summary}</p>
                     <div className="post-bottom">
-                      <Link to={"/article/" + item.id}>
+                      <Link to={{pathname:"/article/" + item.id,state:{thumbnail:item.thumbnail}}}>
                         <i className="iconfont icon-caidan" />
                       </Link>
                     </div>
