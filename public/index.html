@@ -1,11 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no"
+    />
     <meta name="theme-color" content="#000000" />
-    <meta name="referrer" content="never" />
     <meta name="Keywords" ontent="河狸兽,包子铺,React,前端 " />
     <meta http-equiv="Access-Control-Allow-Origin" content="*" />
     <meta name="description" content="这是河狸兽的包子铺" />
@@ -15,16 +16,36 @@
       href="//at.alicdn.com/t/font_1569838_jvrdyorwtit.css"
     />
     <title></title>
+    <script type="text/javascript" src="/js/errorMonitor.js"></script>
+    <script type="text/javascript" src="/assets/jquery.min.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <canvas id="fireworks"></canvas>
-    <script defer type="text/javascript" src="/js/anime.min.js"></script>
-    <script defer type="text/javascript" src="/js/fireworks.js"></script>
-    <script type="text/javascript" src="/js/errorMonitor.js"></script>
-    <script type="text/javascript" src="/assets/jquery.min.js"></script>
-    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-    <script defer type="text/javascript" src="/assets/autoload.js" ></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $.ajax({
+          url: "/js/anime.min.js",
+          dataType: "script",
+          cache: true /*去除缓存*/,
+          async: false /*关闭异步操作*/,
+        });
+        $.ajax({
+          url: "/js/fireworks.js",
+          dataType: "script",
+          cache: true /*去除缓存*/,
+          async: true /*关闭异步操作*/,
+        });
+      });
+      window.onload = function () {
+        $.ajax({
+          url: "/assets/autoload.js",
+          dataType: "script",
+          cache: true /*去除缓存*/,
+          async: true /*关闭异步操作*/,
+        });
+      };
+    </script>
   </body>
 </html>
