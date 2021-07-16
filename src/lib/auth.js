@@ -1,6 +1,15 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-31 09:30:07
+ * @LastEditTime : 2021-07-16 10:36:25
+ * @LastEditors  : helishou
+ * @Description  : 
+ * @FilePath     : d:\desk\sakura\react-blog-acg\src\lib\auth.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
+/*
+ * @Author       : helishou
+ * @Date         : 2021-05-31 09:30:07
  * @LastEditTime : 2021-07-08 08:50:19
  * @LastEditors  : helishou
  * @Description  :
@@ -16,7 +25,7 @@ const Name = "Name";
 // const Github_id ='1111'
 export const config = {
   oauth_uri: "https://github.com/login/oauth/authorize",
-  redirect_uri: "http://wangxinyang.xyz/login",
+  redirect_uri: "https://wangxinyang.xyz/login",
   client_id: "51854bed29b55e611d18",
   client_secret: "fab69f559b39a49929102ad67acf0f89d1c6720c",
   username: "helishou",

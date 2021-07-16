@@ -374,50 +374,21 @@ class Header extends PureComponent {
       540,
       540
     );
+    let cs=0
     let checkToken = () => {
+      cs++
       if (typeof getToken() !== "undefined") {
         clearInterval(iv);
         message.success("登录成功");
         this.setState({ isUser: true });
+      }else if(cs>50){
+        // 防止内存泄露
+        clearInterval(iv);  
+        cs=null
       }
     };
     let iv = setInterval(checkToken, 1000);
-    // let checkCode = () => {
-    //   try {
-    //     let query = popWin.location.search.substring(1);
-    //     console.log(query);
-    //     var querystring = require("querystring");
-    //     let code = querystring.parse(query).code;
-    //     // console.log(code);
-    //     if (typeof code !== "undefined") {
-    //       clearInterval(intervalId);
-    //       popWin.close();
-    //       // console.log("code", code);
-    //       this.loginGithubHandel(code);
-    //       // eventEmitter.emit("code", code);
-    //     }
-    //   } catch (err) {}
-    // };
-    // let intervalId = setInterval(checkCode, 1000);
   }
-  // loginGithubHandel(code) {
-  //   axios
-  //     .post("/getUser", {
-  //       code,
-  //     })
-  //     .then((res) => {
-  //       if (res.code === 0) {
-  //         // console.log("登陆成功");
-  //         setToken(res.data._id);
-  //         setAvatar(res.data.avatar);
-  //         setName(res.data.name);
-  //         // this.setState({ isUser: true });
-  //         message.success("登录成功");
-  //       } else {
-  //         message.error(res.message, 1);
-  //       }
-  //     });
-  // }
   keypress(e) {
     if (e.which === 13) {
       const { value } = this.state;
