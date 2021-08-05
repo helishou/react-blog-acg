@@ -1,10 +1,10 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-07-15 10:02:44
+ * @LastEditTime : 2021-07-17 00:05:13
  * @LastEditors  : helishou
  * @Description  : home
- * @FilePath     : d:\desk\sakura\react-blog-acg\src\pages\home\index.js
+ * @FilePath     : \src\pages\home\index.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import React, {PureComponent} from 'react';
@@ -12,7 +12,7 @@ import Banner from "./components/Banner";
 import ListWrapper from './components/List';
 import Feature from "./components/Feature";
 import {HomeWrapper, MainWrapper} from './style';
-import {actionCreators} from "./store";
+// import {actionCreators} from "./store";
 import {connect} from "react-redux";
 import {getrand} from "../../lib/public";
 
@@ -28,12 +28,13 @@ class Home extends PureComponent {
 
     render() {
         const {banner, innerHeight} = this.state;
-        const {userInfo, featureList, ListImg} = this.props;
+        const {userInfo, ListImg} = this.props;
         return (
             <HomeWrapper>
                 <Banner banner={banner} innerHeight={innerHeight} getBanner={this.getBanner} userInfo={userInfo}/>
                 <MainWrapper id='content'>
-                    <Feature featureList={featureList} ListImg={ListImg}/>
+                    {/* <Feature featureList={featureList} ListImg={ListImg}/> */}
+                    <Feature ListImg={ListImg}/>
                     <ListWrapper/>
                 </MainWrapper>
             </HomeWrapper>
@@ -43,7 +44,7 @@ class Home extends PureComponent {
     componentDidMount() {
         this.changeInnerHeight();
         this.getBanner();
-        this.props.getFeature();
+        // this.props.getFeature();
     }
 
     getBanner() {
@@ -66,18 +67,18 @@ class Home extends PureComponent {
 const mapState = (state) => {
     return {
         userInfo: state.getIn(['header', 'userInfo']),
-        featureList: state.getIn(['home', 'featureList']),
+        // featureList: state.getIn(['home', 'featureList']),
         ListImg: state.getIn(['image', 'ListImg']),
         bannerList: state.getIn(['image', 'bannerList'])
     }
 };
 
-const mapDispatch = (dispatch) => {
-    return {
-        getFeature() {
-            dispatch(actionCreators.getFeature());
-        }
-    }
-};
+// const mapDispatch = (dispatch) => {
+//     return {
+//         getFeature() {
+//             dispatch(actionCreators.getFeature());
+//         }
+//     }
+// };
 
-export default connect(mapState, mapDispatch)(Home);
+export default connect(mapState, {})(Home);

@@ -1,12 +1,3 @@
-/*
- * @Author       : helishou
- * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-06-15 14:01:57
- * @LastEditors  : helishou
- * @Description  : 自动异步加载live2d
- * @FilePath     : \public\assets\autoload.js
- * 你用你的指尖,阻止我说再见,在bug完全失去之前
- */
 try {
     if (!isMobileBrowser()) {
         $("<link>").attr({href: "/assets/waifu.min.css?v=1.4.2", rel: "stylesheet", type: "text/css"}).appendTo('head');
