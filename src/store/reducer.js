@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-07-15 12:10:30
+ * @LastEditTime : 2021-07-20 15:15:32
  * @LastEditors  : helishou
  * @Description  : store
  * @FilePath     : d:\desk\sakura\react-blog-acg\src\store\reducer.js
@@ -45,7 +45,7 @@ const image = () => {
         ],
     }
 };
-
+//传入一个对象
 const reducer = combineReducers({
     header: headerReducer,
     home: homeReducer,
