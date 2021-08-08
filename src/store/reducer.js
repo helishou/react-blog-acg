@@ -1,10 +1,10 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-07-20 15:15:32
+ * @LastEditTime : 2021-08-09 00:04:55
  * @LastEditors  : helishou
  * @Description  : store
- * @FilePath     : d:\desk\sakura\react-blog-acg\src\store\reducer.js
+ * @FilePath     : \src\store\reducer.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import {combineReducers} from 'redux-immutable';
@@ -34,8 +34,8 @@ const image = () => {
         bannerList: [
             // {img: 'https://image.bygit.cn/banner-1.png'},
             // {img: 'https://image.bygit.cn/banner-2.png'},
-            {img: 'https://image.bygit.cn/banner-3.png'},
-            {img: 'https://image.bygit.cn/banner-4.png'},
+            // {img: 'https://image.bygit.cn/banner-3.png'},
+            // {img: 'https://image.bygit.cn/banner-4.png'},
             {img: '/assets/362e3fc0bb57fcc0cef6e4d73f0856f1.jpg.webp'},
             {img: '/assets/d8c29cad010447a75b0eaae4513f3780.jpg.webp'},
             // {img: '/assets/[speed of light] COVER_77987370_p1.png.webp'},
