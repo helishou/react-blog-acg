@@ -120,23 +120,21 @@ class Links extends PureComponent {
     axios.get("/getLinkList").then((res) => {
       let { list } = res.data;
       let arrar = [];
+      let temp = [];
       for (let i in list) {
-        let temp = [
-          {
-            id: 2,
-            title: "大佬们",
-            name: list[i].name,
-            href: list[i].url,
-            logo: list[i].icon,
-            sort: 0,
-            description: list[i].desc || "",
-          },
-        ];
-        arrar.push({
-          title: "大佬们",
-          list: temp,
+        temp.push({
+          id: 2,
+          name: list[i].name,
+          href: list[i].url,
+          logo: list[i].icon,
+          sort: 0,
+          description: list[i].desc || "",
         });
       }
+      arrar.push({
+        title: "大佬们",
+        list: temp,
+      });
       if (res.code === 0) {
         this.setState({
           list: arrar,
@@ -149,7 +147,9 @@ class Links extends PureComponent {
   getTimg() {
     // const list = this.props.topImg;
     // const num = this.getrand(0, list.length - 1);
-    this.setState({ timg: 'https://2heng.xin/wp-content/uploads//2017/11/1-1511301SP0.jpg' });
+    this.setState({
+      timg: "https://2heng.xin/wp-content/uploads//2017/11/1-1511301SP0.jpg",
+    });
   }
 
   getrand(m, n) {

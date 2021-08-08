@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-08-09 00:04:55
+ * @LastEditTime : 2021-08-09 00:12:16
  * @LastEditors  : helishou
  * @Description  : store
  * @FilePath     : \src\store\reducer.js
@@ -15,20 +15,7 @@ const image = () => {
     return {
         //列表页随机封面图
         ListImg: [
-            {img: 'https://image.bygit.cn/list_01.png'},
-            {img: 'https://image.bygit.cn/list_02.png'},
-            {img: 'https://image.bygit.cn/list_03.png'},
-            {img: 'https://image.bygit.cn/list_04.png'},
-            {img: 'https://image.bygit.cn/list_05.png'},
-            {img: 'https://image.bygit.cn/list_06.png'},
-            {img: 'https://image.bygit.cn/list_07.png'},
-            {img: 'https://image.bygit.cn/list_08.png'},
-            {img: 'https://image.bygit.cn/list_09.png'},
-            {img: 'https://image.bygit.cn/list_10.png'},
-            {img: 'https://image.bygit.cn/list_11.png'},
-            {img: 'https://image.bygit.cn/list_12.png'},
-            {img: 'https://image.bygit.cn/list_13.png'},
-            {img: 'https://image.bygit.cn/list_14.png'}
+            {img: 'https://api.2heng.xin/cover/'},
         ],
         //首页banner图和内页顶部头图
         bannerList: [
@@ -41,7 +28,7 @@ const image = () => {
             // {img: '/assets/[speed of light] COVER_77987370_p1.png.webp'},
             {img: '/assets/78b1d42bf01a216ea8cea9569fe68da5.jpg.webp'},
             {img: '/assets/AK-01.jpg.webp'},
-            // {img: 'https://api.2heng.xin/cover/'}
+            {img: 'https://api.2heng.xin/cover/'}
         ],
     }
 };
