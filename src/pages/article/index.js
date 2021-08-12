@@ -13,7 +13,8 @@ import Carousel, { Modal, ModalGateway } from "react-images";
 import WechatReward from "../../statics/images/WechatReward.jpg";
 import AlipayReward from "../../statics/images/AlipayReward.jpg";
 import ColumnGroup from "antd/lib/table/ColumnGroup";
-import preload from '../../utils/preload'
+import preload from "../../utils/preload";
+import {actionCreators} from "./store";
 class Article extends PureComponent {
   tocify = new Tocify();
 
@@ -21,9 +22,9 @@ class Article extends PureComponent {
     super(props);
     // console.log(this.props.history.location.state)
     this.state = {
-      content: '',
+      content: props.content.toJS(),
       timg: "",
-      thumbnail: props.history.location.state?props.history.location.state.thumbnail:"",
+      // thumbnail: props.content.thumbnail,
       isloading: true,
       id: props.match.params.id,
       socialsList: [
@@ -47,13 +48,12 @@ class Article extends PureComponent {
       content,
       socialsList,
       id,
-      timg,
       imgList,
       modalIsOpen,
       currentImage,
-      thumbnail,
       isloading,
     } = this.state;
+    let thumbnail=content.thumbnail
     // const { name, avatar } = this.props.userInfo.toJS();
     this.tocify && this.tocify.reset();
 
@@ -78,8 +78,8 @@ class Article extends PureComponent {
           <div className="pattern-attachment-img">
             <img
               className={isloading ? "loadimg" : "doneimg"}
-              src={thumbnail && (thumbnail || timg)}
-              alt="loading"
+              src={thumbnail}
+              alt=""
             />
           </div>
           <div className="single-header">
@@ -97,7 +97,7 @@ class Article extends PureComponent {
           </div>
         </ArticleTop>
         <MainWrapper>
-          {content ? (
+          {content.content ? (
             <div className="flex-items">
               <div className="cell">
                 <div
@@ -179,60 +179,33 @@ class Article extends PureComponent {
   }
 
   getDetail(id) {
-    axios
-      .post("/getArticleDetail", { id: id, type: 1, filter: 2 })
-      .then((res) => {
-        if (res.code === 0) {
-          let { data } = res;
-          let model = {
-            id: data._id,
-            title: data.title,
-            content: data.content,
-            comments: data.meta.comments,
-            summary: data.desc,
-            views: data.meta.views,
-            weight: data.weight || 1,
-            createTime: data.create_time,
-            isComment: data.isComment || 1,
-            tagsList: data.category,
-            categoryId: data.category[0],
-            categoryName: data.category[0],
-            author: data.author,
-            commentsList: data.comments,
-          };
-          // http://img.netbian.com/file/2020/0407/small7e47965b793534d12b64e4ebdcd33cfa1586267701.jpg
-          this.setState(
-            {
-              content: model,
-              thumbnail: data.img_url,
-            },
-            () => {
-              preload(data.img_url,(newImgUrl)=>this.setState({
-                thumbnail: newImgUrl,
-                isloading: false,
-              }))
-              const content = document.getElementById("content");
-              const img = content.getElementsByTagName("img");
-              let arr = [];
-              for (let i = 0; i < img.length; i++) {
-                const src = img[i].src;
-                arr.push({
-                  source: src,
-                });
-                img[i].onclick = () => {
-                  this.openImg(i);
-                };
-              }
-              this.setState({
-                imgList: arr,
-              });
-            }
-          );
-        }
-      })
-      .catch((err) => {
-        this.props.history.push("/404");
-      });
+
+    // http://img.netbian.com/file/2020/0407/small7e47965b793534d12b64e4ebdcd33cfa1586267701.jpg
+    // this.setState(
+    //   {
+    //     content: model,
+    //     thumbnail: data.img_url,
+    //   },
+    // () => {
+    //   preload(data.img_url,(newImgUrl)=>this.setState({
+    //     thumbnail: newImgUrl,
+    //     isloading: false,
+    //   }))
+    // const content = document.getElementById("content");
+    // const img = content.getElementsByTagName("img");
+    // let arr = [];
+    // for (let i = 0; i < img.length; i++) {
+    //   const src = img[i].src;
+    //   arr.push({
+    //     source: src,
+    //   });
+    //   img[i].onclick = () => {
+    //     this.openImg(i);
+    //   };
+    // }
+    // this.setState({
+    //   imgList: arr,
+    // });
   }
 
   setSocials(socialsList) {
@@ -277,8 +250,17 @@ class Article extends PureComponent {
 const mapState = (state) => {
   return {
     topImg: state.getIn(["image", "bannerList"]),
+    // thumbnail: state.getIn(["artical", "thumbnail"]),
+    content: state.getIn(["artical"]),
     // userInfo: state.getIn(["header", "userInfo"]),
   };
 };
 
-export default connect(mapState)(Article);
+const mapDispatch = (dispatch) => {
+  return {
+    // getArtical() {
+    //   dispatch(actionCreators.getArtical());
+    // },
+  };
+};
+export default connect(mapState, mapDispatch)(Article);

@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import { LinksWrapper, LinksTop, MainWrapper } from "./style";
 import axios from "axios";
+import Itemlayout from "../../components/Itemlayout";
 import { Spin, Anchor } from "antd";
 const { Link } = Anchor;
 
@@ -66,43 +67,34 @@ class Links extends PureComponent {
   render() {
     const { list, loading } = this.state;
     return (
-      <LinksWrapper>
-        <div className="pattern-center-blank" />
-        <LinksTop>
-          <div className="pattern-attachment-img">
-            <img className="lazyload" src={this.state.timg} alt="" />
-          </div>
-          <div className="pattern-header ">
-            <h1>友人帐</h1>
-          </div>
-        </LinksTop>
+      <Itemlayout title="友人帐" timg={this.state.timg}>
         <MainWrapper>
-          <div className="flex-items">
-            <LinksList list={list} loading={loading} />
-            <div className="toc-box">
-              {list.length > 0 && (
-                <Anchor
-                  className="toc"
-                  affix
-                  showInkInFixed
-                  onClick={this.handleClick}
-                  offsetTop={100}
-                >
-                  {list.map((item) => {
-                    return (
-                      <Link
-                        key={item.title}
-                        href={`#${item.title}`}
-                        title={item.title}
-                      />
-                    );
-                  })}
-                </Anchor>
-              )}
-            </div>
+        <div className="flex-items">
+          <LinksList list={list} loading={loading} />
+          <div className="toc-box">
+            {list.length > 0 && (
+              <Anchor
+                className="toc"
+                affix
+                showInkInFixed
+                onClick={this.handleClick}
+                offsetTop={100}
+              >
+                {list.map((item) => {
+                  return (
+                    <Link
+                      key={item.title}
+                      href={`#${item.title}`}
+                      title={item.title}
+                    />
+                  );
+                })}
+              </Anchor>
+            )}
           </div>
+        </div>
         </MainWrapper>
-      </LinksWrapper>
+      </Itemlayout>
     );
   }
 

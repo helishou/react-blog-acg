@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-08-09 00:12:16
+ * @LastEditTime : 2021-08-13 00:22:45
  * @LastEditors  : helishou
  * @Description  : store
  * @FilePath     : \src\store\reducer.js
@@ -10,7 +10,7 @@
 import {combineReducers} from 'redux-immutable';
 import {reducer as headerReducer} from "../components/Header/store";
 import {reducer as homeReducer} from '../pages/home/store';
-
+import {reducer as articalReducer} from '../pages/article/store';
 const image = () => {
     return {
         //列表页随机封面图
@@ -36,7 +36,8 @@ const image = () => {
 const reducer = combineReducers({
     header: headerReducer,
     home: homeReducer,
-    image: image
+    image: image,
+    artical:articalReducer
 });
 
 export default reducer

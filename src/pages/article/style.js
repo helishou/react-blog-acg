@@ -19,6 +19,17 @@ export const ArticleTop = styled.div`
     left: 0;
     width: 100%;
     overflow: hidden;
+    animation: image 1s;
+    @keyframes image {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px)
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    }
     &:before{
         content: "";
         position: absolute;

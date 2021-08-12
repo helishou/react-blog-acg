@@ -8,6 +8,7 @@ import * as constants from "../store/constants";
 import axios from "axios";
 import { fromJS } from "immutable";
 import preload from "../../../utils/preload";
+import ArticalLink from "../../../components/ArticalLink";
 const List = (props) => {
   const { blogList } = props;
   const list = blogList.toJS();
@@ -19,47 +20,59 @@ const List = (props) => {
     <BlogList>
       {list.map((item, index) => {
         return (
-          <div onMouseEnter={()=>preload(item.thumbnail)} className={Class[index % Class.length]} key={index}>
-              <div className="post-thumb">
-                <Link to={{pathname:"/article/" + item.id,state:{thumbnail:item.thumbnail}}}>
-                  <img src={item.thumbnail} alt="" />
-                </Link>
-              </div>
-              <div className="post-content-wrap">
-                <div className="post-content">
-                  <div className="post-date">
-                    <i className="iconfont icon-time" />
-                    发布于 {getTime(item.createTime)}
-                  </div>
-                  <Link to={{pathname:"/article/" + item.id,state:{thumbnail:item.thumbnail}}} className="post-title">
-                    <h3>{item.title}</h3>
-                  </Link>
-                  <div className="post-meta">
+          <div
+            onMouseEnter={() => preload(item.thumbnail)}
+            className={Class[index % Class.length]}
+            key={index}
+          >
+            <div className="post-thumb">
+              <ArticalLink
+                id={item.id}
+                thumbnail={item.thumbnail}
+                className="post-title"
+              >
+                <img src={item.thumbnail} alt="" />
+              </ArticalLink>
+            </div>
+            <div className="post-content-wrap">
+              <div className="post-content">
+                <div className="post-date">
+                  <i className="iconfont icon-time" />
+                  发布于 {getTime(item.createTime)}
+                </div>
+                <ArticalLink
+                  id={item.id}
+                  thumbnail={item.thumbnail}
+                  className="post-title"
+                >
+                  <h3>{item.title}</h3>
+                </ArticalLink>
+                <div className="post-meta">
+                  <span>
+                    <i className="iconfont icon-attention" />
+                    {item.views} 热度
+                  </span>
+                  <span className="comments-number">
+                    <i className="iconfont icon-mark" />
+                    {item.comments} 评论
+                  </span>
+                  {item.categoryName && (
                     <span>
-                      <i className="iconfont icon-attention" />
-                      {item.views} 热度
+                      <i className="iconfont icon-file" />
+                      {item.categoryName}
                     </span>
-                    <span className="comments-number">
-                      <i className="iconfont icon-mark" />
-                      {item.comments} 评论
-                    </span>
-                    {item.categoryName && (
-                      <span>
-                        <i className="iconfont icon-file" />
-                        {item.categoryName}
-                      </span>
-                    )}
-                  </div>
-                  <div className="float-content">
-                    <p>{item.summary}</p>
-                    <div className="post-bottom">
-                      <Link to={{pathname:"/article/" + item.id,state:{thumbnail:item.thumbnail}}}>
-                        <i className="iconfont icon-caidan" />
-                      </Link>
-                    </div>
+                  )}
+                </div>
+                <div className="float-content">
+                  <p>{item.summary}</p>
+                  <div className="post-bottom">
+                    <ArticalLink id={item.id} thumbnail={item.thumbnail}>
+                      <i className="iconfont icon-caidan" />
+                    </ArticalLink>
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         );
       })}

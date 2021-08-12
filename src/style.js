@@ -70,10 +70,12 @@ export const GlobalStyle = createGlobalStyle`
     }
     .loadimg {
         filter: blur(1px);
+        background-color: white;
     }
     .doneimg{
         filter: blur(0px);
         transition: .1s filter linear,.1s -webkit-filter linear;
+        /* transform: translateY(0) */
     }
     p{
         cursor: url(${require('./statics/images/texto.cur')}),auto;
