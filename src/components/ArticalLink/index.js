@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-08-12 23:28:37
- * @LastEditTime : 2021-08-13 02:04:27
+ * @LastEditTime : 2021-08-13 14:51:37
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\components\ArticalLink\index.js
@@ -12,11 +12,19 @@ import { Link ,withRouter} from "react-router-dom";
 import { actionCreators } from "../../pages/article/store";
 import { connect } from "react-redux";
 import axios from "axios";
+import NProgress from 'nprogress'
 function ArticalLink(props) {
+  const processConfig = {
+    trickleSpeed: 200,
+    showSpinner: false,
+    easing: "ease",
+    speed: 500,
+    minimum:0.2
+  };
+  NProgress.configure(processConfig);
   const getArtical = (id) => {
     //获取文章
     return new Promise((resolve, reject) => {
-      console.log("22");
       axios
         .post("/getArticleDetail", {
           id: id,
@@ -31,30 +39,36 @@ function ArticalLink(props) {
               title: data.title,
               content: data.content,
               comments: data.meta.comments,
-              // summary: data.desc,
-              // views: data.meta.views,
-              // weight: data.weight || 1,
               createTime: data.create_time,
-              // isComment: data.isComment || 1,
-              // tagsList: data.category,
-              // categoryId: data.category[0],
-              // categoryName: data.category[0],
               author: data.author,
               commentsList: data.comments,
               thumbnail: data.img_url,
             };
-            // http://img.netbian.com/file/2020/0407/small7e47965b793534d12b64e4ebdcd33cfa1586267701.jpg
-            console.log(model, data.img_url);
             props.setArtical(model);
             resolve()
           }
+        }).catch(error=>{
+          props.history.push("/404");
         });
     });
   };
   const onClick = async (e) => {
+    let flag=false
+    NProgress.start()
+    setTimeout(()=>{
+      if(!flag){
+        NProgress.inc(0.5)
+      }  
+    },2000)
     e.preventDefault()
-    await getArtical(props.id);
+    if(props.ArticleId!==props.id){
+      console.log(props.ArticleId,'props.ArticleId')
+      console.log(props.id,'props.id')
+      await getArtical(props.id);
+    }
     props.history.push("/article/" + props.id)
+    NProgress.done()
+    flag=true
     // } catch {
     //   this.props.history.push("/404");
     // }
@@ -76,7 +90,7 @@ const mapState = (state) => {
   return {
     //   topImg: state.getIn(["image", "bannerList"]),
     //   // thumbnail: state.getIn(["artical", "thumbnail"]),
-    //   content: state.getIn(["artical"]),
+      ArticleId: state.getIn(["artical",'id']),
     // userInfo: state.getIn(["header", "userInfo"]),
   };
 };
