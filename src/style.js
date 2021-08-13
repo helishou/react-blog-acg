@@ -1,5 +1,5 @@
-import {createGlobalStyle} from 'styled-components';
-
+import { createGlobalStyle } from "styled-components";
+import gif from './statics/images/HorseRaceLamp.gif'
 export const GlobalStyle = createGlobalStyle`
     ::selection {
         background: #A0DAD0;
@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     body{
         font-family: 'Noto Serif SC','Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif;
-        cursor: url(${require('./statics/images/normal.cur')}),auto
+        cursor: url(${require("./statics/images/normal.cur")}),auto
     }
 	html, body, div, span, applet, object, iframe,
 	h1, h2, h3, h4, h5, h6, p, blockquote, 
@@ -53,7 +53,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	a{
         transition: color .2s ease-out,border .2s ease-out,opacity .2s ease-out;
-        cursor: url(${require('./statics/images/ayuda.cur')}),auto;
+        cursor: url(${require("./statics/images/ayuda.cur")}),auto;
 	}
 	a:hover{
 	    text-decoration: none;
@@ -69,7 +69,7 @@ export const GlobalStyle = createGlobalStyle`
         transition: .3s filter linear,.3s -webkit-filter linear;
     }
     .loadimg {
-        filter: blur(1px);
+        filter: blur(2px);
         background-color: white;
     }
     .doneimg{
@@ -78,7 +78,7 @@ export const GlobalStyle = createGlobalStyle`
         /* transform: translateY(0) */
     }
     p{
-        cursor: url(${require('./statics/images/texto.cur')}),auto;
+        cursor: url(${require("./statics/images/texto.cur")}),auto;
     }
 	blockquote, q {
 		quotes: none;
@@ -147,4 +147,21 @@ export const GlobalStyle = createGlobalStyle`
         pointer-events: none; 
         z-index: 999;
     }
+
+    /* Make clicks pass-through */
+    #nprogress {
+        pointer-events: none;
+    }
+
+    #nprogress .bar {
+        background-image: url(${require('./statics/images/HorseRaceLamp.gif')});
+        position: fixed;
+        z-index: 1031;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 4px;
+    }
+
 `;

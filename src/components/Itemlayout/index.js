@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-08-12 21:12:09
- * @LastEditTime : 2021-08-12 22:37:02
+ * @LastEditTime : 2021-08-13 15:35:29
  * @LastEditors  : helishou
  * @Description  : 
  * @FilePath     : \src\components\Itemlayout\index.js
@@ -10,7 +10,6 @@
 import React from 'react'
 import {TopImage,Wrapper,MainWrapper} from './style'
 export default function Itemlayout(props) {
-    console.log(props)
     return (
         <Wrapper>
             <div className="pattern-center-blank" />

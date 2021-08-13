@@ -14,7 +14,7 @@ import WechatReward from "../../statics/images/WechatReward.jpg";
 import AlipayReward from "../../statics/images/AlipayReward.jpg";
 import ColumnGroup from "antd/lib/table/ColumnGroup";
 import preload from "../../utils/preload";
-import {actionCreators} from "./store";
+import { actionCreators } from "./store";
 class Article extends PureComponent {
   tocify = new Tocify();
 
@@ -23,9 +23,7 @@ class Article extends PureComponent {
     // console.log(this.props.history.location.state)
     this.state = {
       content: props.content.toJS(),
-      timg: "",
-      // thumbnail: props.content.thumbnail,
-      isloading: true,
+      thumbnail: "",
       id: props.match.params.id,
       socialsList: [
         {
@@ -37,6 +35,7 @@ class Article extends PureComponent {
           remark: "支付宝",
         },
       ],
+      isloading: true,
       imgList: [],
       modalIsOpen: false,
       currentImage: 0,
@@ -51,9 +50,8 @@ class Article extends PureComponent {
       imgList,
       modalIsOpen,
       currentImage,
-      isloading,
+      thumbnail,
     } = this.state;
-    let thumbnail=content.thumbnail
     // const { name, avatar } = this.props.userInfo.toJS();
     this.tocify && this.tocify.reset();
 
@@ -77,8 +75,8 @@ class Article extends PureComponent {
         <ArticleTop>
           <div className="pattern-attachment-img">
             <img
-              className={isloading ? "loadimg" : "doneimg"}
-              src={thumbnail}
+              className={thumbnail ? "doneimg" : "loadimg"}
+              src={thumbnail ? thumbnail : content.thumbnail}
               alt=""
             />
           </div>
@@ -179,35 +177,71 @@ class Article extends PureComponent {
   }
 
   getDetail(id) {
-
-    // http://img.netbian.com/file/2020/0407/small7e47965b793534d12b64e4ebdcd33cfa1586267701.jpg
-    // this.setState(
-    //   {
-    //     content: model,
-    //     thumbnail: data.img_url,
-    //   },
-    // () => {
-    //   preload(data.img_url,(newImgUrl)=>this.setState({
-    //     thumbnail: newImgUrl,
-    //     isloading: false,
-    //   }))
-    // const content = document.getElementById("content");
-    // const img = content.getElementsByTagName("img");
-    // let arr = [];
-    // for (let i = 0; i < img.length; i++) {
-    //   const src = img[i].src;
-    //   arr.push({
-    //     source: src,
-    //   });
-    //   img[i].onclick = () => {
-    //     this.openImg(i);
-    //   };
-    // }
-    // this.setState({
-    //   imgList: arr,
-    // });
+    if (!this.state.content.id) {
+      axios
+        .post("/getArticleDetail", { id: id, type: 1, filter: 2 })
+        .then((res) => {
+          if (res.code === 0) {
+            let { data } = res;
+            let model = {
+              id: data._id,
+              title: data.title,
+              content: data.content,
+              comments: data.meta.comments,
+              createTime: data.create_time,
+              author: data.author,
+              commentsList: data.comments,
+              thumbnail: data.img_url,
+            };
+            this.props.setArtical(model);
+            // http://img.netbian.com/file/2020/0407/small7e47965b793534d12b64e4ebdcd33cfa1586267701.jpg
+            this.setState(
+              {
+                content: model,
+                thumbnail: data.img_url,
+              },
+              () => {
+                preload(data.img_url, (newImgUrl) =>
+                  this.setState({
+                    thumbnail: newImgUrl,
+                    isloading: false,
+                  })
+                );
+                this.getImgList();
+              }
+            );
+          }
+        })
+        .catch((err) => {
+          this.props.history.push("/404");
+        });
+    } else {
+      preload(this.state.content.thumbnail, (newImgUrl) =>
+        this.setState({
+          thumbnail: newImgUrl,
+        })
+      );
+      this.getImgList();
+    }
   }
 
+  getImgList() {
+    const content = document.getElementById("content");
+    const img = content?content.getElementsByTagName("img"):[];
+    let arr = [];
+    for (let i = 0; i < img.length; i++) {
+      const src = img[i].src;
+      arr.push({
+        source: src,
+      });
+      img[i].onclick = () => {
+        this.openImg(i);
+      };
+    }
+    this.setState({
+      imgList: arr,
+    });
+  }
   setSocials(socialsList) {
     if (socialsList.length > 0) {
       return (
@@ -258,9 +292,12 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    // getArtical() {
-    //   dispatch(actionCreators.getArtical());
-    // },
+    updateImg(img) {
+      dispatch(actionCreators.updateImg(img));
+    },
+    setArtical(data){
+      dispatch(actionCreators.setArtical(data))
+    }
   };
 };
 export default connect(mapState, mapDispatch)(Article);

@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import {  MainWrapper } from "./style";
-import { Link } from "react-router-dom";
+import { MainWrapper } from "./style";
+import ArticalLink from '../../components/ArticalLink'
 import { Spin } from "antd";
 import Itemlayout from "../../components/Itemlayout";
 // const setYears = (time) => {
@@ -61,12 +61,13 @@ const ArchivesList = (props) => {
                           </span>
                           <h3 className="tl-content">
                             <span className="arrow left" />
-                            <Link
-                              to={"/article/" + item2.id}
+                            <ArticalLink
+                              id={item2.id}
+                              thumbnail={item.thumbnail}
                               className="text-lt"
                             >
                               {item2.title}
-                            </Link>
+                            </ArticalLink>
                           </h3>
                         </div>
                       </li>

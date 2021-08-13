@@ -1,16 +1,16 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-06-02 09:02:40
- * @LastEditTime : 2021-06-22 15:03:18
+ * @LastEditTime : 2021-08-13 15:36:54
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\pages\login\index.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
-import { getAvatar, setAvatar, setToken, setName } from "../../lib/auth";
-import { Icon, Menu, Dropdown, Affix, message } from "antd";
+import {  setAvatar, setToken, setName } from "../../lib/auth";
+import {  message } from "antd";
 import { withRouter } from "react-router";
 import { Wrapper } from "./style";
 function Login(props) {

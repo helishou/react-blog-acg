@@ -1,8 +1,7 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import { FeatureTitle, HomeList, BlogList } from "../style";
-import { Link } from "react-router-dom";
-import { getrand, getTime } from "../../../lib/public";
+import {  getTime } from "../../../lib/public";
 import PagInation from "../../../components/PagInation";
 import * as constants from "../store/constants";
 import axios from "axios";

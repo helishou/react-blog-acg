@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-08-12 21:12:33
- * @LastEditTime : 2021-08-12 23:06:03
+ * @LastEditTime : 2021-08-13 15:13:14
  * @LastEditors  : helishou
  * @Description  : 
  * @FilePath     : \src\components\Itemlayout\style.js
@@ -14,7 +14,6 @@ export const TopImage = styled.div`
     left: 0;
     width: 100%;
     overflow: hidden;
-    /* animation: image 1s; */
     &:before{
         content: "";
         position: absolute;
@@ -42,6 +41,9 @@ export const TopImage = styled.div`
         width: 100%;
         height: 400px;
         img{
+            background-image:url('https://cdn.jsdelivr.net/gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loader.svg') ;
+            background-size: 200% 180%;
+            background-position: 50% 70%;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -78,16 +80,6 @@ export const TopImage = styled.div`
             }
         }
     }
-    /* @keyframes image {
-        0% {
-            opacity: 0;
-            transform: translateY(-50px)
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0)
-        }
-    } */
 `;
 
 export const Wrapper = styled.div`
