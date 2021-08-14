@@ -6,7 +6,7 @@ import PagInation from "../../../components/PagInation";
 import * as constants from "../store/constants";
 import axios from "axios";
 import { fromJS } from "immutable";
-import preload from "../../../utils/preload";
+// import preload from "../../../utils/preload";
 import ArticalLink from "../../../components/ArticalLink";
 import {picLazyLoad} from '../../../utils/lazyload'
 const List = (props) => {
@@ -21,7 +21,7 @@ const List = (props) => {
       {list.map((item, index) => {
         return (
           <div
-            onMouseEnter={() => preload(item.thumbnail)}
+            // onMouseEnter={() => preload(item.thumbnail)}
             className={Class[index % Class.length]}
             key={index}
           >
