@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-07-15 15:18:12
- * @LastEditTime : 2021-07-16 00:22:14
+ * @LastEditTime : 2021-08-14 22:02:35
  * @LastEditors  : helishou
  * @Description  : 大图预加载
  * @FilePath     : \src\utils\preload.ts
@@ -19,11 +19,11 @@ const preload = (function (): any {
   let nextImg ='' //表示接下来要预加载的图
   return (url: string, callback?: Function) => {
     //懒加载文章组件
-    require("../pages/article")
+    import("../pages/article")
     if (imgArray.has(url)) {
-      //console.log('如果该图已加载过，直接返回回调')
+      // console.log('如果该图已加载过，直接返回回调')
       callback && callback(imgArray.get(url));
-      return;
+      return ;
     }
     //封装一下加载图片函数
     const loadImg=(url:string,callback?:Function)=>{
@@ -39,6 +39,7 @@ const preload = (function (): any {
           imgArray.set(url, newImgUrl);
           img.onload = null;
           if(callback){
+            console.log(newImgUrl)
             callback(newImgUrl);
           }else{
             if(nextImg!==''){
@@ -51,18 +52,20 @@ const preload = (function (): any {
             }
           }
         };
+      }else if(callback){
+        callback(url)
       }
     }
     if(callback){
-      //console.log('有callback说明是文章详情页的加载，优先并行处理')
+      // console.log('有callback说明是文章详情页的加载，优先并行处理')
       loadImg(url,callback)
       return
     }
     if(doing){
-      //console.log('//如果已经在加载了,就插队,因为永远是最后的那个最优先')
+      // console.log('//如果已经在加载了,就插队,因为永远是最后的那个最优先')
       nextImg = url
     }else{
-      //console.log('//没在加载')
+      // console.log('//没在加载')
       loadImg(url,callback)
     }
   };

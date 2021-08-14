@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-08-14 17:07:10
+ * @LastEditTime : 2021-08-14 21:33:27
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\router.js
@@ -30,7 +30,7 @@ class Router extends PureComponent {
         <Route path="/category/:id" exact component={Category} />
         {
           menulist.map((item)=>{
-            return <Route path={item.url} exact component={item.component} />
+            return <Route key={item.url} path={item.url} exact component={item.component} />
           })
         }
         <Route path="/tags/:id" exact component={TagList} />

@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component} from "react";
 import { connect } from "react-redux";
 import { FeatureTitle, HomeList, BlogList } from "../style";
 import {  getTime } from "../../../lib/public";
@@ -8,6 +8,7 @@ import axios from "axios";
 import { fromJS } from "immutable";
 import preload from "../../../utils/preload";
 import ArticalLink from "../../../components/ArticalLink";
+import {picLazyLoad} from '../../../utils/lazyload'
 const List = (props) => {
   const { blogList } = props;
   const list = blogList.toJS();
@@ -27,10 +28,9 @@ const List = (props) => {
             <div className="post-thumb">
               <ArticalLink
                 id={item.id}
-                thumbnail={item.thumbnail}
                 className="post-title"
               >
-                <img src={item.thumbnail} alt="" />
+                <img lazyload={item.thumbnail} className='loadimg' alt="" />
               </ArticalLink>
             </div>
             <div className="post-content-wrap">
@@ -41,7 +41,6 @@ const List = (props) => {
                 </div>
                 <ArticalLink
                   id={item.id}
-                  thumbnail={item.thumbnail}
                   className="post-title"
                 >
                   <h3>{item.title}</h3>
@@ -65,7 +64,7 @@ const List = (props) => {
                 <div className="float-content">
                   <p>{item.summary}</p>
                   <div className="post-bottom">
-                    <ArticalLink id={item.id} thumbnail={item.thumbnail}>
+                    <ArticalLink id={item.id}>
                       <i className="iconfont icon-caidan" />
                     </ArticalLink>
                   </div>
@@ -79,7 +78,7 @@ const List = (props) => {
   );
 };
 
-class ListWrapper extends PureComponent {
+class ListWrapper extends Component {
   render() {
     const { page, finished, loading } = this.props;
     return (
@@ -105,6 +104,7 @@ class ListWrapper extends PureComponent {
     if (!this.props.isList) {
       this.props.getBlogList(1, true);
     }
+    picLazyLoad()
   }
 }
 
@@ -154,23 +154,24 @@ const list = (thumbList, data) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    getBlogList(page, override) {
+    getBlogList(page, override,number=200) {
       dispatch({ type: constants.LOADING_TRUE });
       axios
         .get("/getArticleList?state=1", {
           params: {
             pageNum: page,
-            pageSize: 10,
+            pageSize: number,
           },
         })
         .then((res) => {
           if (res.code === 0) {
-            let current = page * 10;
+            let current = page * number;
             let total = res.data.count;
             let data = list(this.ListImg, res.data.list);
             dispatch(setBlogList(data, page + 1, override));
             if (current > total) dispatch(setfinished());
           }
+          picLazyLoad()
         });
     },
   };

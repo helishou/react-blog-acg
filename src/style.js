@@ -66,15 +66,15 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	.lazyload {
         filter: blur(0px);
-        transition: .3s filter linear,.3s -webkit-filter linear;
+        /* transition: .3s filter linear,.3s -webkit-filter linear; */
     }
     .loadimg {
-        filter: blur(2px);
+        filter: blur(3px)!important;
         background-color: white;
     }
     .doneimg{
-        filter: blur(0px);
-        transition: .1s filter linear,.1s -webkit-filter linear;
+        filter: blur(0px)!important;
+        transition: .1s filter linear,.1s -webkit-filter linear!important;
         /* transform: translateY(0) */
     }
     p{

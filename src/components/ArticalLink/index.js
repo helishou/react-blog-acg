@@ -1,25 +1,25 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-08-12 23:28:37
- * @LastEditTime : 2021-08-13 14:51:37
+ * @LastEditTime : 2021-08-14 21:29:52
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\components\ArticalLink\index.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import React from "react";
-import { Link ,withRouter} from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { actionCreators } from "../../pages/article/store";
 import { connect } from "react-redux";
 import axios from "axios";
-import NProgress from 'nprogress'
+import NProgress from "nprogress";
 function ArticalLink(props) {
   const processConfig = {
     trickleSpeed: 200,
     showSpinner: false,
     easing: "ease",
     speed: 500,
-    minimum:0.2
+    minimum: 0.2,
   };
   NProgress.configure(processConfig);
   const getArtical = (id) => {
@@ -45,30 +45,29 @@ function ArticalLink(props) {
               thumbnail: data.img_url,
             };
             props.setArtical(model);
-            resolve()
+            resolve();
           }
-        }).catch(error=>{
+        })
+        .catch((error) => {
           props.history.push("/404");
         });
     });
   };
   const onClick = async (e) => {
-    let flag=false
-    NProgress.start()
-    setTimeout(()=>{
-      if(!flag){
-        NProgress.inc(0.5)
-      }  
-    },2000)
-    e.preventDefault()
-    if(props.ArticleId!==props.id){
-      console.log(props.ArticleId,'props.ArticleId')
-      console.log(props.id,'props.id')
+    let flag = false;
+    NProgress.start();
+    setTimeout(() => {
+      if (!flag) {
+        NProgress.inc(0.5);
+      }
+    }, 2000);
+    e.preventDefault();
+    if (props.ArticleId !== props.id) {
       await getArtical(props.id);
     }
-    props.history.push("/article/" + props.id)
-    NProgress.done()
-    flag=true
+    props.history.push("/article/" + props.id);
+    NProgress.done();
+    flag = true;
     // } catch {
     //   this.props.history.push("/404");
     // }
@@ -77,7 +76,6 @@ function ArticalLink(props) {
     <Link
       to={{
         pathname: "/article/" + props.id,
-        state: { thumbnail: props.thumbnail },
       }}
       className={props.className}
       onClick={onClick}
@@ -90,7 +88,7 @@ const mapState = (state) => {
   return {
     //   topImg: state.getIn(["image", "bannerList"]),
     //   // thumbnail: state.getIn(["artical", "thumbnail"]),
-      ArticleId: state.getIn(["artical",'id']),
+    ArticleId: state.getIn(["artical", "id"]),
     // userInfo: state.getIn(["header", "userInfo"]),
   };
 };
