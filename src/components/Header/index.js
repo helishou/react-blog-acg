@@ -25,6 +25,7 @@ import { config } from "../../lib/auth";
 import axios from "axios";
 import openWindow from "../../lib/openWindow";
 import { menulist } from "../../lib/router.config";
+import isMobileBrowser from "../../utils/ismobli";
 class Header extends PureComponent {
   constructor(props) {
     super(props);
@@ -35,6 +36,7 @@ class Header extends PureComponent {
       isUser: false,
       menuList: menulist,
       loading: false,
+      mobile:isMobileBrowser()
     };
     this.handleClick = this.handleClick.bind(this);
     this.keypress = this.keypress.bind(this);
@@ -45,7 +47,7 @@ class Header extends PureComponent {
   }
 
   render() {
-    const { isVisible, value, open, isUser, menuList, loading } = this.state;
+    const { isVisible, value, open, isUser, menuList, loading,mobile } = this.state;
     const { category } = this.props;
     // console.log('category',category)
     const { title, domain } = this.props.confing.toJS();
@@ -67,7 +69,7 @@ class Header extends PureComponent {
                 </ruby>
               </a>
               {/* <a >{title}</a> */}
-              <Icon type="menu" onClick={this.openMonav} />
+              <Icon type="menu" onClick={this.openMonav} onMouseOver={this.preloadMonav}/>
             </NavLeft>
             <NavRight>
               {loading ? (
@@ -170,8 +172,8 @@ class Header extends PureComponent {
           </div>
           <div className="search_close" onClick={this.handleClick} />
         </div>
-        <Mask className={open ? "show" : "hidden"} onClick={this.openMonav} />
-        <MoNav className={open ? "mo-nav open" : "mo-nav"}>
+        <Mask className={open ? "show" : "hidden"} onClick={this.openMonav}/>
+        {mobile?<MoNav className={open ? "mo-nav open" : "mo-nav"}>
           <div className="m-avatar">
             <img src={avatar} alt="" />
           </div>
@@ -260,7 +262,7 @@ class Header extends PureComponent {
               }
             })}
           </ul>
-        </MoNav>
+        </MoNav>:null}
       </Headers>
     );
   }
@@ -359,7 +361,9 @@ class Header extends PureComponent {
       };
     });
   }
-
+  preloadMonav=()=>{
+    this.setState({mobile:true})
+  }
   handleClick() {
     this.setState((prevState) => ({
       isVisible: !prevState.isVisible,

@@ -376,9 +376,9 @@ export const MoNav = styled.div`
   overflow-y: scroll;
   -webkit-transform: translateX(-100%) translateY(0px);
   transform: translateX(-100%) translateY(0px);
-  @media (min-width: 768px){
+  /* @media (min-width: 768px){
     display: none;
-  }
+  } */
   &.open {
     transform: translateX(0px) translateY(0px);
     -webkit-transform: translateX(0px) translateY(0px);
