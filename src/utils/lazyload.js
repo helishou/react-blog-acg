@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-08-14 20:46:47
- * @LastEditTime : 2021-08-14 22:00:19
+ * @LastEditTime : 2021-08-15 00:21:13
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\utils\lazyload.js
@@ -16,6 +16,7 @@ export let picLazyLoad = function () {
         img.onload = () => {
           img.onload = null;
           img.setAttribute("class", "lazyload");
+          img.removeAttribute("lazyload");
         };
         observer.unobserve(img);
       }
