@@ -24,6 +24,7 @@ import {
 import { config } from "../../lib/auth";
 import axios from "axios";
 import openWindow from "../../lib/openWindow";
+import { menulist } from "../../lib/router.config";
 class Header extends PureComponent {
   constructor(props) {
     super(props);
@@ -32,7 +33,7 @@ class Header extends PureComponent {
       value: "",
       open: false,
       isUser: false,
-      menuList: [],
+      menuList: menulist,
       loading: false,
     };
     this.handleClick = this.handleClick.bind(this);
@@ -93,30 +94,6 @@ class Header extends PureComponent {
                         </span>
                       </Dropdown>
                     </NavItem>
-                    <NavItem>
-                      <Link to={"/archives"} className="nav-item">
-                        <i className="iconfont icon-archive" />
-                        <span>归档</span>
-                      </Link>
-                    </NavItem>
-                    <NavItem>
-                      <Link to={"/links"} className="nav-item">
-                        <i className="iconfont icon-link" />
-                        <span>友人帐</span>
-                      </Link>
-                    </NavItem>
-                    <NavItem>
-                      <Link to={"/tags"} className="nav-item">
-                        <i className="iconfont icon-tag" />
-                        <span>标签墙</span>
-                      </Link>
-                    </NavItem>
-                    {/* <NavItem>
-                      <Link to={"/tools/genshin"} className="nav-item">
-                        <Icon type="tool" theme="filled" />
-                        <span>工具</span>
-                      </Link>
-                    </NavItem> */}
                     {menuList.map((item, index) => {
                       if (item.child && item.child.length > 0) {
                         return (
@@ -144,15 +121,14 @@ class Header extends PureComponent {
                       } else {
                         return (
                           <NavItem key={index}>
-                            <a
-                              href={item.url}
-                              target={"_blank"}
-                              rel="noopener noreferrer"
-                              className="nav-item"
-                            >
-                              <Icon type={item.icon} theme="filled" />
+                            <Link to={item.url} className="nav-item">
+                              {item.icon ? (
+                                <i className={item.icon} />
+                              ) : (
+                                <Icon type={item.type}></Icon>
+                              )}
                               <span>{item.title}</span>
-                            </a>
+                            </Link>
                           </NavItem>
                         );
                       }
@@ -233,46 +209,6 @@ class Header extends PureComponent {
                 })}
               </ul>
             </li>
-            <li>
-              <Link
-                to={"/archives"}
-                className="item flex-items"
-                onClick={this.openMonav}
-              >
-                <i className="iconfont icon-archive" />
-                <span>归档</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={"/links"}
-                className="item flex-items"
-                onClick={this.openMonav}
-              >
-                <i className="iconfont icon-link" />
-                <span>友人帐</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={"/tags"}
-                className="item flex-items"
-                onClick={this.openMonav}
-              >
-                <i className="iconfont icon-tag" />
-                <span>标签墙</span>
-              </Link>
-            </li>
-            {/* <li>
-              <Link
-                to={"/tools/genshin"}
-                className="item flex-items"
-                onClick={this.openMonav}
-              >
-                <Icon type="tool" theme="filled" />
-                <span>工具</span>
-              </Link>
-            </li> */}
             {menuList.map((item, index) => {
               if (item.child && item.child.length > 0) {
                 return (
@@ -307,15 +243,18 @@ class Header extends PureComponent {
               } else {
                 return (
                   <li key={index}>
-                    <a
-                      href={item.url}
-                      target={"_blank"}
-                      rel="noopener noreferrer"
+                    <Link
+                      to={item.url}
                       className="item flex-items"
+                      onClick={this.openMonav}
                     >
-                      <Icon type={item.icon} theme="filled" />
+                      {item.icon ? (
+                        <i className={item.icon} />
+                      ) : (
+                        <Icon type={item.type} />
+                      )}
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </li>
                 );
               }
@@ -374,17 +313,17 @@ class Header extends PureComponent {
       540,
       540
     );
-    let cs=0
+    let cs = 0;
     let checkToken = () => {
-      cs++
+      cs++;
       if (typeof getToken() !== "undefined") {
         clearInterval(iv);
         message.success("登录成功");
         this.setState({ isUser: true });
-      }else if(cs>50){
+      } else if (cs > 50) {
         // 防止内存泄露
-        clearInterval(iv);  
-        cs=null
+        clearInterval(iv);
+        cs = null;
       }
     };
     let iv = setInterval(checkToken, 1000);
@@ -436,7 +375,10 @@ class Header extends PureComponent {
             // console.log(item)
             return (
               <Menu.Item key={index}>
-                <Link to={"/category/" + item.id}>{item.name}</Link>
+                <Link to={"/category/" + item.id}>
+                  {<Icon  style={{paddingRight:'0.5rem',marginLeft:'-0.5rem'}} type="cloud" theme={index&1?'filled':''}></Icon>}
+                  {item.name}
+                </Link>
               </Menu.Item>
             );
           })}

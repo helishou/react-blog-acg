@@ -81,7 +81,7 @@ class Comments extends Component {
           pageSize={5}
           // total={pageInfo.total}
         />
-        {isComment === 1 ? (
+        {1 ? (
           <CommentTextarea>
             <textarea
               placeholder="你是我一生只会遇见一次的惊喜 ..."
