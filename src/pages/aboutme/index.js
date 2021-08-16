@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-08-13 22:40:53
- * @LastEditTime : 2021-08-14 17:07:41
+ * @LastEditTime : 2021-08-16 19:17:20
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\pages\aboutme\index.js
@@ -149,22 +149,22 @@ export default class AboutMe extends Component {
       <Itemlayout title="关于我" timg={img}>
         <AboutWrapper>
           <div className="container-content revision">
-            <div class="v-container">
+            <div className="v-container">
               <article id="abount">
-                <div class="dialogue">
-                  <div class="dialogue-title">
-                    与&nbsp;
+                <div className="dialogue">
+                  <div className="dialogue-title">
+                    <span>与&nbsp;</span>
                     <ruby>
                       包子叔
                       <rt>こんにちは</rt>
                     </ruby>
                     <span>&nbsp;对话</span>
                   </div>
-                  <div class="dialogue-message">
+                  <div className="dialogue-message">
                     {this.state.dialogueMessage.map((item, index) => {
                       return (
-                        <div className={`send-message ${item.class}`}>
-                          <span key={index}>{item.message}</span>
+                        <div key={item.message} className={`send-message ${item.class}`}>
+                          <span>{item.message}</span>
                         </div>
                       );
                     })}
@@ -182,12 +182,6 @@ export default class AboutMe extends Component {
                   </div>
                 </div>
               </article>
-              <article
-                class="revision"
-                id="primary"
-                v-if="content"
-                v-html="content"
-              ></article>
             </div>
           </div>
         </AboutWrapper>
