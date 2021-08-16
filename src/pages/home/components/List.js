@@ -1,7 +1,7 @@
 import React, { Component} from "react";
 import { connect } from "react-redux";
 import { FeatureTitle, HomeList, BlogList } from "../style";
-import {  getTime } from "../../../lib/public";
+import {  getTime,loadImg } from "../../../lib/public";
 import PagInation from "../../../components/PagInation";
 import * as constants from "../store/constants";
 import axios from "axios";
@@ -30,7 +30,7 @@ const List = (props) => {
                 id={item.id}
                 className="post-title"
               >
-                <img lazyload={item.thumbnail} className='loadimg' alt="" />
+                <img lazyload={item.thumbnail} src={loadImg} className='loadimg' alt="" />
               </ArticalLink>
             </div>
             <div className="post-content-wrap">

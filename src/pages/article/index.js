@@ -190,6 +190,7 @@ class Article extends PureComponent {
               author: data.author,
               commentsList: data.comments,
               thumbnail: data.img_url,
+              views: data.meta.views,
             };
             this.props.setArtical(model);
             // http://img.netbian.com/file/2020/0407/small7e47965b793534d12b64e4ebdcd33cfa1586267701.jpg

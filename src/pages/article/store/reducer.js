@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-08-12 23:42:03
- * @LastEditTime : 2021-08-13 15:35:53
+ * @LastEditTime : 2021-08-16 14:53:12
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\pages\article\store\reducer.js
@@ -20,6 +20,7 @@ const defaultState = fromJS({
     author: '',
     commentsList: '',
     thumbnail: '',
+    views: '',
   });
 
 const setImage = (state, action) => {

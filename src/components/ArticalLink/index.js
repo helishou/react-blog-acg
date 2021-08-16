@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-08-12 23:28:37
- * @LastEditTime : 2021-08-14 21:29:52
+ * @LastEditTime : 2021-08-16 14:54:05
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\components\ArticalLink\index.js
@@ -43,6 +43,7 @@ function ArticalLink(props) {
               author: data.author,
               commentsList: data.comments,
               thumbnail: data.img_url,
+              views: data.meta.views,
             };
             props.setArtical(model);
             resolve();
