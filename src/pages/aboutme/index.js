@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-08-13 22:40:53
- * @LastEditTime : 2021-08-16 19:17:20
+ * @LastEditTime : 2021-08-18 10:47:10
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\pages\aboutme\index.js
@@ -10,7 +10,7 @@
 
 import { AboutWrapper, MyButton } from "./style";
 import Itemlayout from "../../components/Itemlayout";
-import img from "../../statics/images/691.png";
+import img from "../../statics/images/ayrgh-0yern.webp";
 import React, { Component } from "react";
 
 export default class AboutMe extends Component {

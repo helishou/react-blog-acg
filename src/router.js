@@ -1,14 +1,14 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-08-14 21:33:27
+ * @LastEditTime : 2021-08-18 11:17:53
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\router.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import React, { PureComponent } from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import {  Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import loadable from "./utils/loadable";
 import { menulist } from "./lib/router.config";

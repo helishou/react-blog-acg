@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-08-12 23:28:37
- * @LastEditTime : 2021-08-16 14:54:05
+ * @LastEditTime : 2021-08-18 11:13:21
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\components\ArticalLink\index.js
@@ -24,35 +24,38 @@ function ArticalLink(props) {
   NProgress.configure(processConfig);
   const getArtical = (id) => {
     //获取文章
-    return new Promise((resolve, reject) => {
-      axios
-        .post("/getArticleDetail", {
-          id: id,
-          type: 1,
-          filter: 2,
-        })
-        .then((res) => {
-          if (res.code === 0) {
-            let { data } = res;
-            let model = {
-              id: data._id,
-              title: data.title,
-              content: data.content,
-              comments: data.meta.comments,
-              createTime: data.create_time,
-              author: data.author,
-              commentsList: data.comments,
-              thumbnail: data.img_url,
-              views: data.meta.views,
-            };
-            props.setArtical(model);
-            resolve();
-          }
-        })
-        .catch((error) => {
-          props.history.push("/404");
+    return import("../../pages/article")
+      .then(() => {
+        return new Promise((resolve, reject) => {
+          axios
+            .post("/getArticleDetail", {
+              id: id,
+              type: 1,
+              filter: 2,
+            })
+            .then((res) => {
+              if (res.code === 0) {
+                let { data } = res;
+                let model = {
+                  id: data._id,
+                  title: data.title,
+                  content: data.content,
+                  comments: data.meta.comments,
+                  createTime: data.create_time,
+                  author: data.author,
+                  commentsList: data.comments,
+                  thumbnail: data.img_url,
+                  views: data.meta.views,
+                };
+                props.setArtical(model);
+                resolve();
+              }
+            });
         });
-    });
+      })
+      .catch((error) => {
+        props.history.push("/404");
+      });
   };
   const onClick = async (e) => {
     let flag = false;

@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-08-13 00:22:45
+ * @LastEditTime : 2021-08-18 11:01:43
  * @LastEditors  : helishou
  * @Description  : store
  * @FilePath     : \src\store\reducer.js
@@ -19,16 +19,14 @@ const image = () => {
         ],
         //首页banner图和内页顶部头图
         bannerList: [
-            // {img: 'https://image.bygit.cn/banner-1.png'},
-            // {img: 'https://image.bygit.cn/banner-2.png'},
-            // {img: 'https://image.bygit.cn/banner-3.png'},
-            // {img: 'https://image.bygit.cn/banner-4.png'},
             {img: '/assets/362e3fc0bb57fcc0cef6e4d73f0856f1.jpg.webp'},
             {img: '/assets/d8c29cad010447a75b0eaae4513f3780.jpg.webp'},
-            // {img: '/assets/[speed of light] COVER_77987370_p1.png.webp'},
+            {img: '/assets/cover1.png.webp'},
             {img: '/assets/78b1d42bf01a216ea8cea9569fe68da5.jpg.webp'},
+            // {img: '/assets/foQ5-2ergZmT3cSxc-ir.jpg.webp'},
+            // {img: '/assets/70150501_p0.jpg.webp'},
             {img: '/assets/AK-01.jpg.webp'},
-            {img: 'https://api.2heng.xin/cover/'}
+            // {img: 'https://api.2heng.xin/cover/'}
         ],
     }
 };
