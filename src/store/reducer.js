@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-08-18 11:01:43
+ * @LastEditTime : 2021-08-18 11:37:55
  * @LastEditors  : helishou
  * @Description  : store
  * @FilePath     : \src\store\reducer.js
@@ -19,13 +19,22 @@ const image = () => {
         ],
         //首页banner图和内页顶部头图
         bannerList: [
-            {img: '/assets/362e3fc0bb57fcc0cef6e4d73f0856f1.jpg.webp'},
-            {img: '/assets/d8c29cad010447a75b0eaae4513f3780.jpg.webp'},
-            {img: '/assets/cover1.png.webp'},
-            {img: '/assets/78b1d42bf01a216ea8cea9569fe68da5.jpg.webp'},
-            // {img: '/assets/foQ5-2ergZmT3cSxc-ir.jpg.webp'},
-            // {img: '/assets/70150501_p0.jpg.webp'},
-            {img: '/assets/AK-01.jpg.webp'},
+            // {img: '/assets/362e3fc0bb57fcc0cef6e4d73f0856f1.jpg.webp'},
+            // {img: 'https://images5.alphacoders.com/107/1074486.jpg'},
+            {img: 'https://images.alphacoders.com/107/1070339.jpg'},
+            // {img: '/assets/d8c29cad010447a75b0eaae4513f3780.jpg.webp'},
+            // {img: '/assets/78b1d42bf01a216ea8cea9569fe68da5.jpg.webp'},
+            // {img: '/assets/AK-01.jpg.webp'},
+            {img: 'https://images7.alphacoders.com/875/thumb-1920-875794.jpg'},
+            {img: 'https://images2.alphacoders.com/107/thumb-1920-1073171.jpg'},
+            {img: 'https://images2.alphacoders.com/104/thumb-1920-1041382.png'},
+            {img: 'https://images2.alphacoders.com/107/thumb-1920-1073172.jpg'},
+            {img: 'https://images5.alphacoders.com/108/thumb-1920-1080109.jpg'},
+            {img: 'https://images4.alphacoders.com/107/thumb-1920-1071053.jpg'},
+            {img: 'https://images5.alphacoders.com/112/thumb-1920-1121158.jpg'},
+            {img: 'https://images8.alphacoders.com/106/thumb-1920-1064494.jpg'},
+            {img: 'https://images5.alphacoders.com/114/thumb-1920-1141313.jpg'},
+            
             // {img: 'https://api.2heng.xin/cover/'}
         ],
     }
