@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-31 09:30:07
- * @LastEditTime : 2021-07-17 00:02:51
+ * @LastEditTime : 2021-08-18 18:58:44
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\pages\home\store\actionCreators.js
@@ -19,24 +19,23 @@ const setFeature = (data) => ({
 export const getFeature = () => {
   //首页三个推荐
   return (dispatch) => {
-    axios
-      .get("getProjectList")
-      .then(function (res) {
-        let datas = res.data.list;
-        let models = [];
-        datas.map((data, index) => {
-          // console.log(data)
-          let model = {
-            id: data._id,
-            title: data.title,
-            summary: data.desc,
-            thumbnail:data.img_url
-          };
-          models.unshift(model);
-        });
-        if (res.code === 0) {
-          dispatch(setFeature(models));
-        }
+    axios.get("getProjectList").then(function (res) {
+      let datas = res.data.list;
+      let models = [];
+      datas.map((data, index) => {
+        // console.log(data)
+        let model = {
+          id: data._id,
+          title: data.title,
+          summary: data.desc,
+          thumbnail: data.img_url,
+        };
+        models.unshift(model);
+        return null;
       });
+      if (res.code === 0) {
+        dispatch(setFeature(models));
+      }
+    });
   };
 };
