@@ -70,7 +70,7 @@ class Header extends PureComponent {
             <NavRight>
               {loading ? (
                 <div className="flex-items">
-                  <Nav className="flex-items">
+                  <Nav className="flex-items menulist">
                     <NavItem>
                       <Link to={"/"} className="nav-item">
                         <i className="iconfont icon-fort-awesome" />

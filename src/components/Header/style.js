@@ -1,13 +1,25 @@
 import styled from "styled-components";
 // import ayuda from "../../statics/images/ayuda.cur"
 export const Headers = styled.div`
+  /* .menulist {
+    opacity: 0;
+    transition: visibility 0.25s ease, opacity 0.25s ease;
+  } */
   .ant-affix {
     z-index: 999;
+    /* .menulist {
+      opacity: 1;
+    } */
     .nav-wrapper {
       background: rgba(255, 255, 255, 0.95);
       box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
     }
   }
+  /* &:hover {
+    .menulist {
+      opacity: 1;
+    }
+  } */
   .search-form--modal {
     -webkit-transition: visibility 0.25s ease, opacity 0.25s ease;
     -moz-transition: visibility 0.25s ease, opacity 0.25s ease;
@@ -189,7 +201,7 @@ export const NavLeft = styled.div`
   .sakuraso {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
-    color: '#464646';
+    color: "#464646";
     height: auto;
     line-height: 25px;
     margin-right: 0;

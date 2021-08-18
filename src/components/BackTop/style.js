@@ -1,10 +1,10 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-07-06 10:52:12
+ * @LastEditTime : 2021-08-18 19:45:26
  * @LastEditors  : helishou
  * @Description  : 
- * @FilePath     : d:\desk\sakura\react-blog-acg\src\components\BackTop\style.js
+ * @FilePath     : \src\components\BackTop\style.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import styled from "styled-components";
@@ -21,7 +21,7 @@ export const Top = styled.div`
         transition: all .5s 0.3s ease-in-out;
         cursor: url(${require('../../statics/images/ayuda.cur')}),auto;
         -webkit-animation: float 2s linear infinite;
-        animation: float 2s linear infinite
+        animation: float 2s linear infinite;
         @media(max-width:768px){
             display:none;
         }
