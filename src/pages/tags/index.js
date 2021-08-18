@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-31 09:30:07
- * @LastEditTime : 2021-08-13 15:40:03
+ * @LastEditTime : 2021-08-18 18:49:41
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\pages\tags\index.js
@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 import { Spin, Tag } from "antd";
-import { TagsWrapper, TagsTop, MainWrapper } from "./style";
+import {  MainWrapper } from "./style";
 import Itemlayout from "../../components/Itemlayout";
 const TagsList = (props) => {
   const { list, loading } = props;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { CommentsWrapper, CommentTextarea } from "../style";
-import { getFormatTime, getTime } from "../../../lib/public";
+import {  getTime } from "../../../lib/public";
 import { Pagination, message } from "antd";
 import axios from "axios";
 import { loginGithubHandel, config } from "../../../lib/auth";
@@ -27,7 +27,7 @@ class Comments extends Component {
   }
 
   render() {
-    const {  id, commentsList, isComment } = this.state;
+    const {  id, commentsList } = this.state;
     // console.log(pageInfo)
     return (
       <CommentsWrapper>
@@ -170,7 +170,7 @@ class Comments extends Component {
   }
 
   addComments() {
-    const { value, id, parentId, preContent, preUserID } = this.state;
+    const { value, id } = this.state;
     const _id = getToken();
     if (!_id) {
       message.error("请先登录");

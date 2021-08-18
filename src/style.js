@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import gif from './statics/images/HorseRaceLamp.gif'
 export const GlobalStyle = createGlobalStyle`
     ::selection {
         background: #A0DAD0;

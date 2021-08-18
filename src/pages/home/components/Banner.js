@@ -5,7 +5,7 @@ import leetcode from "../../../statics/images/leetcode.svg";
 import wechat from "../../../statics/images/wechat.png";
 import github from "../../../statics/images/github.png";
 import gitee from "../../../statics/images/gitee.png";
-
+import next from "../../../statics/images/next-b.svg"
 class Banner extends PureComponent {
   constructor(props) {
     super(props);
@@ -57,7 +57,7 @@ class Banner extends PureComponent {
                 <li onClick={this.props.getBanner}>
                   <img
                     className="flipx"
-                    src={require("../../../statics/images/next-b.svg")}
+                    src={next}
                     alt=""
                   />
                 </li>
@@ -101,7 +101,7 @@ class Banner extends PureComponent {
                 })}
                 <li onClick={this.props.getBanner}>
                   <img
-                    src={require("../../../statics/images/next-b.svg")}
+                    src={next}
                     alt=""
                   />
                 </li>

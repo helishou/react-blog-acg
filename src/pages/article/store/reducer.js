@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-08-12 23:42:03
- * @LastEditTime : 2021-08-16 14:53:12
+ * @LastEditTime : 2021-08-18 19:10:35
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\pages\article\store\reducer.js
@@ -9,7 +9,6 @@
  */
 import { fromJS } from "immutable";
 import * as constants from "./constants";
-import axios from "axios";
 // import { push } from 'react-router-redux'
 const defaultState = fromJS({
     id: '',
@@ -30,7 +29,7 @@ const setImage = (state, action) => {
 };
 
 
-export default (state = defaultState, action) => {
+const reducer= (state = defaultState, action) => {
   switch (action.type) {
     case constants.GET_ARTICAL:
       return action.data;
@@ -40,3 +39,4 @@ export default (state = defaultState, action) => {
       return state;
   }
 };
+export default reducer

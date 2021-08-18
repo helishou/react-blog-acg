@@ -17,12 +17,8 @@ import { Icon, Menu, Dropdown, Affix, message } from "antd";
 import {
   getAvatar,
   getToken,
-  setAvatar,
-  setToken,
-  setName,
 } from "../../lib/auth";
 import { config } from "../../lib/auth";
-import axios from "axios";
 import openWindow from "../../lib/openWindow";
 import { menulist } from "../../lib/router.config";
 import isMobileBrowser from "../../utils/ismobli";

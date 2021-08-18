@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
-import { LinksWrapper, LinksTop, MainWrapper } from "./style";
+import {  MainWrapper } from "./style";
 import axios from "axios";
 import Itemlayout from "../../components/Itemlayout";
 import { Spin, Anchor } from "antd";

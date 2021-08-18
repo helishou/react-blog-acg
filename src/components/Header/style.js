@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+// import ayuda from "../../statics/images/ayuda.cur"
 export const Headers = styled.div`
   .ant-affix {
     z-index: 999;
@@ -100,7 +100,7 @@ export const Headers = styled.div`
     visibility: visible;
     opacity: 0.99;
     animation: elastic 0.5s;
-    background-image: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.2.1/img/other/iloli.gif);
+    background-image: url("https://cdn.jsdelivr.net/gh/moezx/cdn@3.2.1/img/other/iloli.gif");
     background-repeat: no-repeat;
     background-position: bottom right;
   }
@@ -147,17 +147,17 @@ export const Headers = styled.div`
 `;
 
 export const NavWrapper = styled.div`
-    width: 100%;
-    height: 75px;
-    position:fixed;
-    top:0;
-    padding:0 30px
-    z-index:999;
-    transition: all .4s ease;
-    @media (max-width: 768px){
-        height: 50px;
-        padding:0 15px
-    }
+  width: 100%;
+  height: 75px;
+  position: fixed;
+  top: 0;
+  padding: 0 30px;
+  z-index: 999;
+  transition: all 0.4s ease;
+  @media (max-width: 768px) {
+    height: 50px;
+    padding: 0 15px;
+  }
 `;
 
 export const NavLeft = styled.div`
@@ -189,7 +189,7 @@ export const NavLeft = styled.div`
   .sakuraso {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
-    color: #464646;
+    color: '#464646';
     height: auto;
     line-height: 25px;
     margin-right: 0;
@@ -211,7 +211,7 @@ export const NavLeft = styled.div`
     font-size: 10px;
     transform: translateY(-8px);
     opacity: 0;
-    transiton-property: opacity;
+    transition-property: opacity;
     transition-duration: 0.5s, 0.5s;
   }
   i {
@@ -248,11 +248,11 @@ export const NavLeft = styled.div`
   }
   @keyframes action {
     from {
-      transform: rotate(0deg) translate(0px) ;
+      transform: rotate(0deg) translate(0px);
     }
 
     to {
-      transform: rotate(360deg) translate(0px) ;
+      transform: rotate(360deg) translate(0px);
     }
   }
 `;

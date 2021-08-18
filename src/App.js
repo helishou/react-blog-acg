@@ -1,10 +1,10 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-07-15 11:05:13
+ * @LastEditTime : 2021-08-18 18:48:27
  * @LastEditors  : helishou
  * @Description  : 主入口
- * @FilePath     : d:\desk\sakura\react-blog-acg\src\App.js
+ * @FilePath     : \src\App.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import React, { PureComponent } from "react";
@@ -18,7 +18,7 @@ import Header from "./components/Header";
 import ToTop from "./components/BackTop";
 import Router from "./router";
 import loadable from "./utils/loadable";
-import { Redirect, Route, Switch } from "react-router-dom";
+import {  Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import Music from "./components/Music";
 // import axios from "axios";

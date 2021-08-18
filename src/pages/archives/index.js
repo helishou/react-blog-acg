@@ -127,6 +127,7 @@ class Archives extends PureComponent {
             createTime: item.create_time,
             updateTime: item.create_time,
           });
+          return null
         });
         models.push({
           articleTotal: data.count,
@@ -134,6 +135,7 @@ class Archives extends PureComponent {
           archiveMonth: parseInt(item.yearMonth.slice(4)) + 1,
           archivePosts: archivePosts,
         });
+        return null
       });
       // console.log('models',models)
       if (res.code === 0) {

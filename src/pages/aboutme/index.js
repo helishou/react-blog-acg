@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-08-13 22:40:53
- * @LastEditTime : 2021-08-18 10:47:10
+ * @LastEditTime : 2021-08-18 18:57:15
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\pages\aboutme\index.js
@@ -39,6 +39,9 @@ export default class AboutMe extends Component {
     this.setState({ dialogueButton: [] });
     this.next({ message: item.message, class: "you" });
     switch (item.id) {
+      default:
+        this.next('忘记写id了')
+        break
       case 1:
         this.next(
           {

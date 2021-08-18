@@ -13,6 +13,7 @@ export const getCategory = () => {
       let list = res.data.list;
       list.map((item, index) => {
         item.id = item._id;
+        return null
       });
       if (res.message === "success") {
         dispatch(changeCategory(res.data.list));

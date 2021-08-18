@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-30 14:44:09
- * @LastEditTime : 2021-08-18 11:17:29
+ * @LastEditTime : 2021-08-18 19:10:02
  * @LastEditors  : helishou
  * @Description  : 
  * @FilePath     : \src\utils\loadable.js
@@ -14,9 +14,10 @@ const loadingComponent = () => {
   return <Itemlayout></Itemlayout>;
 };
 
-export default (loader, loading = loadingComponent) => {
+const loadable= (loader, loading = loadingComponent) => {
   return Loadable({
     loader,
     loading,
   });
 };
+export default loadable
