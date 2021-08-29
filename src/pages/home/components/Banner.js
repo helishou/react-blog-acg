@@ -114,6 +114,7 @@ class Banner extends PureComponent {
   }
 
   componentDidMount() {
+    // console.log('bannamount')
     // axios.get('https://www.bygit.cn/api/blog/auth/social/v1/info').then((res) => {
     //     if (res.success === 1) {
     // const {models} = res;
@@ -178,8 +179,10 @@ class Banner extends PureComponent {
       info: array,
     });
   }
-  //     });
-  // }
+
+// componentWillUnmount(){
+//     console.log('baba销毁')
+// }
 }
 
 function headertop_down() {

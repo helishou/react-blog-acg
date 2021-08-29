@@ -1,3 +1,12 @@
+<!--
+ * @Author       : helishou
+ * @Date         : 2021-05-30 14:44:09
+ * @LastEditTime : 2021-08-29 21:12:56
+ * @LastEditors  : helishou
+ * @Description  : 
+ * @FilePath     : \public\index.html
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,36 +23,66 @@
     />
     <meta http-equiv="Access-Control-Allow-Origin" content="*" />
     <meta name="description" content="这是河狸兽的包子铺" />
+    <script type="text/javascript">
+      window.onerror = function (message, source, lineno, colno, error) {
+        console.log(`****window.onerror****`);
+        console.log("错误信息提示:", message);
+        console.log("错误脚本地址:", source); //
+        console.log("错误代码行号:", lineno);
+        console.log("错误代码列号:", colno);
+        console.log("错误的对象信息:", error);
+        console.log(`************************`);
+      };
+
+      //捕获promise的unhandelerejection
+      window.addEventListener("unhandledrejection", (e) => {
+        e.preventDefault();
+        console.log("promise reject:", e.reason);
+        return true;
+      });
+
+      window.addEventListener(
+        "error",
+        (error) => {
+          if (!error.message) {
+            console.log("网络资源加载错误", error);
+          }
+        },
+        true
+      );
+
+      //页面不正常退出的错误收集
+      window.addEventListener("load", () => {
+        sessionStorage.setItem("good_exit", "pending");
+      });
+
+      window.addEventListener("beforeunload", () => {
+        sessionStorage.setItem("good_exit", "true");
+      });
+
+      if (
+        sessionStorage.getItem("good_exit") &&
+        sessionStorage.getItem("good_exit") !== "true"
+      ) {
+        console.log("捕获到页面崩溃");
+      }
+
+      //框架信息错误处理
+      const nativeConsoleError = window.console.error;
+      window.console.error = (...args) =>
+        nativeConsoleError.apply(this, [`I GOT ${args}`]);
+    </script>
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link
       rel="stylesheet"
       href="//at.alicdn.com/t/font_1569838_jvrdyorwtit.css"
     />
-    <title></title>
-    <script type="text/javascript" src="/js/errorMonitor.js"></script>
-    <script type="text/javascript" src="/assets/jquery.min.js"></script>
-    <!-- <script type="text/javascript">
-          paceOptions = {
-            // Disable the 'elements' source
-            elements: false,
-            ajax: false, // disabled
-            document: false, // disabled
-            eventLag: false, // disabled
-            elements: {
-              selectors: ['.my-page']
-            },
-            // Only show the progress on regular and ajax-y page navigation,
-            // not every request
-            restartOnRequestAfter: false
-          }
-    </script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script> -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/nprogress@0.2.0/nprogress.css" /> -->
-    <!-- <link rel="stylesheet" href="/assets/pace-theme-minimal.css" /> -->
+    <title>包子铺</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script type="text/javascript" src="/assets/jquery.min.js"></script>
     <canvas id="fireworks"></canvas>
     <script type="text/javascript">
       $(document).ready(function () {

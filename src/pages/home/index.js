@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-08-13 18:51:54
+ * @LastEditTime : 2021-08-20 00:25:31
  * @LastEditors  : helishou
  * @Description  : home
  * @FilePath     : \src\pages\home\index.js
@@ -42,10 +42,15 @@ class Home extends PureComponent {
     }
 
     componentDidMount() {
+        // console.log('index创建')
         this.changeInnerHeight();
         this.getBanner();
         // this.props.getFeature();
     }
+
+    // componentWillUnmount(){
+    //     console.log('index销毁')
+    // }
 
     getBanner() {
         const banner = this.props.bannerList;
