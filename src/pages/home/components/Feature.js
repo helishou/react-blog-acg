@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-08-13 14:19:19
+ * @LastEditTime : 2021-08-31 22:38:18
  * @LastEditors  : helishou
  * @Description  : 项目展示列表
  * @FilePath     : \src\pages\home\components\Feature.js
@@ -22,7 +22,7 @@ const featureList = (props) => {
       summary:
         "此项目为一个前后台分离的的 SPA, 包括前端跨端展示应用,后端应用,前端后台管理应用,采用模块化、组件化、工程化的模式开发。",
       thumbnail:
-        "https://www.wangxinyang.xyz/cloudDisk/small7e47965b793534d12b64e4ebdcd33cfa1586267701.jpg.webp",
+        "https://wxy-picture.oss-cn-hangzhou.aliyuncs.com/thumb-1920-1107810.jpg?x-oss-process=style/shape",
     },
     {
       id: "60c027af538f510268ba51b4",
@@ -30,7 +30,7 @@ const featureList = (props) => {
       summary:
         "1. 此项目为一个前后台分离的后台管理的 SPA, 包括前端 PC 应用和后端应用 2. 包括用户管理 / 商品分类管理 / 商品管理 / 权限管理等功能模块 3. 前端: 使用 React 全家桶 + Antd + Axios + ES6 + Webpack + typescript + less 等技术 4. 后端: 使用 Node + Express + Mongodb 等技术 5. 采用模块化、组件化、工程化的模式开发",
       thumbnail:
-        "https://www.wangxinyang.xyz/cloudDisk/small6a819ea7150c70fb01ea89ec9b0f85b61568078170.jpg.webp",
+        "https://wxy-picture.oss-cn-hangzhou.aliyuncs.com/thumb-1920-1112818.jpg?x-oss-process=style/shape",
     },
     {
       id: "60bed39f538f510268ba51b2",
@@ -38,7 +38,7 @@ const featureList = (props) => {
       summary:
         "1. 此项目为一个播放视频的NativeApp，因设备所限，仅实现了android端 2. 包括搜索 / 视频播放 / 弹幕 / 用户空间 等功能模块 3. 使用 ReactNative + reactHooks + Axios + ES6 + Webpack 等技术 4. 采用模块化、组件化、工程化的模式开发",
       thumbnail:
-        "https://www.wangxinyang.xyz/cloudDisk/small1c34660a6917f03b1249f8a1923d36ef1573698572.jpg.webp",
+        "https://wxy-picture.oss-cn-hangzhou.aliyuncs.com/thumb-1920-1109233.jpg?x-oss-process=style/shape",
     },
   ];
   return (
