@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-08-31 22:38:18
+ * @LastEditTime : 2021-08-31 23:08:39
  * @LastEditors  : helishou
  * @Description  : 项目展示列表
  * @FilePath     : \src\pages\home\components\Feature.js
@@ -28,7 +28,7 @@ const featureList = (props) => {
       id: "60c027af538f510268ba51b4",
       title: "电商后台管理系统",
       summary:
-        "1. 此项目为一个前后台分离的后台管理的 SPA, 包括前端 PC 应用和后端应用 2. 包括用户管理 / 商品分类管理 / 商品管理 / 权限管理等功能模块 3. 前端: 使用 React 全家桶 + Antd + Axios + ES6 + Webpack + typescript + less 等技术 4. 后端: 使用 Node + Express + Mongodb 等技术 5. 采用模块化、组件化、工程化的模式开发",
+        "此项目为一个前后台分离的后台管理的 SPA, 包括前端 PC 应用和后端应用,包括用户管理 / 商品分类管理 / 商品管理 / 权限管理等功能模块,前端: 使用 React 全家桶 + Antd + Axios + ES6 + Webpack + typescript + less 等技术 4. 后端: 使用 Node + Express + Mongodb 等技术 5. 采用模块化、组件化、工程化的模式开发",
       thumbnail:
         "https://wxy-picture.oss-cn-hangzhou.aliyuncs.com/thumb-1920-1112818.jpg?x-oss-process=style/shape",
     },
@@ -36,7 +36,7 @@ const featureList = (props) => {
       id: "60bed39f538f510268ba51b2",
       title: "Bilibili客户端的ReactNative版本(demo)",
       summary:
-        "1. 此项目为一个播放视频的NativeApp，因设备所限，仅实现了android端 2. 包括搜索 / 视频播放 / 弹幕 / 用户空间 等功能模块 3. 使用 ReactNative + reactHooks + Axios + ES6 + Webpack 等技术 4. 采用模块化、组件化、工程化的模式开发",
+        "此项目为一个播放视频的NativeApp，因设备所限，仅实现了android端,包括搜索 / 视频播放 / 弹幕 / 用户空间 等功能模块,使用 ReactNative + reactHooks + Axios + ES6 + Webpack 等技术 4. 采用模块化、组件化、工程化的模式开发",
       thumbnail:
         "https://wxy-picture.oss-cn-hangzhou.aliyuncs.com/thumb-1920-1109233.jpg?x-oss-process=style/shape",
     },
