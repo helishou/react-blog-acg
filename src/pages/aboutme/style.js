@@ -26,7 +26,7 @@ export const AboutWrapper = styled.div`
     background-color: #f8f8f8;
   }
   .v-container {
-    max-width: 850px !important;
+    max-width: 768px !important;
     margin: 0 auto;
   }
   .container-content {

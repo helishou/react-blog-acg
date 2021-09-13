@@ -168,7 +168,7 @@ export const Center = styled.div`
 
 export const Focusinfo = styled.div`
   position: relative;
-  max-width: 800px;
+  max-width: 768px;
   padding: 0 10px;
   top: 49.3%;
   left: 50%;

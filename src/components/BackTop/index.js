@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-30 14:44:09
- * @LastEditTime : 2021-09-13 18:26:26
+ * @LastEditTime : 2021-09-13 19:51:32
  * @LastEditors  : helishou
  * @Description  : 
  * @FilePath     : \src\components\BackTop\index.js
@@ -11,6 +11,7 @@ import React, {PureComponent} from "react";
 import {Top} from './style';
 import {BackTop} from 'antd';
 import backImg from '../../assets/images/scroll.png'
+import throttle from '../../utils/throttle'
 class ToTop extends PureComponent {
     constructor(props) {
         super(props);
@@ -35,12 +36,12 @@ class ToTop extends PureComponent {
     }
 
     componentDidMount() {
-        window.onscroll = () => {
+        window.onscroll = throttle(() => {
             let t = document.documentElement.scrollTop || document.body.scrollTop;
             this.setState({
                 gotoTop: t > 600
             })
-        }
+        },1000)
     }
 
     toTopfun() {

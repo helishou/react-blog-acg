@@ -290,7 +290,7 @@ export const Nav = styled.ul`
 `;
 
 export const NavItem = styled.li`
-  padding: 0 15px;
+  padding: 0 1rem;
   .nav-item {
     display: block;
     color: #666666;
