@@ -1,5 +1,14 @@
 /*
  * @Author       : helishou
+ * @Date         : 2021-05-30 14:44:09
+ * @LastEditTime : 2021-09-13 18:25:28
+ * @LastEditors  : helishou
+ * @Description  : 
+ * @FilePath     : \src\components\BackTop\style.js
+ * 你用你的指尖,阻止我说再见,在bug完全失去之前
+ */
+/*
+ * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
  * @LastEditTime : 2021-08-18 19:45:26
  * @LastEditors  : helishou
@@ -19,7 +28,7 @@ export const Top = styled.div`
         width: 70px;
         height: 900px;
         transition: all .5s 0.3s ease-in-out;
-        cursor: url(${require('../../statics/images/ayuda.cur')}),auto;
+        cursor: url(${require('../../assets/images/ayuda.cur')}),auto;
         -webkit-animation: float 2s linear infinite;
         animation: float 2s linear infinite;
         @media(max-width:768px){

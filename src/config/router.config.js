@@ -4,7 +4,7 @@
  * @LastEditTime : 2021-08-14 16:51:16
  * @LastEditors  : helishou
  * @Description  :
- * @FilePath     : \src\lib\router.config.js
+ * @FilePath     : \src\utils\router.config.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import loadable from "../utils/loadable";

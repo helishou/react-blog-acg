@@ -1,14 +1,15 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FeatureTitle, HomeList, BlogList } from "../style";
-import {  getTime,loadImg } from "../../../lib/public";
+import { getTime } from "../../../utils/formdata";
+import { loadImg } from "../../../config/const.config";
 import PagInation from "../../../components/PagInation";
 import * as constants from "../store/constants";
 import axios from "axios";
 import { fromJS } from "immutable";
 // import preload from "../../../utils/preload";
 import ArticalLink from "../../../components/ArticalLink";
-import {picLazyLoad} from '../../../utils/lazyload'
+import { picLazyLoad } from "../../../utils/lazyload";
 const List = (props) => {
   const { blogList } = props;
   const list = blogList.toJS();
@@ -26,11 +27,13 @@ const List = (props) => {
             key={index}
           >
             <div className="post-thumb">
-              <ArticalLink
-                id={item.id}
-                className="post-title"
-              >
-                <img lazyload={item.thumbnail} src={loadImg} className='loadimg' alt="" />
+              <ArticalLink id={item.id} className="post-title">
+                <img
+                  lazyload={item.thumbnail}
+                  src={loadImg}
+                  className="loadimg"
+                  alt=""
+                />
               </ArticalLink>
             </div>
             <div className="post-content-wrap">
@@ -39,10 +42,7 @@ const List = (props) => {
                   <i className="iconfont icon-time" />
                   发布于 {getTime(item.createTime)}
                 </div>
-                <ArticalLink
-                  id={item.id}
-                  className="post-title"
-                >
+                <ArticalLink id={item.id} className="post-title">
                   <h3>{item.title}</h3>
                 </ArticalLink>
                 <div className="post-meta">
@@ -104,7 +104,7 @@ class ListWrapper extends Component {
     if (!this.props.isList) {
       this.props.getBlogList(1, true);
     }
-    picLazyLoad()
+    picLazyLoad();
   }
 }
 
@@ -154,7 +154,7 @@ const list = (thumbList, data) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    getBlogList(page, override,number=200) {
+    getBlogList(page, override, number = 200) {
       dispatch({ type: constants.LOADING_TRUE });
       axios
         .get("/getArticleList?state=1", {
@@ -171,7 +171,7 @@ const mapDispatch = (dispatch) => {
             dispatch(setBlogList(data, page + 1, override));
             if (current > total) dispatch(setfinished());
           }
-          picLazyLoad()
+          picLazyLoad();
         });
     },
   };

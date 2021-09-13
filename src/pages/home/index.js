@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-08-20 00:25:31
+ * @LastEditTime : 2021-09-13 18:40:16
  * @LastEditors  : helishou
  * @Description  : home
  * @FilePath     : \src\pages\home\index.js
@@ -14,7 +14,7 @@ import Feature from "./components/Feature";
 import {HomeWrapper, MainWrapper} from './style';
 // import {actionCreators} from "./store";
 import {connect} from "react-redux";
-import {getrand} from "../../lib/public";
+import {getrand} from "../../utils/formdata";
 
 class Home extends PureComponent {
     constructor(props) {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import hr from '../../statics/images/hr.gif';
+import hr from '../../assets/images/hr.gif';
 
 export const ArticleWrapper = styled.div`
     .pattern-center-blank{
@@ -540,7 +540,7 @@ export const CommentsWrapper = styled.div`
                     line-height: 20px;
                     padding: 0 6px;
                     border-radius: 3px;
-                    cursor: url(${require('../../statics/images/ayuda.cur')}),auto;
+                    cursor: url(${require('../../assets/images/ayuda.cur')}),auto;
                     opacity: 0;
                     transition: color .2s ease-out,border .2s ease-out,opacity .2s ease-out;
                 }
@@ -658,7 +658,7 @@ export const CommentTextarea = styled.div`
             box-shadow: none;
             border: 1px solid #ccc;
             text-shadow: none;
-            cursor: url(${require('../../statics/images/ayuda.cur')}),auto;
+            cursor: url(${require('../../assets/images/ayuda.cur')}),auto;
         }
         input:hover{
             border: 1px solid #FE9600;

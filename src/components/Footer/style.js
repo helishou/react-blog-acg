@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logo from '../../statics/images/sakura.svg';
+import logo from '../../assets/images/sakura.svg';
 
 export const Footers = styled.footer`
     padding: 2%;

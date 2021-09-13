@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-06-02 09:02:40
- * @LastEditTime : 2021-08-13 15:36:54
+ * @LastEditTime : 2021-09-13 18:34:38
  * @LastEditors  : helishou
  * @Description  :
  * @FilePath     : \src\pages\login\index.js
@@ -9,7 +9,7 @@
  */
 import React, { useEffect } from "react";
 import axios from "axios";
-import {  setAvatar, setToken, setName } from "../../lib/auth";
+import {  setAvatar, setToken, setName } from "../../utils/auth";
 import {  message } from "antd";
 import { withRouter } from "react-router";
 import { Wrapper } from "./style";

@@ -1,10 +1,10 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-30 14:44:09
- * @LastEditTime : 2021-08-16 14:58:10
+ * @LastEditTime : 2021-09-13 18:40:10
  * @LastEditors  : helishou
  * @Description  : 
- * @FilePath     : \src\lib\public.js
+ * @FilePath     : \src\utils\formdata.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 export const getTime = (time) => {
@@ -65,4 +65,3 @@ export const getrand = (m, n) => {
     return Math.floor(Math.random() * (n - m + 1)) + m;
 };
 
-export const loadImg='https://cdn.jsdelivr.net/gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loader.svg'

@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-24 09:00:06
- * @LastEditTime : 2021-08-31 23:08:39
+ * @LastEditTime : 2021-09-13 18:40:19
  * @LastEditors  : helishou
  * @Description  : 项目展示列表
  * @FilePath     : \src\pages\home\components\Feature.js
@@ -11,7 +11,7 @@ import React from "react";
 import ArticalLink from "../../../components/ArticalLink";
 import { FeatureWrapper, FeatureTitle } from "../style";
 import { Row, Col } from "antd";
-import { getrand } from "../../../lib/public";
+import { getrand } from "../../../utils/formdata";
 import preload from "../../../utils/preload";
 const featureList = (props) => {
   const { ListImg } = props;

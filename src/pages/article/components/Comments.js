@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { CommentsWrapper, CommentTextarea } from "../style";
-import {  getTime } from "../../../lib/public";
+import {  getTime } from "../../../utils/formdata";
 import { Pagination, message } from "antd";
 import axios from "axios";
-import { loginGithubHandel, config } from "../../../lib/auth";
-import openWindow from "../../../lib/openWindow";
-import { getToken, getAvatar, getName } from "../../../lib/auth";
+import { loginGithubHandel, config } from "../../../utils/auth";
+import openWindow from "../../../utils/openWindow";
+import { getToken, getAvatar, getName } from "../../../utils/auth";
 class Comments extends Component {
   constructor(props) {
     super(props);

@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-30 14:44:09
- * @LastEditTime : 2021-08-13 15:38:57
+ * @LastEditTime : 2021-09-13 18:40:12
  * @LastEditors  : helishou
  * @Description  : 
  * @FilePath     : \src\components\List\index.js
@@ -9,7 +9,7 @@
  */
 import React from "react";
 import { SiteMain } from "./style";
-import { getTime } from "../../lib/public";
+import { getTime } from "../../utils/formdata";
 import ArticalLink from "../ArticalLink";
 const CatList = (props) => {
   let { list } = props;

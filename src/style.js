@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     body{
         font-family: 'Noto Serif SC','Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif;
-        cursor: url(${require("./statics/images/normal.cur")}),auto
+        cursor: url(${require("./assets/images/normal.cur")}),auto
     }
 	html, body, div, span, applet, object, iframe,
 	h1, h2, h3, h4, h5, h6, p, blockquote, 
@@ -52,7 +52,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	a{
         transition: color .2s ease-out,border .2s ease-out,opacity .2s ease-out;
-        cursor: url(${require("./statics/images/ayuda.cur")}),auto;
+        cursor: url(${require("./assets/images/ayuda.cur")}),auto;
 	}
 	a:hover{
 	    text-decoration: none;
@@ -77,7 +77,7 @@ export const GlobalStyle = createGlobalStyle`
         /* transform: translateY(0) */
     }
     p{
-        cursor: url(${require("./statics/images/texto.cur")}),auto;
+        cursor: url(${require("./assets/images/texto.cur")}),auto;
     }
 	blockquote, q {
 		quotes: none;
@@ -153,7 +153,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     #nprogress .bar {
-        background-image: url(${require('./statics/images/HorseRaceLamp.gif')});
+        background-image: url(${require('./assets/images/HorseRaceLamp.gif')});
         position: fixed;
         z-index: 1031;
         top: 0;

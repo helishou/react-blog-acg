@@ -1,11 +1,11 @@
 import React, { PureComponent } from "react";
 import { BannerWrapper, Center, Focusinfo } from "../style";
-import { scrollAnimation } from "../../../lib/auth";
-import leetcode from "../../../statics/images/leetcode.svg";
-import wechat from "../../../statics/images/wechat.png";
-import github from "../../../statics/images/github.png";
-import gitee from "../../../statics/images/gitee.png";
-import next from "../../../statics/images/next-b.svg"
+import { scrollAnimation } from "../../../utils/auth";
+import leetcode from "../../../assets/images/leetcode.svg";
+import wechat from "../../../assets/images/wechat.png";
+import github from "../../../assets/images/github.png";
+import gitee from "../../../assets/images/gitee.png";
+import next from "../../../assets/images/next-b.svg"
 class Banner extends PureComponent {
   constructor(props) {
     super(props);

@@ -1,19 +1,10 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-31 09:30:07
- * @LastEditTime : 2021-07-16 10:36:25
- * @LastEditors  : helishou
- * @Description  : 
- * @FilePath     : d:\desk\sakura\react-blog-acg\src\lib\auth.js
- * 你用你的指尖,阻止我说再见,在bug完全失去之前
- */
-/*
- * @Author       : helishou
- * @Date         : 2021-05-31 09:30:07
- * @LastEditTime : 2021-07-08 08:50:19
+ * @LastEditTime : 2021-09-13 18:32:31
  * @LastEditors  : helishou
  * @Description  :
- * @FilePath     : d:\desk\sakura\react-blog-acg\src\lib\auth.js
+ * @FilePath     : \src\utils\auth.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import Cookies from "js-cookie";

@@ -1,7 +1,7 @@
 /*
  * @Author       : helishou
  * @Date         : 2021-05-30 14:44:09
- * @LastEditTime : 2021-08-18 18:08:23
+ * @LastEditTime : 2021-09-13 18:26:26
  * @LastEditors  : helishou
  * @Description  : 
  * @FilePath     : \src\components\BackTop\index.js
@@ -10,7 +10,7 @@
 import React, {PureComponent} from "react";
 import {Top} from './style';
 import {BackTop} from 'antd';
-import backImg from '../../statics/images/scroll.png'
+import backImg from '../../assets/images/scroll.png'
 class ToTop extends PureComponent {
     constructor(props) {
         super(props);
