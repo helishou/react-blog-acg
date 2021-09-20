@@ -1,7 +1,7 @@
 <!--
  * @Author       : helishou
  * @Date         : 2021-05-30 14:44:09
- * @LastEditTime : 2021-08-29 21:12:56
+ * @LastEditTime : 2021-09-16 17:44:56
  * @LastEditors  : helishou
  * @Description  : 
  * @FilePath     : \public\index.html
@@ -82,7 +82,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script type="text/javascript" src="/assets/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.min.js"></script>
     <canvas id="fireworks"></canvas>
     <script type="text/javascript">
       $(document).ready(function () {
@@ -101,7 +101,7 @@
       });
       window.onload = function () {
         $.ajax({
-          url: "/assets/autoload.js",
+          url: "/static/autoload.js",
           dataType: "script",
           cache: true /*去除缓存*/,
           async: true /*关闭异步操作*/,
