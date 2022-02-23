@@ -6,6 +6,7 @@ import wechat from "../../../assets/images/wechat.png";
 import github from "../../../assets/images/github.png";
 import gitee from "../../../assets/images/gitee.png";
 import next from "../../../assets/images/next-b.svg"
+import qq from "../../../assets/images/qq.png"
 class Banner extends PureComponent {
   constructor(props) {
     super(props);
@@ -123,7 +124,7 @@ class Banner extends PureComponent {
         code: "QQ",
         content: "479525390",
         showType: 2,
-        icon: "https://cos.nosum.cn/sakura/qq_icon.png",
+        icon: qq,
         updateTime: 1621847573185,
       },
       {
