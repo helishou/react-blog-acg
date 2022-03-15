@@ -116,7 +116,7 @@ function isMobileBrowser() {
 }
 
 var canvasEl = document.querySelector("#fireworks");
-if (canvasEl && !isMobileBrowser()) {
+if (canvasEl && !isMobileBrowser()&&window.innerWidth<1000) {
     var ctx = canvasEl.getContext("2d")
         , numberOfParticules = 30
         , pointerX = 0
