@@ -124,11 +124,11 @@ if (canvasEl && !isMobileBrowser()) {
         , tap = "mousedown"
         , colors = ["#FF1461", "#18FF92", "#5A87FF", "#FBF38C"]
         , setCanvasSize = debounce(function () {
-            canvasEl.width = 1 * window.innerWidth;
-            canvasEl.height = 1 * window.innerHeight;
+            canvasEl.width = 2 * window.innerWidth;
+            canvasEl.height = 2 * window.innerHeight;
             canvasEl.style.width = window.innerWidth + "px";
             canvasEl.style.height = window.innerHeight + "px";
-            canvasEl.getContext("2d").scale(1, 1)
+            canvasEl.getContext("2d").scale(2, 2)
         }, 500)
         , render = anime({
             duration: 1 / 0,
