@@ -17,12 +17,13 @@ import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import ToTop from "./components/BackTop";
 import Router from "./router";
-import loadable from "./utils/loadable";
+// import loadable from "./utils/loadable";
 import {  Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import Music from "./components/Music";
 // import axios from "axios";
-const Login = loadable(() => import("./pages/login"));
+// const Login = loadable(() => import("./pages/login"));
+import Login from "./pages/login";
 
 function mainComponent() {
   return (

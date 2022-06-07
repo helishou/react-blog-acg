@@ -19,7 +19,7 @@ export const Top = styled.div`
     /* width: 70px; */
     height: 130%;
     transition: all 0.5s ease-in-out;
-    cursor: url(${require("../../assets/images/ayuda.cur")}), auto;
+    cursor: url("../../assets/images/ayuda.cur"), auto;
     -webkit-animation: float 2s linear infinite;
     animation: float 2s linear infinite;
     @media (max-width: 768px) {

@@ -9,15 +9,20 @@
  */
 import React, { PureComponent } from "react";
 import { Route, Switch ,withRouter} from "react-router-dom";
-import loadable from "./utils/loadable";
+// import loadable from "./utils/loadable";
 import { menulist } from "./config/router.config";
 // const Home = loadable(() => import("./pages/home"));
 import Home from "./pages/home";
-const Article = loadable(() => import("./pages/article"));
-const Category = loadable(() => import("./pages/category"));
-const TagList = loadable(() => import("./pages/tags/list"));
-const Search = loadable(() => import("./pages/search"));
-const Error = loadable(() => import("./pages/error"));
+import Article from "./pages/article";
+import Category from "./pages/category";
+import TagList from "./pages/tags/list";
+import Search from "./pages/search";
+import Error from "./pages/error";
+// const Article = loadable(() => import("./pages/article"));
+// const Category = loadable(() => import("./pages/category"));
+// const TagList = loadable(() => import("./pages/tags/list"));
+// const Search = loadable(() => import("./pages/search"));
+// const Error = loadable(() => import("./pages/error"));
 // const Tools = loadable(() => import("./pages/tools"));
 
 class Router extends PureComponent {

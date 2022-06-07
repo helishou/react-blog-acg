@@ -146,7 +146,7 @@ export const MainWrapper = styled.div`
         font-size: 12px;
         display: inline-block;
         text-align: center;
-        cursor: url(${require('../../assets/images/ayuda.cur')}),auto;
+        cursor: url('../../assets/images/ayuda.cur'),auto;
         border: 1px solid transparent;
     }
     .info .title {

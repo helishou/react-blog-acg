@@ -86,13 +86,13 @@ export const BannerWrapper = styled.div`
     animation: move_wave 15s linear infinite;
   }
   .waveTop {
-    background-image: url("${require("../../assets/images/wave-top.png")}");
+    background-image: url("../../assets/images/wave-top.png");
   }
   .waveMiddle {
-    background-image: url("${require("../../assets/images/wave-mid.png")}");
+    background-image: url("../../assets/images/wave-mid.png");
   }
   .waveBottom {
-    background-image: url("${require("../../assets/images/wave-bot.png")}");
+    background-image: url("../../assets/images/wave-bot.png");
   }
   .headertop-down {
     will-change: auto;
@@ -383,7 +383,7 @@ export const Focusinfo = styled.div`
     height: 35px;
     float: left;
     margin: 0 6px;
-    cursor: url(${require("../../assets/images/ayuda.cur")}), auto;
+    cursor: url("../../assets/images/ayuda.cur"), auto;
     position: relative;
   }
   .top-social_v2 li {

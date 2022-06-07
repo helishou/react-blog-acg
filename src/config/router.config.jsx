@@ -7,11 +7,10 @@
  * @FilePath     : \src\utils\router.config.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
-import loadable from "../utils/loadable";
-const Links = loadable(() => import("../pages/links"));
-const Archives = loadable(() => import("../pages/archives"));
-const AboutMe = loadable(() => import("../pages/aboutme"));
-const Tags = loadable(() => import("../pages/tags"));
+import Links from "../pages/links"
+import Archives from "../pages/archives";
+import AboutMe from "../pages/aboutme";
+import Tags from "../pages/tags";
 export const menulist = [
   // {
   //   url: "/",
