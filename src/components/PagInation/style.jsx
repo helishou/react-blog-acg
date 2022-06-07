@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { getStaticUrl } from "../../utils";
 export const PagWrapper = styled.div`
     width: 100%;
     padding: 20px 0;
@@ -11,7 +11,7 @@ export const PagWrapper = styled.div`
     }
     .btn{
         display: inline-block;
-        cursor: url('../../assets/images/ayuda.cur'),auto;
+        cursor: url(${getStaticUrl("ayuda.cur")}),auto;
         padding: 13px 35px;
         border: 1px solid #d6d6d6;
         border-radius: 50px;

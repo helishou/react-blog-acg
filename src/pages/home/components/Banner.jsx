@@ -3,6 +3,7 @@ import { BannerWrapper, Center, Focusinfo } from "../style";
 import { scrollAnimation } from "../../../utils/auth";
 import leetcode from "../../../assets/images/leetcode.svg";
 import wechat from "../../../assets/images/wechat.png";
+import email from "../../../assets/images/email.png";
 import github from "../../../assets/images/github.png";
 import gitee from "../../../assets/images/gitee.png";
 import next from "../../../assets/images/next-b.svg"
@@ -138,7 +139,7 @@ class Banner extends PureComponent {
         code: "Email",
         content: "Wang86699596@gmail.com",
         showType: 2,
-        icon: "https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/sns/email.svg",
+        icon: email,
         updateTime: 1621847573185,
       },
       {

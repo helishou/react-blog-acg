@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// import ayuda from "../../assets/images/ayuda.cur"
+import { getStaticUrl } from "../../utils";
 export const Headers = styled.div`
   /* .menulist {
     opacity: 0;
@@ -88,7 +88,7 @@ export const Headers = styled.div`
     background: 0 0;
     top: 20px;
     right: 15px;
-    cursor: url(../../assets/images/ayuda.cur"), auto;
+    cursor: url(${getStaticUrl("ayuda.cur")}), auto;
   }
   .search_close:before,
   .search_close:after {
@@ -229,7 +229,7 @@ export const NavLeft = styled.div`
   i {
     font-size: 22px;
     color: #666666;
-    cursor: url("../../assets/images/ayuda.cur"), auto;
+    cursor: url(${getStaticUrl("ayuda.cur")}), auto;
     display: none;
   }
   i:hover {
@@ -298,7 +298,7 @@ export const NavItem = styled.li`
     height: 40px;
     line-height: 40px;
     position: relative;
-    cursor: url("../../assets/images/ayuda.cur"), auto;
+    cursor: url(${getStaticUrl("ayuda.cur")}), auto;
   }
   .nav-item i {
     margin-right: 5px;
@@ -347,7 +347,7 @@ export const IconBox = styled.div`
     font-size: 24px;
     margin-left: 20px;
     color: #666666;
-    cursor: url("../../assets/images/ayuda.cur"), auto !important;
+    cursor: url(${getStaticUrl("ayuda.cur")}), auto !important;
   }
   i:hover {
     color: #fe9600;
