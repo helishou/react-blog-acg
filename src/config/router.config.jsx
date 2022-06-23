@@ -11,6 +11,18 @@ import Links from "../pages/links"
 import Archives from "../pages/archives";
 import AboutMe from "../pages/aboutme";
 import Tags from "../pages/tags";
+// const Home = lazy(() => import("./pages/home"));
+import Home from "../pages/home";
+import Article from "../pages/article";
+import Category from "../pages/category";
+import TagList from "../pages/tags/list";
+import Search from "../pages/search";
+// import Error from "./pages/error";
+// const Article = lazy(() => import("./pages/article"));
+// const Category = lazy(() => import("./pages/category"));
+// const TagList = lazy(() => import("./pages/tags/list"));
+// const Search = lazy(() => import("./pages/search"));
+
 export const menulist = [
   // {
   //   url: "/",
@@ -47,3 +59,26 @@ export const menulist = [
     component:AboutMe
   },
 ];
+export const routerList =[
+...menulist,
+  {
+    url: "/",
+    component:Home
+  },
+  {
+    url: "/article/:id",
+    component:Article
+  },
+  {
+    url: "/category/:id",
+    component:Category
+  },
+  {
+    url: "/tags/:id",
+    component:TagList
+  },
+  {
+    url: "/search/:key",
+    component:Search
+  },
+]

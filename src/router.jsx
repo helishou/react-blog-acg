@@ -7,29 +7,24 @@
  * @FilePath     : \src\router.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
-import React, { PureComponent } from "react";
+import React, { PureComponent, Suspense,lazy} from "react";
 import { Route, Switch ,withRouter} from "react-router-dom";
-// import loadable from "./utils/loadable";
-import { menulist } from "./config/router.config";
-// const Home = loadable(() => import("./pages/home"));
-import Home from "./pages/home";
-import Article from "./pages/article";
-import Category from "./pages/category";
-import TagList from "./pages/tags/list";
-import Search from "./pages/search";
-import Error from "./pages/error";
-// const Article = loadable(() => import("./pages/article"));
-// const Category = loadable(() => import("./pages/category"));
-// const TagList = loadable(() => import("./pages/tags/list"));
-// const Search = loadable(() => import("./pages/search"));
-// const Error = loadable(() => import("./pages/error"));
-// const Tools = loadable(() => import("./pages/tools"));
-
+import { routerList } from "./config/router.config";
+import { Spin } from "antd";
+const Error = lazy(() => import("./pages/error"));
+// const Tools = lazy(() => import("./pages/tools"));
 class Router extends PureComponent {
   render() {
     return (
+      <>
+      <Suspense fallback={<div style={{
+            height: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+        }}><Spin size="large" /></div>}>
       <Switch key={this.props.location.key}>
-        {menulist.map((item) => {
+        {routerList.map((item) => {
           return (
             <Route
               key={item.url}
@@ -39,13 +34,10 @@ class Router extends PureComponent {
             />
           );
         })}
-        <Route path="/" exact component={Home} />
-        <Route path="/article/:id" exact component={Article} />
-        <Route path="/category/:id" exact component={Category} />
-        <Route path="/tags/:id" exact component={TagList} />
-        <Route path="/search/:key" exact component={Search} />
         <Route component={Error} />
       </Switch>
+      </Suspense>
+      </>
     );
   }
 }
