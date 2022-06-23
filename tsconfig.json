@@ -18,10 +18,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "noFallthroughCasesInSwitch": true,
-    "paths": {
-      "@/*": ["./src/*"]     //格式一定要写对符号*不能少不然找不到@或者没有代码提示
-    }
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src"

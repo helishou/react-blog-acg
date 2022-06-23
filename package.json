@@ -4,8 +4,8 @@
   "scripts": {
     "dev": "vite",
     "start": "PORT=8888 react-app-rewired start",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "PORT=8888 react-app-rewired build",
+    "preview": "PORT=8888 react-app-rewired preview"
   },
   "proxy": "http://47.98.154.142/",
   "dependencies": {
