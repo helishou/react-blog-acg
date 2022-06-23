@@ -13,7 +13,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import { Spin, Tag } from "antd";
 import {  MainWrapper } from "./style";
-import Itemlayout from "../../components/Itemlayout";
+import Itemlayout from "@/components/Itemlayout";
 const TagsList = (props) => {
   const { list, loading } = props;
   const color = [

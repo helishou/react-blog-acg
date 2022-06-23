@@ -2,9 +2,9 @@ import React, { PureComponent } from "react";
 import {  MainWrapper } from "./style";
 import { connect } from "react-redux";
 import axios from "axios";
-import CatList from "../../components/List";
-import PagInation from "../../components/PagInation";
-import Itemlayout from "../../components/Itemlayout";
+import CatList from "@/components/List";
+import PagInation from "@/components/PagInation";
+import Itemlayout from "@/components/Itemlayout";
 class Category extends PureComponent {
   constructor(props) {
     super(props);

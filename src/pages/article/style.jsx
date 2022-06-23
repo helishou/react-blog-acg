@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import hr from '../../assets/images/hr.gif';
-import { getStaticUrl } from "../../utils";
+import hr from '@/assets/images/hr.gif';
+import { getStaticUrl } from "@/utils";
 export const ArticleWrapper = styled.div`
     .pattern-center-blank{
         padding-top: 75px;

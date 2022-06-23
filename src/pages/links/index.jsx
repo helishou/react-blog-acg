@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import {  MainWrapper } from "./style";
 import axios from "axios";
-import Itemlayout from "../../components/Itemlayout";
+import Itemlayout from "@/components/Itemlayout";
 import { Spin, Anchor } from "antd";
 const { Link } = Anchor;
 

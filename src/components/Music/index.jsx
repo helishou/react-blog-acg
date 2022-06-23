@@ -13,7 +13,7 @@ import "aplayer/dist/APlayer.min.css";
 // import axios from "axios";
 import "./index.css";
 // import music1 from "/assets/song1.mp3";
-import cover1 from "../../assets/images/cover.jpg"
+import cover1 from "@/assets/images/cover.jpg"
 export default function Music() {
   // const getWYY=()=>{
   //   https://api.imjad.cn/cloudmusic/?id=460839654&type=song

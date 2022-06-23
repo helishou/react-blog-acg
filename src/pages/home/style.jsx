@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import grid from "../../assets/images/grid.png";
-import waveMid from "../../assets/images/wave-mid.png"
-import waveTop from "../../assets/images/wave-top.png"
-import waveBot from "../../assets/images/wave-bot.png"
-import { getStaticUrl } from "../../utils";
+import grid from "@/assets/images/grid.png";
+import waveMid from "@/assets/images/wave-mid.png"
+import waveTop from "@/assets/images/wave-top.png"
+import waveBot from "@/assets/images/wave-bot.png"
+import { getStaticUrl } from "@/utils";
 
 export const BannerWrapper = styled.div`
   position: relative;

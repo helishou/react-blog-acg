@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FeatureTitle, HomeList, BlogList } from "../style";
-import { getTime } from "../../../utils/formdata";
-import { loadImg } from "../../../config/const.config";
-import PagInation from "../../../components/PagInation";
+import { getTime } from "@/utils/formdata";
+import { loadImg } from "@/config/const.config";
+import PagInation from "@/components/PagInation";
 import * as constants from "../store/constants";
 import axios from "axios";
 import { fromJS } from "immutable";
-// import preload from "../../../utils/preload";
-import ArticalLink from "../../../components/ArticalLink";
-import { picLazyLoad } from "../../../utils/lazyload";
+// import preload from "@/utils/preload";
+import ArticalLink from "@/components/ArticalLink";
+import { picLazyLoad } from "@/utils/lazyload";
 const List = (props) => {
   const { blogList } = props;
   const list = blogList.toJS();

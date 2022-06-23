@@ -2,9 +2,9 @@ import React, { PureComponent } from "react";
 import { MainWrapper} from "./style";
 import axios from "axios";
 import { connect } from "react-redux";
-import CatList from "../../components/List";
-import PagInation from "../../components/PagInation";
-import Itemlayout from "../../components/Itemlayout";
+import CatList from "@/components/List";
+import PagInation from "@/components/PagInation";
+import Itemlayout from "@/components/Itemlayout";
 const getrand = (m, n) => {
   return Math.floor(Math.random() * (n - m + 1)) + m;
 };

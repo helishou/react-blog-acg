@@ -10,8 +10,8 @@
 import React, {PureComponent} from "react";
 import {Top} from './style';
 import {BackTop} from 'antd';
-import backImg from '../../assets/images/scroll.png'
-import throttle from '../../utils/throttle'
+import backImg from '@/assets/images/scroll.png'
+import throttle from '@/utils/throttle'
 class ToTop extends PureComponent {
     constructor(props) {
         super(props);

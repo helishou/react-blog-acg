@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { getStaticUrl } from "../../utils";
+import { getStaticUrl } from "@/utils";
 export const PagWrapper = styled.div`
     width: 100%;
     padding: 20px 0;

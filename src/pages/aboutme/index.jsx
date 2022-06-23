@@ -9,8 +9,8 @@
  */
 
 import { AboutWrapper, MyButton } from "./style";
-import Itemlayout from "../../components/Itemlayout";
-import img from "../../assets/images/ayrgh-0yern.webp";
+import Itemlayout from "@/components/Itemlayout";
+import img from "@/assets/images/ayrgh-0yern.webp";
 import React, { Component } from "react";
 
 export default class AboutMe extends Component {

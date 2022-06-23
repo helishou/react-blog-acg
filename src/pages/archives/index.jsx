@@ -2,9 +2,9 @@ import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import { MainWrapper } from "./style";
-import ArticalLink from '../../components/ArticalLink'
+import ArticalLink from '@/components/ArticalLink'
 import { Spin } from "antd";
-import Itemlayout from "../../components/Itemlayout";
+import Itemlayout from "@/components/Itemlayout";
 // const setYears = (time) => {
 //   const date = new Date(time);
 //   let Y = date.getFullYear() + "年";

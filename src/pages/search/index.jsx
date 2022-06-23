@@ -2,8 +2,8 @@ import React, {PureComponent} from "react";
 import {connect} from "react-redux";
 import axios from "axios";
 import {SearchWrapper, MainWrapper} from './style';
-import CatList from "../../components/List";
-import PagInation from '../../components/PagInation';
+import CatList from "@/components/List";
+import PagInation from '@/components/PagInation';
 
 class Search extends PureComponent {
     constructor(props) {

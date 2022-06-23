@@ -8,11 +8,11 @@
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import React from "react";
-import ArticalLink from "../../../components/ArticalLink";
+import ArticalLink from "@/components/ArticalLink";
 import { FeatureWrapper, FeatureTitle } from "../style";
 import { Row, Col } from "antd";
-import { getrand } from "../../../utils/formdata";
-import preload from "../../../utils/preload";
+import { getrand } from "@/utils/formdata";
+import preload from "@/utils/preload";
 const featureList = (props) => {
   const { ListImg } = props;
   const list = [

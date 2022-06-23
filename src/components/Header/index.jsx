@@ -17,11 +17,11 @@ import { Icon, Menu, Dropdown, Affix, message } from "antd";
 import {
   getAvatar,
   getToken,
-} from "../../utils/auth";
-import { config } from "../../utils/auth";
-import openWindow from "../../utils/openWindow";
-import { menulist } from "../../config/router.config";
-import isMobileBrowser from "../../utils/ismoblie";
+} from "@/utils/auth";
+import { config } from "@/utils/auth";
+import openWindow from "@/utils/openWindow";
+import { menulist } from "@/config/router.config";
+import isMobileBrowser from "@/utils/ismoblie";
 class Header extends PureComponent {
   constructor(props) {
     super(props);

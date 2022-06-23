@@ -14,7 +14,7 @@ import Feature from "./components/Feature";
 import {HomeWrapper, MainWrapper} from './style';
 // import {actionCreators} from "./store";
 import {connect} from "react-redux";
-import {getrand} from "../../utils/formdata";
+import {getrand} from "@/utils/formdata";
 
 class Home extends PureComponent {
     constructor(props) {

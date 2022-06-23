@@ -9,7 +9,7 @@
  */
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import { actionCreators } from "../../pages/article/store";
+import { actionCreators } from "@/pages/article/store";
 import { connect } from "react-redux";
 import axios from "axios";
 import NProgress from "nprogress";
@@ -24,7 +24,7 @@ function ArticalLink(props) {
   NProgress.configure(processConfig);
   const getArtical = (id) => {
     //获取文章
-    return import("../../pages/article")
+    return import("@/pages/article")
       .then(() => {
         return new Promise((resolve, reject) => {
           axios

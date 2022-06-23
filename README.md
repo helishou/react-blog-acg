@@ -27,4 +27,4 @@ global=globalThis
 
 ### react-loadable 失效
 解决办法：移除react-loadable。
-尝试react.lazyload，失效
+使用react.lazyload
