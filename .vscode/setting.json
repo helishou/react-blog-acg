@@ -1,0 +1,30 @@
+{
+  "eslint.run": "onType",
+  "eslint.options": {
+    "extensions": [".js", ".vue", ".jsx", ".tsx"]
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+ 
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter":"remimarsal.prettier-now",
+ 
+  "prettier.useTabs": false,
+  "prettier.tabWidth": 2, 
+  
+
+  "prettier.spaceBeforeFunctionParen": true,
+ 
+
+  "prettier.jsxBracketSameLine": true,
+  "prettier.bracketSpacing": false, 
+  "prettier.semi": false, 
+  "prettier.singleQuote": true, 
+  "prettier.trailingComma": "none", 
+  "prettier.printWidth": 80, 
+ 
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
+}

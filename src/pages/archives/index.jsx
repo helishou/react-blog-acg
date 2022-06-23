@@ -5,18 +5,9 @@ import { MainWrapper } from "./style";
 import ArticalLink from '../../components/ArticalLink'
 import { Spin } from "antd";
 import Itemlayout from "../../components/Itemlayout";
-// const setYears = (time) => {
-//   const date = new Date(time);
-//   let Y = date.getFullYear() + "年";
-//   let M =
-//     (date.getMonth()  < 10
-//       ? "0" + (date.getMonth() )
-//       : date.getMonth() ) + "月";
-//   return Y + M;
-// };
 
 const setDay = (time) => {
-  const date = new Date(time);
+  const date = new Date( time);
   return date.getDate() + "日";
 };
 
