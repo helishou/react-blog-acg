@@ -7,8 +7,9 @@
  * @FilePath     : \src\components\BackTop\style.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
-import styled from "styled-components";
-import { getStaticUrl } from "@/utils";
+import styled from 'styled-components';
+import { getStaticUrl } from '@/utils';
+
 export const Top = styled.div`
   .toTop {
     will-change: auto;
@@ -19,7 +20,7 @@ export const Top = styled.div`
     /* width: 70px; */
     height: 130%;
     transition: all 0.5s ease-in-out;
-    cursor: url(${getStaticUrl("ayuda.cur")}), auto;
+    cursor: url(${getStaticUrl('ayuda.cur')}), auto;
     -webkit-animation: float 2s linear infinite;
     animation: float 2s linear infinite;
     @media (max-width: 768px) {
