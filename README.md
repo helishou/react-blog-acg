@@ -24,3 +24,6 @@ vite.config.js添加配置
 
 解决办法：在index.html里面加script 
 global=globalThis
+
+### react-loadable 失效
+解决办法：移除react-loadable。
