@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { getStaticUrl } from "@/utils";
+import { getStaticUrl } from "@/getStaticUrl.js";
 export const Headers = styled.div`
   /* .menulist {
     opacity: 0;

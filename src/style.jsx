@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { getStaticUrl } from "./utils";
+import { getStaticUrl } from "@/getStaticUrl.js";
 export const GlobalStyle = createGlobalStyle`
     ::selection {
         background: #A0DAD0;

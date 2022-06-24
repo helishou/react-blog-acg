@@ -8,7 +8,7 @@
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import styled from 'styled-components';
-import { getStaticUrl } from '@/utils';
+import { getStaticUrl } from "@/getStaticUrl.js";
 
 export const Top = styled.div`
   .toTop {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getStaticUrl } from "@/utils";
+import { getStaticUrl } from "@/getStaticUrl.js";
 export const MainWrapper = styled.div`
     min-height:600px;
     max-width: 900px;
