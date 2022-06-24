@@ -1,3 +1,4 @@
+import path from 'path';
 module.exports = {
   root: true,
   env: {
@@ -24,5 +25,8 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    alias: {
+      '@': path.resolve(__dirname, '../src'),
+    }
   },
 };

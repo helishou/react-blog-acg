@@ -28,3 +28,17 @@ global=globalThis
 ### react-loadable 失效
 解决办法：移除react-loadable。
 使用react.lazyload
+
+### 打包上线后出现invalid URL错误
+看错误是
+```
+export function getStaticUrl(name) {
+  return new URL('./assets/images/'+name, import.meta.url).href
+}
+```
+参考https://www.zhihu.com/question/472668669
+这一段的问题。
+尝试改成
+export function getStaticUrl(name) {
+  return new URL('@/assets/images/'+name, import.meta.url).href
+}

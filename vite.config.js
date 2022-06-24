@@ -1,20 +1,21 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import Components from 'unplugin-vue-components/vite';
-import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
-import path from 'path';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import Components from "unplugin-vue-components/vite";
+import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
+import dynamicImportVars from "@rollup/plugin-dynamic-import-vars";
+import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(),
-    Components(
-      {
-        resolvers: [AntDesignVueResolver()],
-      },
-    )],
+  plugins: [
+    react(),
+    Components({
+      resolvers: [AntDesignVueResolver()],
+    }),
+  ],
   server: {
     proxy: {
-      '/api': {
-        target: 'http://47.98.154.142/',
+      "/api": {
+        target: "http://47.98.154.142/",
         changeOrigin: true,
       },
     },
@@ -25,7 +26,12 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      plugins: [dynamicImportVars()],
     },
   },
 });

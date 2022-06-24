@@ -72,7 +72,7 @@ class Links extends PureComponent {
           <div className="flex-items">
             <LinksList list={list} loading={loading} />
             <div className="toc-box">
-              {list.length > 0 && (
+              {list.length > 0 && loading &&(
                 <Anchor
                   className="toc"
                   affix

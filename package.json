@@ -2,7 +2,7 @@
   "name": "my-react-app",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "start": "PORT=8888 react-app-rewired start",
     "build": "PORT=8888 react-app-rewired build",
     "preview": "PORT=8888 react-app-rewired preview"
@@ -41,6 +41,7 @@
     "unplugin-vue-components": "^0.19.3"
   },
   "devDependencies": {
+    "@rollup/plugin-dynamic-import-vars": "^1.4.2",
     "@typescript-eslint/parser": "^5.28.0",
     "@vitejs/plugin-react": "^1.0.7",
     "babel-plugin-import": "^1.13.3",
