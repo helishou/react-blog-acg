@@ -1,16 +1,14 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import Components from "unplugin-vue-components/vite";
 import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
 import dynamicImportVars from "@rollup/plugin-dynamic-import-vars";
 import path from "path";
+import commonjs from 'vite-plugin-commonjs'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    Components({
-      resolvers: [AntDesignVueResolver()],
-    }),
+    commonjs,
   ],
   server: {
     proxy: {
@@ -33,5 +31,6 @@ export default defineConfig({
     rollupOptions: {
       plugins: [dynamicImportVars()],
     },
+    sourcemap: true,
   },
 });
