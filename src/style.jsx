@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { getStaticUrl } from "@/getStaticUrl.js";
+import {MOUSEPOINTCUR,TEXTOCUR,HORSERACELAMP}  from "@/utils/constans.js";
 export const GlobalStyle = createGlobalStyle`
     ::selection {
         background: #A0DAD0;
@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     body{
         font-family: 'Noto Serif SC','Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif;
-        cursor: url(${getStaticUrl("normal.cur")}),auto
+        cursor: url(${MOUSEPOINTCUR}),auto
     }
 	html, body, div, span, applet, object, iframe,
 	h1, h2, h3, h4, h5, h6, p, blockquote, 
@@ -60,7 +60,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	a{
         transition: color .2s ease-out,border .2s ease-out,opacity .2s ease-out;
-        cursor: url(${getStaticUrl("ayuda.cur")}),auto;
+        cursor: url(${MOUSEPOINTCUR}),auto;
 	}
 	a:hover{
 	    text-decoration: none;
@@ -85,7 +85,7 @@ export const GlobalStyle = createGlobalStyle`
         /* transform: translateY(0) */
     }
     p{
-        cursor: url(${getStaticUrl("texto.cur")}),auto;
+        cursor: url(${TEXTOCUR}),auto;
     }
 	blockquote, q {
 		quotes: none;
@@ -161,7 +161,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     #nprogress .bar {
-        background-image: url(${getStaticUrl("HorseRaceLamp.gif")});
+        background-image: url(${HORSERACELAMP});
         position: fixed;
         z-index: 1031;
         top: 0;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getStaticUrl } from "@/getStaticUrl.js";
+import { MOUSEPOINTCUR } from "@/utils/constans.js";
 export const MainWrapper = styled.div`
     min-height:600px;
     max-width: 900px;
@@ -146,7 +146,7 @@ export const MainWrapper = styled.div`
         font-size: 12px;
         display: inline-block;
         text-align: center;
-        cursor: url(${getStaticUrl("ayuda.cur")}),auto;
+        cursor: url(${MOUSEPOINTCUR}),auto;
         border: 1px solid transparent;
     }
     .info .title {

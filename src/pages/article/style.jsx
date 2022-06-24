@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import hr from '@/assets/images/hr.gif';
-import { getStaticUrl } from "@/getStaticUrl.js";
+import { MOUSEPOINTCUR } from "@/utils/constans.js";
 export const ArticleWrapper = styled.div`
     .pattern-center-blank{
         padding-top: 75px;
@@ -540,7 +540,7 @@ export const CommentsWrapper = styled.div`
                     line-height: 20px;
                     padding: 0 6px;
                     border-radius: 3px;
-                    cursor: url(${getStaticUrl("ayuda.cur")}),auto;
+                    cursor: url(${MOUSEPOINTCUR}),auto;
                     opacity: 0;
                     transition: color .2s ease-out,border .2s ease-out,opacity .2s ease-out;
                 }
@@ -658,7 +658,7 @@ export const CommentTextarea = styled.div`
             box-shadow: none;
             border: 1px solid #ccc;
             text-shadow: none;
-            cursor: url(${getStaticUrl("ayuda.cur")}),auto;
+            cursor: url(${MOUSEPOINTCUR}),auto;
         }
         input:hover{
             border: 1px solid #FE9600;

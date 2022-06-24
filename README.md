@@ -42,3 +42,5 @@ export function getStaticUrl(name) {
 export function getStaticUrl(name) {
   return new URL('@/assets/images/'+name, import.meta.url).href
 }
+无效
+参考https://github.com/vitejs/vite/issues/7647

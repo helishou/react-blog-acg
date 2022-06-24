@@ -8,7 +8,8 @@
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
 import styled from 'styled-components';
-import { getStaticUrl } from "@/getStaticUrl.js";
+
+import { MOUSEPOINTCUR } from '@/utils/constans.js';
 
 export const Top = styled.div`
   .toTop {
@@ -20,7 +21,7 @@ export const Top = styled.div`
     /* width: 70px; */
     height: 130%;
     transition: all 0.5s ease-in-out;
-    cursor: url(${getStaticUrl('ayuda.cur')}), auto;
+    cursor: url(${MOUSEPOINTCUR}), auto;
     -webkit-animation: float 2s linear infinite;
     animation: float 2s linear infinite;
     @media (max-width: 768px) {
