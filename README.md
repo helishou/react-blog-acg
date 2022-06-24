@@ -44,3 +44,11 @@ export function getStaticUrl(name) {
 }
 无效
 参考https://github.com/vitejs/vite/issues/7647
+解决
+都改为import解决
+也可以用new URL返回静态资源解决，但是无法兼容webpack，所以不推荐
+
+### 打包上线后出现invalid URL错误
+require is not defined
+发现antd很多包都是require引入
+解决起来比较麻烦，不如webpack打包。

@@ -82,7 +82,33 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script type="text/javascript" src="/static/jquery.min.js"></script>
     <script type="module" src="/src/index.jsx"></script>
     <div id="root"></div>
+    <canvas id="fireworks"></canvas>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $.ajax({
+          url: "/js/anime.min.js",
+          dataType: "script",
+          cache: true /*去除缓存*/,
+          async: false /*关闭异步操作*/,
+        });
+        $.ajax({
+          url: "/js/fireworks.js",
+          dataType: "script",
+          cache: true /*去除缓存*/,
+          async: true /*关闭异步操作*/,
+        });
+      });
+      window.onload = function () {
+        $.ajax({
+          url: "/static/autoload.js",
+          dataType: "script",
+          cache: true /*去除缓存*/,
+          async: true /*关闭异步操作*/,
+        });
+      };
+    </script>
   </body>
 </html>
