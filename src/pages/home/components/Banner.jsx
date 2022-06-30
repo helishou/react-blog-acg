@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { BannerWrapper, Center, Focusinfo } from "../style";
-import { scrollAnimation } from "@/utils/auth";
+import { scrollAnimation } from "@/lib/utils";
 import leetcode from "@/assets/images/leetcode.svg";
 import wechat from "@/assets/images/wechat.png";
 import email from "@/assets/images/email.png";

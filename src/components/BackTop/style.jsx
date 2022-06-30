@@ -9,7 +9,7 @@
  */
 import styled from 'styled-components';
 
-import { MOUSEPOINTCUR } from '@/utils/constans.js';
+import { MOUSEPOINTCUR } from '@/lib/constans/vite.js';
 
 export const Top = styled.div`
   .toTop {

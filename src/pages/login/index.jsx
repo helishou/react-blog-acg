@@ -9,7 +9,7 @@
  */
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { setAvatar, setToken, setName } from '@/utils/auth';
+import { setAvatar, setToken, setName } from '@/lib/utils';
 import { message } from 'antd';
 import { withRouter } from 'react-router';
 import { Wrapper } from './style';

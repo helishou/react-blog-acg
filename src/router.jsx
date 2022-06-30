@@ -10,7 +10,7 @@
 import React, { PureComponent, Suspense, lazy } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { Spin } from 'antd';
-import { routerList } from './config/router.config';
+import { routerList } from './lib/config/router.config';
 import Itemlayout from './components/Itemlayout';
 const Error = lazy(() => import('./pages/error'));
 // const Tools = lazy(() => import("./pages/tools"));

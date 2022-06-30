@@ -21,12 +21,12 @@ import { lazy } from 'react';
 const Home = lazy(() => import("@/pages/home"));
 const Links = lazy(() => import('@/pages/links'));
 const Archives = lazy(() => import('@/pages/archives'));
-const AboutMe = lazy(() => import('../pages/aboutme'));
-const Tags = lazy(() => import('../pages/tags'));
-const Article = lazy(() => import('../pages/article'));
-const Category = lazy(() => import('../pages/category'));
-const TagList = lazy(() => import('../pages/tags/list'));
-const Search = lazy(() => import('../pages/search'));
+const AboutMe = lazy(() => import('../../pages/aboutme'));
+const Tags = lazy(() => import('../../pages/tags'));
+const Article = lazy(() => import('../../pages/article'));
+const Category = lazy(() => import('../../pages/category'));
+const TagList = lazy(() => import('../../pages/tags/list'));
+const Search = lazy(() => import('../../pages/search'));
 
 export const menulist = [
   // {

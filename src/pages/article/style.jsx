@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import hr from '@/assets/images/hr.gif';
-import { MOUSEPOINTCUR } from "@/utils/constans.js";
+import { MOUSEPOINTCUR } from "@/lib/constans/vite.js";
 export const ArticleWrapper = styled.div`
     .pattern-center-blank{
         padding-top: 75px;

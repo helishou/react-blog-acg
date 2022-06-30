@@ -12,7 +12,7 @@ import axios from "axios";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import WechatReward from "@/assets/images/WechatReward.jpg";
 import AlipayReward from "@/assets/images/AlipayReward.jpg";
-import preload from "@/utils/preload";
+import {preload} from "@/lib/utils";
 import { actionCreators } from "./store";
 class Article extends PureComponent {
   tocify = new Tocify();

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MOUSEPOINTCUR } from "@/utils/constans.js";
+import { MOUSEPOINTCUR } from "@/lib/constans/vite.js";
 export const Headers = styled.div`
   /* .menulist {
     opacity: 0;

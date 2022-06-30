@@ -1,4 +1,4 @@
-export default function openWindow(url, title, w, h) {
+export const openWindow=(url, title, w, h)=> {
     // Fixes dual-screen position                            Most browsers       Firefox
     const dualScreenLeft =
         // eslint-disable-next-line no-restricted-globals

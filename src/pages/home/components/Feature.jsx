@@ -11,8 +11,7 @@ import React from "react";
 import ArticalLink from "@/components/ArticalLink";
 import { FeatureWrapper, FeatureTitle } from "../style";
 import { Row, Col } from "antd";
-import { getrand } from "@/utils/formdata";
-import preload from "@/utils/preload";
+import { getrand,preload } from "@/lib/utils";
 const featureList = (props) => {
   const { ListImg } = props;
   const list = [

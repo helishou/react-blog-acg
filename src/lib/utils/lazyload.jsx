@@ -7,7 +7,7 @@
  * @FilePath     : \src\utils\lazyload.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
-export let picLazyLoad = function () {
+export const picLazyLoad = function () {
   let observer = new IntersectionObserver((changes) => {
     changes.forEach((change) => {
       if (change.intersectionRatio > 0) {

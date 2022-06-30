@@ -14,7 +14,7 @@ import ListWrapper from './components/List';
 import Feature from './components/Feature';
 import { HomeWrapper, MainWrapper } from './style';
 // import {actionCreators} from "./store";
-import { getrand } from '@/utils/formdata';
+import { getrand } from '@/lib/utils';
 
 class Home extends PureComponent {
   constructor(props) {

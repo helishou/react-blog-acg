@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import {MOUSEPOINTCUR,TEXTOCUR,HORSERACELAMP}  from "@/utils/constans.js";
+import {MOUSEPOINTCUR,TEXTOCUR,HORSERACELAMP}  from "@/lib/constans/vite.js";
 export const GlobalStyle = createGlobalStyle`
     ::selection {
         background: #A0DAD0;
