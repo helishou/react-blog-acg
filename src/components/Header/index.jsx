@@ -15,7 +15,8 @@ import {
 import { actionCreators } from "./store";
 import { Icon, Menu, Dropdown, Affix, message } from "antd";
 import {   getAvatar,
-  getToken,config,openWindow,isMobileBrowser } from "@/lib/utils";
+  getToken,openWindow,isMobileBrowser } from "@/lib/utils";
+import { config } from "@/lib/config/user.config.js";
 import { menulist } from "@/lib/config/router.config";
 class Header extends PureComponent {
   constructor(props) {

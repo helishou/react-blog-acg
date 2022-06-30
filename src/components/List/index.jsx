@@ -9,7 +9,7 @@
  */
 import React from "react";
 import { SiteMain } from "./style";
-import { getTime } from "@/utils/formdata";
+import { getTime } from "@/lib/utils/formdata";
 import ArticalLink from "../ArticalLink";
 const CatList = (props) => {
   let { list } = props;

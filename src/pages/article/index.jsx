@@ -4,7 +4,6 @@ import marked from "marked";
 import hljs from "highlight.js";
 import { Spin } from "antd";
 import { ArticleWrapper, ArticleTop, MainWrapper } from "./style";
-import { getTime } from "@/utils/formdata";
 import "highlight.js/styles/atom-one-dark.css";
 import Tocify from "./tocify";
 import Comments from "./components/Comments";
@@ -12,7 +11,7 @@ import axios from "axios";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import WechatReward from "@/assets/images/WechatReward.jpg";
 import AlipayReward from "@/assets/images/AlipayReward.jpg";
-import {preload} from "@/lib/utils";
+import {preload,getTime} from "@/lib/utils";
 import { actionCreators } from "./store";
 class Article extends PureComponent {
   tocify = new Tocify();

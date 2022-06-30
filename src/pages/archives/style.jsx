@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { MOUSEPOINTCUR } from "@/utils/constans/vite.js";
+import { MOUSEPOINTCUR } from "@/lib/constans/vite.js";
 export const MainWrapper = styled.div`
     min-height:600px;
     max-width: 900px;
