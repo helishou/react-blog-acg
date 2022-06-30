@@ -7,8 +7,8 @@ import commonjs from 'vite-plugin-commonjs'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
     commonjs,
+    react(),
   ],
   server: {
     proxy: {
@@ -31,6 +31,6 @@ export default defineConfig({
     rollupOptions: {
       plugins: [dynamicImportVars()],
     },
-    sourcemap: true,
+    // sourcemap: true,
   },
 });
