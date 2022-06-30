@@ -5,6 +5,11 @@
 解决办法：
 使用 New URL 参考：https://vitejs.dev/guide/assets.html#new-url-url-import-meta-url
 
+### 加载不了本地.cur文件
+也找不到插件
+解决办法:
+传到阿里云，用链接加载
+
 ### 正向代理失效 
 
 解决办法：
