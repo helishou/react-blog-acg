@@ -389,7 +389,7 @@ export const MainWrapper = styled.div`
         padding: 30px 50px;
         margin: 20px 0;
         i{
-            background-color: #FE9600;
+            background-color: var(--color-primary);
         }
     }
     .toc{
@@ -399,16 +399,16 @@ export const MainWrapper = styled.div`
             line-height: 1.143;
             font-size: 16px;
             font-weight: bold;
-            color: #FE9600;
+            color: var(--color-primary);
         }
         .ant-anchor-link-active > .ant-anchor-link-title{
-            color: #FE9600;
+            color: var(--color-primary);
         }
         .ant-anchor-link-title:hover{
-            color: #FE9600;
+            color: var(--color-primary);
         }
         .ant-anchor-ink-ball{
-            border: 2px solid #FE9600;
+            border: 2px solid var(--color-primary);
         }
     }
     .flex-items{
@@ -515,7 +515,7 @@ export const CommentsWrapper = styled.div`
                 }
                 .commeta{
                     h2{
-                        color: #FE9600;
+                        color: var(--color-primary);
                         font-size: 15px;
                         font-weight: 600;
                         line-height:20px;
@@ -536,7 +536,7 @@ export const CommentsWrapper = styled.div`
                     text-transform: uppercase;
                     color: #fff;
                     height: 20px;
-                    background-color: #FE9600;
+                    background-color: var(--color-primary);
                     line-height: 20px;
                     padding: 0 6px;
                     border-radius: 3px;
@@ -588,23 +588,23 @@ export const CommentsWrapper = styled.div`
             font-size: 15px;
         }
         .ant-pagination-item-active a{
-            color: #FE9600;
+            color: var(--color-primary);
         }
         .ant-pagination-item:focus a, .ant-pagination-item:hover a{
-            color: #FE9600;
+            color: var(--color-primary);
         }
         .ant-pagination-next,.ant-pagination-prev{
-            color: #FE9600;
+            color: var(--color-primary);
             font-family: inherit;
             font-size: 15px;
         }
         .ant-pagination-next span,.ant-pagination-prev span{
-            color: #FE9600;
+            color: var(--color-primary);
             font-family: inherit;
             font-size: 15px;
         }
         .ant-pagination-next:hover span,.ant-pagination-prev:hover span{
-            color: #FE9600;
+            color: var(--color-primary);
         }
         .ant-pagination-disabled span{
             color: rgba(0, 0, 0, 0.25);
@@ -637,7 +637,7 @@ export const CommentTextarea = styled.div`
         outline:none;
      }
     .commentbody:focus{
-        border: 1px solid #FE9600; 
+        border: 1px solid var(--color-primary); 
     }
     .form-submit {
         clear: both;
@@ -661,8 +661,8 @@ export const CommentTextarea = styled.div`
             cursor: url(${MOUSEPOINTCUR}),auto;
         }
         input:hover{
-            border: 1px solid #FE9600;
-            color: #FE9600;
+            border: 1px solid var(--color-primary);
+            color: var(--color-primary);
         }
     }
 `;

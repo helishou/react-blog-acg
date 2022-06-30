@@ -50,7 +50,7 @@ export const MainWrapper = styled.div`
         line-height:52px;
         text-align: center;
         i{
-            background-color: #FE9600;
+            background-color: var(--color-primary);
         }
     }
     @media(max-width:768px){

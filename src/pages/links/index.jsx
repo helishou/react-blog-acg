@@ -129,7 +129,7 @@ class Links extends PureComponent {
   padding 0 10px
   font-size 18px
   color #6d6d6d
-  border-left 3px solid #FE9600
+  border-left 3px solid var(--color-primary)
 
 .code
   background-color rgba(254,250,199,1)

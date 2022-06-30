@@ -26,7 +26,7 @@ export default function Music() {
     const options = {
       container: document.getElementById("player"),
       fixed: true,
-      theme: "#fe9600",
+      theme: "var(--color-primary)",
       listMaxHeight: "300px",
       listFolded: false,
       lrcType: 3,

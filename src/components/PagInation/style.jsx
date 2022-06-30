@@ -20,8 +20,8 @@ export const PagWrapper = styled.div`
     @media(min-width:768px){
         .btn:hover{
             border: 1px solid orange;
-            color: #FE9600;
-            border-color: #FE9600;
+            color: var(--color-primary);
+            border-color: var(--color-primary);
             box-shadow: 0 0 4px rgba(255,165,0,.85);
         }
     }
@@ -33,7 +33,7 @@ export const PagWrapper = styled.div`
         height:52px;
         line-height:52px;
         i{
-            background-color: #FE9600;
+            background-color: var(--color-primary);
         }
     }
 `;

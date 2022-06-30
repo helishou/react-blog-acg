@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 import {MOUSEPOINTCUR,TEXTOCUR,HORSERACELAMP}  from "@/lib/constans/vite.js";
 export const GlobalStyle = createGlobalStyle`
+    :root{
+        --color-primary: #FE9600;
+        /* --color-primary: #A0DAD0; */
+    }
     ::selection {
         background: #A0DAD0;
         color: #fff;
@@ -10,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     ::-webkit-scrollbar-thumb {
         border-radius: 10px;
-        background-color: #FE9600;
+        background-color: var(--color-primary);
     }
     ::-webkit-scrollbar {
         width: 5px;
@@ -143,7 +147,7 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-line-clamp: 2;
     }
     #player .aplayer-lrc-current {
-        color: #fe9600;
+        color: var(--color-primary);
         font-size: 15px;
         font-weight: bold;
     }

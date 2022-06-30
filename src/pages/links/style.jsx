@@ -14,13 +14,13 @@ export const MainWrapper = styled.div`
   }
   .toc {
     .ant-anchor-link-active > .ant-anchor-link-title {
-      color: #fe9600;
+      color: var(--color-primary);
     }
     .ant-anchor-link-title:hover {
-      color: #fe9600;
+      color: var(--color-primary);
     }
     .ant-anchor-ink-ball {
-      border: 2px solid #fe9600;
+      border: 2px solid var(--color-primary);
     }
   }
   @keyframes main {
@@ -38,7 +38,7 @@ export const MainWrapper = styled.div`
     line-height: 52px;
     text-align: center;
     i {
-      background-color: #fe9600;
+      background-color: var(--color-primary);
     }
   }
   .links > p {
@@ -82,7 +82,7 @@ export const MainWrapper = styled.div`
   }
   .links ul li:before {
     content: "";
-    background-color: #fe9600;
+    background-color: var(--color-primary);
     -webkit-transform: skew(45deg, 0);
     transform: skew(45deg, 0);
     width: 0;
@@ -115,7 +115,7 @@ export const MainWrapper = styled.div`
     border-radius: 100%;
   }
   .links ul li .sitename {
-    color: #fe9600;
+    color: var(--color-primary);
     padding-bottom: 10px;
     display: block;
     -webkit-transition: all 0.3s;
@@ -158,8 +158,8 @@ export const MainWrapper = styled.div`
   @media (min-width: 768px) {
     .links ul li:hover {
       color: #27323a;
-      border-color: #fe9600;
-      border: 1px solid #fe9600;
+      border-color: var(--color-primary);
+      border: 1px solid var(--color-primary);
     }
     .links ul li:hover:before {
       width: 180%;

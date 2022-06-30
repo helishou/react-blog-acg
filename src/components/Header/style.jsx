@@ -233,16 +233,16 @@ export const NavLeft = styled.div`
     display: none;
   }
   i:hover {
-    color: #fe9600;
+    color: var(--color-primary);
   }
   a:hover {
-    color: #fe9600;
+    color: var(--color-primary);
     rt {
       opacity: 1;
     }
     .sakuraso {
       color: #ffffff;
-      background-color: #fe9600;
+      background-color: var(--color-primary);
     }
     .no {
       animation: action 1s linear infinite;
@@ -309,12 +309,12 @@ export const NavItem = styled.li`
     position: absolute;
     bottom: -17px;
     height: 6px;
-    background-color: #fe9600;
+    background-color: var(--color-primary);
     width: 0px;
     transition: width 0.25s ease-in-out;
   }
   &:hover .nav-item {
-    color: #fe9600;
+    color: var(--color-primary);
   }
   &:hover .nav-item:after {
     width: 100%;
@@ -328,7 +328,7 @@ export const NavItem = styled.li`
     background: none;
   }
   .NavDropdown ul li:hover a {
-    color: #fe9600;
+    color: var(--color-primary);
   }
   .NavDropdown ul:before {
     content: "";
@@ -350,7 +350,7 @@ export const IconBox = styled.div`
     cursor: url(${MOUSEPOINTCUR}), auto !important;
   }
   i:hover {
-    color: #fe9600;
+    color: var(--color-primary);
   }
   img {
     width: 24px;

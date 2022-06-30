@@ -61,7 +61,7 @@ export const SiteMain = styled.div`
       color: #504e4e;
     }
     &:hover a {
-      color: #fe9600;
+      color: var(--color-primary);
     }
   }
   .p-time {

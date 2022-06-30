@@ -575,7 +575,7 @@ export const BlogList = styled.div`
           opacity 0.2s ease-out;
       }
       &:hover h3 {
-        color: #fe9600;
+        color: var(--color-primary);
       }
     }
     .comments-number {
@@ -604,7 +604,7 @@ export const BlogList = styled.div`
         font-size: 25px;
         color: #666;
         &:hover {
-          color: #fe9600;
+          color: var(--color-primary);
         }
       }
     }
