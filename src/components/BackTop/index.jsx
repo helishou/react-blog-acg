@@ -11,7 +11,7 @@ import React, { PureComponent } from 'react';
 import { BackTop } from 'antd';
 import { Top } from './style';
 import backImg from '@/assets/images/scroll.png';
-import {throttle} from 'lodash';
+import {throttle} from 'lodash-es';
 
 class ToTop extends PureComponent {
   constructor(props) {

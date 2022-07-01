@@ -9,7 +9,7 @@
  */
 import React from 'react';
 import {Anchor} from 'antd';
-import {last} from 'lodash';
+import {last} from 'lodash-es';
 
 const {Link} = Anchor;
 

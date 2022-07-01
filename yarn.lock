@@ -43,11 +43,6 @@
   resolved "http://r.npm.sankuai.com/@ant-design/icons/download/@ant-design/icons-2.1.1.tgz#7b9c08dffd4f5d41db667d9dbe5e0107d0bd9a4a"
   integrity sha1-e5wI3/1PXUHbZn2dvl4BB9C9mko=
 
-"@antfu/utils@^0.5.0":
-  version "0.5.2"
-  resolved "http://r.npm.sankuai.com/@antfu/utils/download/@antfu/utils-0.5.2.tgz#8c2d931ff927be0ebe740169874a3d4004ab414b"
-  integrity sha1-jC2TH/knvg6+dAFph0o9QASrQUs=
-
 "@babel/code-frame@7.8.3":
   version "7.8.3"
   resolved "http://r.npm.sankuai.com/@babel/code-frame/download/@babel/code-frame-7.8.3.tgz#33e25903d7481181534e12ec0a25f16b6fcf419e"
@@ -1580,7 +1575,7 @@
     fast-glob "^3.2.7"
     magic-string "^0.25.7"
 
-"@rollup/pluginutils@^4.1.2", "@rollup/pluginutils@^4.2.0", "@rollup/pluginutils@^4.2.1":
+"@rollup/pluginutils@^4.1.2", "@rollup/pluginutils@^4.2.1":
   version "4.2.1"
   resolved "http://r.npm.sankuai.com/@rollup/pluginutils/download/@rollup/pluginutils-4.2.1.tgz#e6c6c3aba0744edce3fb2074922d3776c0af2a6d"
   integrity sha1-5sbDq6B0Ttzj+yB0ki03dsCvKm0=
@@ -3121,13 +3116,6 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
-brace-expansion@^2.0.1:
-  version "2.0.1"
-  resolved "http://r.npm.sankuai.com/brace-expansion/download/brace-expansion-2.0.1.tgz#1edc459e0f0c548486ecf9fc99f2221364b9a0ae"
-  integrity sha1-HtxFng8MVISG7Pn8mfIiE2S5oK4=
-  dependencies:
-    balanced-match "^1.0.0"
-
 braces@^2.3.1, braces@^2.3.2:
   version "2.3.2"
   resolved "http://r.npm.sankuai.com/braces/download/braces-2.3.2.tgz#5979fd3f14cd531565e5fa2df1abfff1dfaee729"
@@ -3521,7 +3509,7 @@ chokidar@^2.1.8:
   optionalDependencies:
     fsevents "^1.2.7"
 
-chokidar@^3.3.0, chokidar@^3.4.1, chokidar@^3.5.3:
+chokidar@^3.3.0, chokidar@^3.4.1:
   version "3.5.3"
   resolved "http://r.npm.sankuai.com/chokidar/download/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
   integrity sha1-HPN8hwe5Mr0a8a4iwEMuKs0ZA70=
@@ -5633,7 +5621,7 @@ fast-glob@^2.0.2:
     merge2 "^1.2.3"
     micromatch "^3.1.10"
 
-fast-glob@^3.2.11, fast-glob@^3.2.7, fast-glob@^3.2.9:
+fast-glob@^3.2.7, fast-glob@^3.2.9:
   version "3.2.11"
   resolved "http://r.npm.sankuai.com/fast-glob/download/fast-glob-3.2.11.tgz#a1172ad95ceb8a16e20caa5c5e56480e5129c1d9"
   integrity sha1-oRcq2VzrihbiDKpcXlZIDlEpwdk=
@@ -8064,11 +8052,6 @@ loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.3:
     emojis-list "^3.0.0"
     json5 "^1.0.1"
 
-local-pkg@^0.4.1:
-  version "0.4.1"
-  resolved "http://r.npm.sankuai.com/local-pkg/download/local-pkg-0.4.1.tgz#e7b0d7aa0b9c498a1110a5ac5b00ba66ef38cfff"
-  integrity sha1-57DXqgucSYoREKWsWwC6Zu84z/8=
-
 locate-path@^2.0.0:
   version "2.0.0"
   resolved "http://r.npm.sankuai.com/locate-path/download/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
@@ -8091,6 +8074,11 @@ locate-path@^5.0.0:
   integrity sha1-Gvujlq/WdqbUJQTQpno6frn2KqA=
   dependencies:
     p-locate "^4.1.0"
+
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "http://r.npm.sankuai.com/lodash-es/download/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha1-Q+YmxG5lkbd1C+srUBFzkMYJ4+4=
 
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"
@@ -8194,13 +8182,6 @@ magic-string@^0.25.7:
   version "0.25.9"
   resolved "http://r.npm.sankuai.com/magic-string/download/magic-string-0.25.9.tgz#de7f9faf91ef8a1c91d02c2e5314c8277dbcdd1c"
   integrity sha1-3n+fr5HvihyR0CwuUxTIJ3283Rw=
-  dependencies:
-    sourcemap-codec "^1.4.8"
-
-magic-string@^0.26.1:
-  version "0.26.2"
-  resolved "http://r.npm.sankuai.com/magic-string/download/magic-string-0.26.2.tgz#5331700e4158cd6befda738bb6b0c7b93c0d4432"
-  integrity sha1-UzFwDkFYzWvv2nOLtrDHuTwNRDI=
   dependencies:
     sourcemap-codec "^1.4.8"
 
@@ -8468,13 +8449,6 @@ minimatch@^3.0.4, minimatch@^3.1.1, minimatch@^3.1.2:
   integrity sha1-Gc0ZS/0+Qo8EmnCBfAONiatL41s=
   dependencies:
     brace-expansion "^1.1.7"
-
-minimatch@^5.0.1:
-  version "5.1.0"
-  resolved "http://r.npm.sankuai.com/minimatch/download/minimatch-5.1.0.tgz#1717b464f4971b144f6aabe8f2d0b8e4511e09c7"
-  integrity sha1-Fxe0ZPSXGxRPaqvo8tC45FEeCcc=
-  dependencies:
-    brace-expansion "^2.0.1"
 
 minimist@^1.1.1, minimist@^1.2.0, minimist@^1.2.6:
   version "1.2.6"
@@ -12950,31 +12924,6 @@ unpipe@1.0.0, unpipe@~1.0.0:
   resolved "http://r.npm.sankuai.com/unpipe/download/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
   integrity sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=
 
-unplugin-vue-components@^0.19.3:
-  version "0.19.3"
-  resolved "http://r.npm.sankuai.com/unplugin-vue-components/download/unplugin-vue-components-0.19.3.tgz#4c0aa419d118aee1c010d0da9d38ead45e735d63"
-  integrity sha1-TAqkGdEYruHAENDanTjq1F5zXWM=
-  dependencies:
-    "@antfu/utils" "^0.5.0"
-    "@rollup/pluginutils" "^4.2.0"
-    chokidar "^3.5.3"
-    debug "^4.3.4"
-    fast-glob "^3.2.11"
-    local-pkg "^0.4.1"
-    magic-string "^0.26.1"
-    minimatch "^5.0.1"
-    resolve "^1.22.0"
-    unplugin "^0.6.1"
-
-unplugin@^0.6.1:
-  version "0.6.3"
-  resolved "http://r.npm.sankuai.com/unplugin/download/unplugin-0.6.3.tgz#b8721e2b163a410a7efed726e6a0fc6fbadf975a"
-  integrity sha1-uHIeKxY6QQp+/tcm5qD8b7rfl1o=
-  dependencies:
-    chokidar "^3.5.3"
-    webpack-sources "^3.2.3"
-    webpack-virtual-modules "^0.4.3"
-
 unquote@~1.1.1:
   version "1.1.1"
   resolved "http://r.npm.sankuai.com/unquote/download/unquote-1.1.1.tgz#8fded7324ec6e88a0ff8b905e7c098cdc086d544"
@@ -13327,16 +13276,6 @@ webpack-sources@^1.1.0, webpack-sources@^1.4.0, webpack-sources@^1.4.1, webpack-
   dependencies:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
-
-webpack-sources@^3.2.3:
-  version "3.2.3"
-  resolved "http://r.npm.sankuai.com/webpack-sources/download/webpack-sources-3.2.3.tgz#2d4daab8451fd4b240cc27055ff6a0c2ccea0cde"
-  integrity sha1-LU2quEUf1LJAzCcFX/agwszqDN4=
-
-webpack-virtual-modules@^0.4.3:
-  version "0.4.3"
-  resolved "http://r.npm.sankuai.com/webpack-virtual-modules/download/webpack-virtual-modules-0.4.3.tgz#cd597c6d51d5a5ecb473eea1983a58fa8a17ded9"
-  integrity sha1-zVl8bVHVpey0c+6hmDpY+ooX3tk=
 
 webpack@4.41.5:
   version "4.41.5"

@@ -9,6 +9,9 @@ export default defineConfig({
     commonjs,
     react(),
   ],
+  optimizeDeps:{
+    // exclude:['lodash-es']
+  },
   server: {
     proxy: {
       "/api": {
