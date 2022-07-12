@@ -1,18 +1,18 @@
-import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
+import React, {PureComponent} from 'react';
+import {connect} from 'react-redux';
 import axios from 'axios';
-import { Spin } from 'antd';
-import { MainWrapper } from './style';
+import {Spin} from 'antd';
+import {MainWrapper} from './style';
 import ArticalLink from '@/components/ArticalLink';
 import Itemlayout from '@/components/Itemlayout';
 
-const setDay = (time) => {
+const setDay = time => {
   const date = new Date(time);
   return `${date.getDate()}日`;
 };
 
 function ArchivesList(props) {
-  const { list, loading } = props;
+  const {list, loading} = props;
   const Class = [
     'info',
     'dark',
@@ -32,40 +32,36 @@ function ArchivesList(props) {
   return (
     <div className="wrapper-md">
       <ul className="timeline">
-        {list.map((item, index) =>
-        // console.log("item", item);
-          (
-            <div className={Class[index % Class.length]} key={index}>
-              <li className="tl-header">
-                <h2 className="title">
-                  {`${item.archiveYear}年${item.archiveMonth}月`}
-                </h2>
-              </li>
-              {item.archivePosts.map((item2, index2) =>
-                // console.log("archivePosts", item2);
-                (
-                  <div className="tl-body" key={index2}>
-                    <li className="tl-item">
-                      <div className="tl-wrap">
-                        <span className="tl-date">
-                          {setDay(item2.createTime)}
-                        </span>
-                        <h3 className="tl-content">
-                          <span className="arrow left" />
-                          <ArticalLink
-                            id={item2.id}
-                            thumbnail={item.thumbnail}
-                            className="text-lt"
-                          >
-                            {item2.title}
-                          </ArticalLink>
-                        </h3>
-                      </div>
-                    </li>
+        {list.map((item, index) => (
+          // console.log("item", item);
+          <div className={Class[index % Class.length]} key={index}>
+            <li className="tl-header">
+              <h2 className="title">
+                {`${item.archiveYear}年${item.archiveMonth}月`}
+              </h2>
+            </li>
+            {item.archivePosts.map((item2, index2) => (
+              // console.log("archivePosts", item2);
+              <div className="tl-body" key={index2}>
+                <li className="tl-item">
+                  <div className="tl-wrap">
+                    <span className="tl-date">{setDay(item2.createTime)}</span>
+                    <h3 className="tl-content">
+                      <span className="arrow left" />
+                      <ArticalLink
+                        id={item2.id}
+                        thumbnail={item.thumbnail}
+                        className="text-lt"
+                      >
+                        {item2.title}
+                      </ArticalLink>
+                    </h3>
                   </div>
-                ))}
-            </div>
-          ))}
+                </li>
+              </div>
+            ))}
+          </div>
+        ))}
         <div className="tl-header">
           <div className="start">博客用React重构</div>
         </div>
@@ -85,7 +81,7 @@ class Archives extends PureComponent {
   }
 
   render() {
-    const { list, loading } = this.state;
+    const {list, loading} = this.state;
     return (
       <Itemlayout title="文章归档" timg={this.state.timg}>
         <MainWrapper>
@@ -101,9 +97,9 @@ class Archives extends PureComponent {
   }
 
   getArchives() {
-    this.setState({ loading: true });
-    axios.get('/getArticleList?state=1&article=1').then((res) => {
-      const { data } = res;
+    this.setState({loading: true});
+    axios.get('/getArticleList?state=1&article=1').then(res => {
+      const {data} = res;
       const models = [];
       data.list.map((item, index) => {
         const archivePosts = [];
@@ -148,7 +144,7 @@ class Archives extends PureComponent {
   }
 }
 
-const mapState = (state) => ({
+const mapState = state => ({
   topImg: state.getIn(['image', 'bannerList']),
 });
 

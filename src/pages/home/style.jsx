@@ -1,15 +1,15 @@
-import styled from "styled-components";
-import grid from "@/assets/images/grid.png";
-import waveMid from "@/assets/images/wave-mid.png"
-import waveTop from "@/assets/images/wave-top.png"
-import waveBot from "@/assets/images/wave-bot.png"
+import styled from 'styled-components';
+import grid from '@/assets/images/grid.png';
+import waveMid from '@/assets/images/wave-mid.png';
+import waveTop from '@/assets/images/wave-top.png';
+import waveBot from '@/assets/images/wave-bot.png';
 
 export const BannerWrapper = styled.div`
   position: relative;
   overflow: hidden;
   height: auto;
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     bottom: 0;
@@ -202,7 +202,7 @@ export const Focusinfo = styled.div`
     transform: rotate(360deg);
   }
   .glitch {
-    font-family: "Ubuntu", sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     position: relative;
     color: #fff;
     mix-blend-mode: lighten;
@@ -359,7 +359,7 @@ export const Focusinfo = styled.div`
     white-space: nowrap;
   }
   .header-info:before {
-    content: "";
+    content: '';
     position: absolute;
     top: -30px;
     left: 50%;
@@ -370,7 +370,7 @@ export const Focusinfo = styled.div`
   }
   .header-info p {
     margin: 0;
-    font-family: "Ubuntu", sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     span {
       margin: 0 10px;
@@ -403,7 +403,7 @@ export const Focusinfo = styled.div`
       transform: translate3d(0, 50px, 0) translateX(-50%);
       opacity: 0;
       &:before {
-        content: "";
+        content: '';
         position: absolute;
         top: -30px;
         left: 50%;
@@ -427,7 +427,7 @@ export const Focusinfo = styled.div`
       transform: translate3d(0, 50px, 0) translateX(-50%);
       opacity: 0;
       &:before {
-        content: "";
+        content: '';
         position: absolute;
         top: -30px;
         left: 50%;

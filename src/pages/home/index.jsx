@@ -7,14 +7,14 @@
  * @FilePath     : \src\pages\home\index.js
  * 你用你的指尖,阻止我说再见,在bug完全失去之前
  */
-import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
+import React, {PureComponent} from 'react';
+import {connect} from 'react-redux';
 import Banner from './components/Banner';
 import ListWrapper from './components/List';
 import Feature from './components/Feature';
-import { HomeWrapper, MainWrapper } from './style';
+import {HomeWrapper, MainWrapper} from './style';
 // import {actionCreators} from "./store";
-import { getrand } from '@/lib/utils';
+import {getrand} from '@/lib/utils';
 
 class Home extends PureComponent {
   constructor(props) {
@@ -27,8 +27,8 @@ class Home extends PureComponent {
   }
 
   render() {
-    const { banner, innerHeight } = this.state;
-    const { userInfo, ListImg } = this.props;
+    const {banner, innerHeight} = this.state;
+    const {userInfo, ListImg} = this.props;
     return (
       <HomeWrapper>
         <Banner
@@ -69,7 +69,7 @@ class Home extends PureComponent {
   }
 }
 
-const mapState = (state) => ({
+const mapState = state => ({
   userInfo: state.getIn(['header', 'userInfo']),
   // featureList: state.getIn(['home', 'featureList']),
   ListImg: state.getIn(['image', 'ListImg']),

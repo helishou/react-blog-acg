@@ -1,32 +1,21 @@
-import path from 'path';
 module.exports = {
   root: true,
-  env: {
-    node: true,
-  },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-  ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
-  parser: '@typescript-eslint/parser',
+  extends: ['./node_modules/gts/'],
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-  ],
-  rules: {
-    alias: {
-      '@': path.resolve(__dirname, '../src'),
-    }
+  settings: {
+    react: {
+      /**
+       * "detect" automatically picks the version you have installed.
+       * You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+       * default to latest and warns if missing
+       */
+
+      version: '999.999.999', // It will default to "detect" in the future
+
+      // "version": "detect"
+      // "version": "16.12.0"
+    },
   },
 };

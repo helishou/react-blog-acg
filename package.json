@@ -1,11 +1,18 @@
 {
-  "name": "my-react-app",
+  "name": "react_blog_acg",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --open",
     "start": "PORT=8888 react-app-rewired start",
     "build": "PORT=8888 react-app-rewired build",
-    "preview": "PORT=8888 react-app-rewired preview"
+    "preview": "PORT=8888 react-app-rewired preview",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "yarn.cmd run compile",
+    "pretest": "yarn.cmd run compile",
+    "posttest": "yarn.cmd run lint"
   },
   "proxy": "http://47.98.154.142/",
   "dependencies": {
@@ -34,7 +41,7 @@
     "react-redux": "^7.1.3",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
+    "react-scripts": "4.0.1",
     "redux": "^4.0.4",
     "redux-immutable": "^4.0.0",
     "redux-thunk": "^2.3.0",
@@ -43,18 +50,22 @@
   },
   "devDependencies": {
     "@rollup/plugin-dynamic-import-vars": "^1.4.2",
+    "@types/node": "^14.11.2",
     "@typescript-eslint/parser": "^5.28.0",
     "@vitejs/plugin-react": "^1.0.7",
     "babel-plugin-import": "^1.13.3",
     "customize-cra": "^1.0.0",
-    "eslint": "^6.6.0",
+    "eslint": "7.32.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.28.0",
+    "gts": "^3.1.0",
     "prerender-spa-plugin": "^3.4.0",
     "react-app-rewired": "^2.1.11",
-    "typescript": "^4.3.5",
+    "typescript": "^4.0.3",
     "vite": "^2.9.0"
   },
   "browserslist": {

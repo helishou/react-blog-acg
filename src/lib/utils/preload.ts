@@ -14,12 +14,12 @@
  * @return       {*}
  */
 export const preload = (function (): any {
-  let imgArray = new Map(); //表示该图是否加载过
+  const imgArray = new Map(); //表示该图是否加载过
   let doing = false; //表示任务是否在执行
-  let nextImg = ""; //表示接下来要预加载的图
+  let nextImg = ''; //表示接下来要预加载的图
   return (url: string, callback?: Function) => {
     //懒加载文章组件
-    import("../../pages/article");
+    import('../../pages/article');
     if (imgArray.has(url)) {
       // console.log('如果该图已加载过，直接返回回调')
       callback && callback(imgArray.get(url));
@@ -27,11 +27,11 @@ export const preload = (function (): any {
     }
     //封装一下加载图片函数
     const loadImg = (url: string, callback?: Function) => {
-      let newImgUrl: string = "";
-      if (url?.indexOf("small") > 0) {
+      let newImgUrl = '';
+      if (url?.indexOf('small') > 0) {
         doing = true;
-        newImgUrl = url.replace("small", "");
-        newImgUrl = newImgUrl.slice(0, newImgUrl.length - 19) + ".jpg.webp";
+        newImgUrl = url.replace('small', '');
+        newImgUrl = newImgUrl.slice(0, newImgUrl.length - 19) + '.jpg.webp';
         // //console.log(newImgUrl)
         const img = new Image();
         img.src = newImgUrl;
@@ -42,10 +42,10 @@ export const preload = (function (): any {
             console.log(newImgUrl);
             callback(newImgUrl);
           } else {
-            if (nextImg !== "") {
+            if (nextImg !== '') {
               //console.log('加载下一张')
               loadImg(nextImg);
-              nextImg = "";
+              nextImg = '';
             } else {
               //console.log('加载完了')
               doing = false;
