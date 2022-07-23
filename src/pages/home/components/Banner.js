@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { BannerWrapper, Center, Focusinfo,BackgroudWrapper } from '../style';
+import { BannerWrapper, Center, Focusinfo, BackgroudWrapper } from '../style';
 import { scrollAnimation } from '../../../utils/auth';
 import leetcode from '../../../assets/images/leetcode.svg';
 import wechat from '../../../assets/images/wechat.png';
@@ -17,7 +17,7 @@ class Banner extends PureComponent {
     }
 
     render() {
-        const { banner, innerHeight } = this.props;
+        const { banner } = this.props;
         const { introduction } = this.props.userInfo.toJS();
         const { info } = this.state;
         return (
@@ -40,12 +40,7 @@ class Banner extends PureComponent {
                 </div>
                 <Center>
                     <BackgroudWrapper>
-                        <img
-                            src={
-                                'https://wxy-picture.oss-cn-hangzhou.aliyuncs.com/thumb-1920-1141313.jpg?x-oss-process=style/shape'
-                            }
-                            alt=""
-                        />
+                        <img src={banner} alt="" />
                     </BackgroudWrapper>
                     <Focusinfo>
                         <h1 className="glitch" data-text="こにちわ!">

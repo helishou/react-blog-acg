@@ -61,7 +61,7 @@ class Home extends PureComponent {
         const banner = this.props.bannerList;
         const num = getrand(0, banner.length - 1);
         this.setState({
-            banner: `url('${banner[num].img}')`,
+            banner: banner[num].img,
         });
     }
 
