@@ -155,8 +155,7 @@ export const BannerWrapper = styled.div`
 
 export const Center = styled.div`
   width: 100%;
-  height: 550px;
-  height: 1235px;
+  height: 100vh;
   margin: 0;
   padding: 0;
   background-position: top center;

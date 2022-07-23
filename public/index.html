@@ -9,104 +9,49 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no"
-    />
-    <meta name="referrer" content="never" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="Keywords"
-      ontent="河狸兽,包子铺,React,前端,javascript,ACG,河狸兽的包子铺"
-    />
-    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
-    <meta name="description" content="这是河狸兽的包子铺" />
-    <script type="text/javascript">
-      window.onerror = function (message, source, lineno, colno, error) {
-        console.log(`****window.onerror****`);
-        console.log("错误信息提示:", message);
-        console.log("错误脚本地址:", source); //
-        console.log("错误代码行号:", lineno);
-        console.log("错误代码列号:", colno);
-        console.log("错误的对象信息:", error);
-        console.log(`************************`);
-      };
-
-      //捕获promise的unhandelerejection
-      window.addEventListener("unhandledrejection", (e) => {
-        e.preventDefault();
-        console.log("promise reject:", e.reason);
-        return true;
-      });
-
-      window.addEventListener(
-        "error",
-        (error) => {
-          if (!error.message) {
-            console.log("网络资源加载错误", error);
-          }
-        },
-        true
-      );
-
-      //页面不正常退出的错误收集
-      window.addEventListener("load", () => {
-        sessionStorage.setItem("good_exit", "pending");
-      });
-
-      window.addEventListener("beforeunload", () => {
-        sessionStorage.setItem("good_exit", "true");
-      });
-
-      if (
-        sessionStorage.getItem("good_exit") &&
-        sessionStorage.getItem("good_exit") !== "true"
-      ) {
-        console.log("捕获到页面崩溃");
-      }
-
-      //框架信息错误处理
-      const nativeConsoleError = window.console.error;
-      window.console.error = (...args) =>
-        nativeConsoleError.apply(this, [`I GOT ${args}`]);
-    </script>
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="//at.alicdn.com/t/font_1569838_jvrdyorwtit.css"
-    />
-    <title>包子铺</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <script type="text/javascript" src="/static/jquery.min.js"></script>
-    <canvas id="fireworks"></canvas>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $.ajax({
-          url: "/js/anime.min.js",
-          dataType: "script",
-          cache: true /*去除缓存*/,
-          async: false /*关闭异步操作*/,
-        });
-        $.ajax({
-          url: "/js/fireworks.js",
-          dataType: "script",
-          cache: true /*去除缓存*/,
-          async: true /*关闭异步操作*/,
-        });
-      });
-      window.onload = function () {
-        $.ajax({
-          url: "/static/autoload.js",
-          dataType: "script",
-          cache: true /*去除缓存*/,
-          async: true /*关闭异步操作*/,
-        });
-      };
-    </script>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no" />
+        <meta name="referrer" content="never" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="Keywords" ontent="河狸兽,包子铺,React,前端,javascript,ACG,河狸兽的包子铺" />
+        <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+        <meta name="description" content="这是河狸兽的包子铺" />
+        <script type="text/javascript" src="'./static/errorMonitor.js"></script>
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <link rel="stylesheet" href="//at.alicdn.com/t/font_1569838_jvrdyorwtit.css" />
+        <title>包子铺</title>
+    </head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
+        <script type="text/javascript" src="/static/jquery.min.js"></script>
+        <canvas id="fireworks"></canvas>
+        <script type="text/javascript">
+            if (window.devicePixelRatio < 1.25) {
+                $(document).ready(function () {
+                    $.ajax({
+                        url: '/static/anime.min.js',
+                        dataType: 'script',
+                        cache: true /*去除缓存*/,
+                        async: false /*关闭异步操作*/,
+                    });
+                    $.ajax({
+                        url: '/static/fireworks.js',
+                        dataType: 'script',
+                        cache: true /*去除缓存*/,
+                        async: true /*关闭异步操作*/,
+                    });
+                });
+                window.onload = function () {
+                    $.ajax({
+                        url: '/static/autoload.js',
+                        dataType: 'script',
+                        cache: true /*去除缓存*/,
+                        async: true /*关闭异步操作*/,
+                    });
+                };
+            }
+        </script>
+    </body>
 </html>
