@@ -21,7 +21,7 @@ class Home extends PureComponent {
         super(props);
         this.state = {
             banner: '',
-            innerHeight: window.innerHeight,
+            innerHeight: document.documentElement.clientHeight,
         };
         this.getBanner = this.getBanner.bind(this);
     }
@@ -31,7 +31,7 @@ class Home extends PureComponent {
         const {userInfo, ListImg} = this.props;
         return (
             <HomeWrapper>
-                <Banner banner={banner} innerHeight={innerHeight} getBanner={this.getBanner} userInfo={userInfo}/>
+                <Banner banner={banner} innerHeight={innerHeight+'px'} getBanner={this.getBanner} userInfo={userInfo}/>
                 <MainWrapper id='content'>
                     {/* <Feature featureList={featureList} ListImg={ListImg}/> */}
                     <Feature ListImg={ListImg}/>
