@@ -160,13 +160,20 @@ export const Center = styled.div`
     height: 100dvh;
     margin: 0;
     padding: 0;
+    background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
     z-index: -1;
 `;
 
+export const BackgroudWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+`;
 export const Focusinfo = styled.div`
     position: relative;
     max-width: 768px;
