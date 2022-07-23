@@ -39,9 +39,7 @@ class Banner extends PureComponent {
                     </span>
                 </div>
                 <Center>
-                    <BackgroudWrapper>
-                        <img src={banner} alt="" />
-                    </BackgroudWrapper>
+                    <BackgroudWrapper className="glitch222" src={banner} alt=""/>
                     <Focusinfo>
                         <h1 className="glitch" data-text="こにちわ!">
                             こにちわ!

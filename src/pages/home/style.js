@@ -167,12 +167,11 @@ export const Center = styled.div`
     z-index: -1;
 `;
 
-export const BackgroudWrapper = styled.div`
-    display: flex;
-    justify-content: center;
+export const BackgroudWrapper = styled.img`
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
+    object-fit: cover;
 `;
 export const Focusinfo = styled.div`
     position: relative;
