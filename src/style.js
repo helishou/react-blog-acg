@@ -1,5 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
+    :root{
+        height: 100vh;
+    }
     ::selection {
         background: #A0DAD0;
         color: #fff;

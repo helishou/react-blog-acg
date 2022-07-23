@@ -37,7 +37,7 @@ class Banner extends PureComponent {
             <i className="iconfont icon-chevrondown" />
           </span>
         </div>
-        <Center style={{ backgroundImage: banner,height:innerHeight}}>
+        <Center style={{ backgroundImage: banner}}>
           <Focusinfo>
             <h1 className="glitch" data-text="こにちわ!">
               こにちわ!
