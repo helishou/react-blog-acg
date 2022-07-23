@@ -47,7 +47,7 @@ class Banner extends PureComponent {
                             alt=""
                         />
                     </BackgroudWrapper>
-                    <Focusinfo style={{ zIndex: 20 }}>
+                    <Focusinfo>
                         <h1 className="glitch" data-text="こにちわ!">
                             こにちわ!
                         </h1>
