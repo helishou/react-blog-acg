@@ -7,7 +7,6 @@ import github from '../../../assets/images/github.png';
 import gitee from '../../../assets/images/gitee.png';
 import next from '../../../assets/images/next-b.svg';
 import qq from '../../../assets/images/qq.png';
-import { iOS } from '../../../utils/iOS';
 class Banner extends PureComponent {
     constructor(props) {
         super(props);
